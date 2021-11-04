@@ -22,7 +22,13 @@ Partial Class frm_login
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.Db_scepDataSet = New scep.db_scepDataSet()
+        Me.OrderedBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.OrderedTableAdapter = New scep.db_scepDataSetTableAdapters.orderedTableAdapter()
+        CType(Me.Db_scepDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.OrderedBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -34,6 +40,20 @@ Partial Class frm_login
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Login"
         '
+        'Db_scepDataSet
+        '
+        Me.Db_scepDataSet.DataSetName = "db_scepDataSet"
+        Me.Db_scepDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'OrderedBindingSource
+        '
+        Me.OrderedBindingSource.DataMember = "ordered"
+        Me.OrderedBindingSource.DataSource = Me.Db_scepDataSet
+        '
+        'OrderedTableAdapter
+        '
+        Me.OrderedTableAdapter.ClearBeforeFill = True
+        '
         'frm_login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -42,10 +62,15 @@ Partial Class frm_login
         Me.Controls.Add(Me.Label1)
         Me.Name = "frm_login"
         Me.Text = "frm_login"
+        CType(Me.Db_scepDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.OrderedBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents Label1 As Windows.Forms.Label
+    Friend WithEvents Db_scepDataSet As db_scepDataSet
+    Friend WithEvents OrderedBindingSource As Windows.Forms.BindingSource
+    Friend WithEvents OrderedTableAdapter As db_scepDataSetTableAdapters.orderedTableAdapter
 End Class
