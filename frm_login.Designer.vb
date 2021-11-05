@@ -71,7 +71,7 @@ Partial Class frm_login
         Me.btn_login.BackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(168, Byte), Integer))
         Me.btn_login.Cursor = System.Windows.Forms.Cursors.Default
         Me.btn_login.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_login.Font = New System.Drawing.Font("Mukta", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_login.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_login.ForeColor = System.Drawing.Color.White
         Me.btn_login.Location = New System.Drawing.Point(35, 429)
         Me.btn_login.Name = "btn_login"
@@ -124,10 +124,10 @@ Partial Class frm_login
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.pic_logo.BackColor = System.Drawing.Color.Transparent
         Me.pic_logo.Image = CType(resources.GetObject("pic_logo.Image"), System.Drawing.Image)
-        Me.pic_logo.Location = New System.Drawing.Point(67, 13)
+        Me.pic_logo.Location = New System.Drawing.Point(67, 0)
         Me.pic_logo.Name = "pic_logo"
         Me.pic_logo.Padding = New System.Windows.Forms.Padding(10)
-        Me.pic_logo.Size = New System.Drawing.Size(237, 148)
+        Me.pic_logo.Size = New System.Drawing.Size(256, 174)
         Me.pic_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pic_logo.TabIndex = 0
         Me.pic_logo.TabStop = False
@@ -139,10 +139,10 @@ Partial Class frm_login
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txt_email.BackColor = System.Drawing.Color.White
         Me.txt_email.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txt_email.Font = New System.Drawing.Font("Mukta", 14.8!)
+        Me.txt_email.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.8!)
         Me.txt_email.Location = New System.Drawing.Point(36, 257)
         Me.txt_email.Name = "txt_email"
-        Me.txt_email.Size = New System.Drawing.Size(321, 33)
+        Me.txt_email.Size = New System.Drawing.Size(321, 23)
         Me.txt_email.TabIndex = 1
         '
         'Label3
@@ -152,11 +152,11 @@ Partial Class frm_login
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label3.AutoSize = True
         Me.Label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label3.Font = New System.Drawing.Font("Mukta", 16.75!)
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.75!)
         Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(168, Byte), Integer))
         Me.Label3.Location = New System.Drawing.Point(123, 177)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(125, 38)
+        Me.Label3.Size = New System.Drawing.Size(140, 29)
         Me.Label3.TabIndex = 14
         Me.Label3.Text = "Fazer Login"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -238,20 +238,20 @@ Partial Class frm_login
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Mukta", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(30, 219)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(63, 35)
+        Me.Label1.Size = New System.Drawing.Size(65, 25)
         Me.Label1.TabIndex = 15
         Me.Label1.Text = "Email"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Mukta", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.Location = New System.Drawing.Point(30, 319)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(69, 35)
+        Me.Label4.Size = New System.Drawing.Size(74, 25)
         Me.Label4.TabIndex = 20
         Me.Label4.Text = "Senha"
         '
@@ -262,11 +262,11 @@ Partial Class frm_login
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txt_password.BackColor = System.Drawing.Color.White
         Me.txt_password.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txt_password.Font = New System.Drawing.Font("Mukta", 14.8!)
+        Me.txt_password.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.8!)
         Me.txt_password.Location = New System.Drawing.Point(35, 357)
         Me.txt_password.Name = "txt_password"
         Me.txt_password.PasswordChar = Global.Microsoft.VisualBasic.ChrW(8226)
-        Me.txt_password.Size = New System.Drawing.Size(321, 33)
+        Me.txt_password.Size = New System.Drawing.Size(321, 23)
         Me.txt_password.TabIndex = 2
         '
         'Panel18
