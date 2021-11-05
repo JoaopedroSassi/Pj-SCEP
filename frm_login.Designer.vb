@@ -71,11 +71,11 @@ Partial Class frm_login
         Me.btn_login.BackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(168, Byte), Integer))
         Me.btn_login.Cursor = System.Windows.Forms.Cursors.Default
         Me.btn_login.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_login.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_login.Font = New System.Drawing.Font("Mukta", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_login.ForeColor = System.Drawing.Color.White
-        Me.btn_login.Location = New System.Drawing.Point(35, 447)
+        Me.btn_login.Location = New System.Drawing.Point(35, 440)
         Me.btn_login.Name = "btn_login"
-        Me.btn_login.Size = New System.Drawing.Size(321, 36)
+        Me.btn_login.Size = New System.Drawing.Size(321, 43)
         Me.btn_login.TabIndex = 3
         Me.btn_login.Text = "Login"
         Me.btn_login.UseVisualStyleBackColor = False
@@ -128,7 +128,7 @@ Partial Class frm_login
         Me.pic_logo.Name = "pic_logo"
         Me.pic_logo.Padding = New System.Windows.Forms.Padding(10)
         Me.pic_logo.Size = New System.Drawing.Size(256, 174)
-        Me.pic_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pic_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
         Me.pic_logo.TabIndex = 0
         Me.pic_logo.TabStop = False
         '
@@ -152,13 +152,13 @@ Partial Class frm_login
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label3.AutoSize = True
         Me.Label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.75!)
+        Me.Label3.Font = New System.Drawing.Font("Mukta", 17.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(168, Byte), Integer))
-        Me.Label3.Location = New System.Drawing.Point(123, 177)
+        Me.Label3.Location = New System.Drawing.Point(150, 177)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(140, 29)
+        Me.Label3.Size = New System.Drawing.Size(74, 38)
         Me.Label3.TabIndex = 14
-        Me.Label3.Text = "Fazer Login"
+        Me.Label3.Text = "Login"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Panel4
@@ -238,20 +238,20 @@ Partial Class frm_login
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Mukta", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(30, 219)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(65, 25)
+        Me.Label1.Size = New System.Drawing.Size(63, 35)
         Me.Label1.TabIndex = 15
         Me.Label1.Text = "Email"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Font = New System.Drawing.Font("Mukta", 15.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.Location = New System.Drawing.Point(30, 319)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(74, 25)
+        Me.Label4.Size = New System.Drawing.Size(69, 35)
         Me.Label4.TabIndex = 20
         Me.Label4.Text = "Senha"
         '
