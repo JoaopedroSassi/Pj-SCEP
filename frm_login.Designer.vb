@@ -71,13 +71,13 @@ Partial Class frm_login
         Me.btn_login.BackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(168, Byte), Integer))
         Me.btn_login.Cursor = System.Windows.Forms.Cursors.Default
         Me.btn_login.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_login.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_login.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_login.ForeColor = System.Drawing.Color.White
-        Me.btn_login.Location = New System.Drawing.Point(35, 429)
+        Me.btn_login.Location = New System.Drawing.Point(35, 447)
         Me.btn_login.Name = "btn_login"
-        Me.btn_login.Size = New System.Drawing.Size(321, 54)
+        Me.btn_login.Size = New System.Drawing.Size(321, 36)
         Me.btn_login.TabIndex = 3
-        Me.btn_login.Text = "Logar!"
+        Me.btn_login.Text = "Login"
         Me.btn_login.UseVisualStyleBackColor = False
         '
         'Panel1
