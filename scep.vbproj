@@ -99,10 +99,10 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Include="Vendedor.Designer.vb">
-      <DependentUpon>Vendedor.vb</DependentUpon>
+    <Compile Include="frm_seller.Designer.vb">
+      <DependentUpon>frm_seller.vb</DependentUpon>
     </Compile>
-    <Compile Include="Vendedor.vb">
+    <Compile Include="frm_seller.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
@@ -128,8 +128,8 @@
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vendedor.resx">
-      <DependentUpon>Vendedor.vb</DependentUpon>
+    <EmbeddedResource Include="frm_seller.resx">
+      <DependentUpon>frm_seller.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

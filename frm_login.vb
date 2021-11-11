@@ -2,6 +2,11 @@
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles pic_close.Click
         Me.Close()
     End Sub
+
+    Private Sub frm_login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        conectar_banco()
+    End Sub
+
     Private Sub btn_login_Click(sender As Object, e As EventArgs) Handles btn_login.Click
         Try
             sql = "SELECT * FROM tb_sys_users WHERE email = '" & txt_email.Text & "'"
@@ -27,13 +32,5 @@
         Catch ex As Exception
             MsgBox("Erro ao conectar! | Conexão para login", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Aviso")
         End Try
-    End Sub
-
-    Private Sub frm_login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        conectar_banco()
-    End Sub
-
-    Private Sub Panel1_Paint(sender As Object, e As Windows.Forms.PaintEventArgs) Handles Panel1.Paint
-
     End Sub
 End Class
