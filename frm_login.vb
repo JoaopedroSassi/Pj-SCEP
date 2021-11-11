@@ -32,4 +32,8 @@
     Private Sub frm_login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         conectar_banco()
     End Sub
+
+    Private Sub Panel1_Paint(sender As Object, e As Windows.Forms.PaintEventArgs) Handles Panel1.Paint
+
+    End Sub
 End Class
