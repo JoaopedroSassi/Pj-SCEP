@@ -3,7 +3,8 @@
 Module main_module
     Public db As New ADODB.Connection
     Public rs As New ADODB.Recordset
-    Public sql As String
+    Public sql, day As String
+
     Sub conectar_banco()
         Try
             db = CreateObject("ADODB.Connection")
