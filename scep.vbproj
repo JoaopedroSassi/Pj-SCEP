@@ -87,6 +87,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>db_scepDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="frm_adm.Designer.vb">
+      <DependentUpon>frm_adm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_adm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frm_login.Designer.vb">
       <DependentUpon>frm_login.vb</DependentUpon>
     </Compile>
