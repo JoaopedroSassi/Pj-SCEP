@@ -139,10 +139,10 @@ Partial Class frm_login
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txt_email.BackColor = System.Drawing.Color.White
         Me.txt_email.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txt_email.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.8!)
-        Me.txt_email.Location = New System.Drawing.Point(36, 257)
+        Me.txt_email.Font = New System.Drawing.Font("Mukta", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_email.Location = New System.Drawing.Point(34, 257)
         Me.txt_email.Name = "txt_email"
-        Me.txt_email.Size = New System.Drawing.Size(321, 23)
+        Me.txt_email.Size = New System.Drawing.Size(321, 32)
         Me.txt_email.TabIndex = 1
         '
         'Label3
@@ -262,11 +262,11 @@ Partial Class frm_login
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txt_password.BackColor = System.Drawing.Color.White
         Me.txt_password.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txt_password.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.8!)
-        Me.txt_password.Location = New System.Drawing.Point(35, 357)
+        Me.txt_password.Font = New System.Drawing.Font("Mukta", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_password.Location = New System.Drawing.Point(34, 357)
         Me.txt_password.Name = "txt_password"
         Me.txt_password.PasswordChar = Global.Microsoft.VisualBasic.ChrW(8226)
-        Me.txt_password.Size = New System.Drawing.Size(321, 23)
+        Me.txt_password.Size = New System.Drawing.Size(321, 32)
         Me.txt_password.TabIndex = 2
         '
         'Panel18
@@ -396,7 +396,6 @@ Partial Class frm_login
     Friend WithEvents Panel2 As Windows.Forms.Panel
     Friend WithEvents Label1 As Windows.Forms.Label
     Friend WithEvents Label4 As Windows.Forms.Label
-    Friend WithEvents txt_password As Windows.Forms.TextBox
     Friend WithEvents Panel18 As Windows.Forms.Panel
     Friend WithEvents Panel19 As Windows.Forms.Panel
     Friend WithEvents Panel20 As Windows.Forms.Panel
@@ -406,4 +405,5 @@ Partial Class frm_login
     Friend WithEvents Panel24 As Windows.Forms.Panel
     Friend WithEvents Panel25 As Windows.Forms.Panel
     Friend WithEvents pic_minimize As Windows.Forms.PictureBox
+    Public WithEvents txt_password As Windows.Forms.TextBox
 End Class
