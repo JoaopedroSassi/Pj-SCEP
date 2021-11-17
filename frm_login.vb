@@ -23,10 +23,10 @@
                 If (txt_password.Text = rs.Fields(5).Value) Then
                     If (rs.Fields(6).Value = "seller") Then
                         MsgBox("Vendedor logado!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Atenção")
-                        Dim frm_log = New frm_login()
-                        frm_log.Close()
+                        Me.Hide()
                         Dim frm_sel = New frm_seller()
                         frm_sel.ShowDialog()
+                        Me.Close()
                     Else
                         MsgBox("Admin logado!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Atenção")
                     End If
