@@ -1,5 +1,5 @@
 ﻿Public Class frm_login
-    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles pic_close.Click
+    Private Sub PictureBox2_Click(sender As Object, e As EventArgs) 
         Me.Close()
     End Sub
 

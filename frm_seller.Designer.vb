@@ -31,9 +31,6 @@ Partial Class frm_seller
         Me.btn_make_order = New FontAwesome.Sharp.IconButton()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.pic_logo = New System.Windows.Forms.PictureBox()
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.pnl_content = New System.Windows.Forms.Panel()
         Me.lbl_day = New System.Windows.Forms.Label()
@@ -43,9 +40,6 @@ Partial Class frm_seller
         Me.pnl_menu.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.pic_logo, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel2.SuspendLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnl_content.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -168,52 +162,20 @@ Partial Class frm_seller
         Me.pic_logo.TabIndex = 0
         Me.pic_logo.TabStop = False
         '
-        'Panel2
-        '
-        Me.Panel2.BackColor = System.Drawing.Color.White
-        Me.Panel2.Controls.Add(Me.PictureBox2)
-        Me.Panel2.Controls.Add(Me.PictureBox1)
-        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel2.Location = New System.Drawing.Point(205, 0)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(896, 25)
-        Me.Panel2.TabIndex = 1
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(851, 1)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(24, 24)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.PictureBox2.TabIndex = 1
-        Me.PictureBox2.TabStop = False
-        '
-        'PictureBox1
-        '
-        Me.PictureBox1.BackColor = System.Drawing.Color.White
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(872, 0)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(24, 24)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
-        '
         'Timer1
         '
         Me.Timer1.Enabled = True
         '
         'pnl_content
         '
-        Me.pnl_content.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.pnl_content.Controls.Add(Me.lbl_day)
         Me.pnl_content.Controls.Add(Me.lbl_wel)
         Me.pnl_content.Controls.Add(Me.lbl_date)
         Me.pnl_content.Controls.Add(Me.lbl_time)
-        Me.pnl_content.Location = New System.Drawing.Point(205, 25)
+        Me.pnl_content.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pnl_content.Location = New System.Drawing.Point(205, 0)
         Me.pnl_content.Name = "pnl_content"
-        Me.pnl_content.Size = New System.Drawing.Size(896, 530)
+        Me.pnl_content.Size = New System.Drawing.Size(896, 555)
         Me.pnl_content.TabIndex = 2
         '
         'lbl_day
@@ -221,7 +183,7 @@ Partial Class frm_seller
         Me.lbl_day.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.lbl_day.AutoSize = True
         Me.lbl_day.Font = New System.Drawing.Font("Microsoft YaHei", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_day.Location = New System.Drawing.Point(413, 160)
+        Me.lbl_day.Location = New System.Drawing.Point(413, 172)
         Me.lbl_day.Name = "lbl_day"
         Me.lbl_day.Size = New System.Drawing.Size(45, 25)
         Me.lbl_day.TabIndex = 11
@@ -231,10 +193,10 @@ Partial Class frm_seller
         '
         Me.lbl_wel.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.lbl_wel.AutoSize = True
-        Me.lbl_wel.Font = New System.Drawing.Font("Fira Code", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_wel.Location = New System.Drawing.Point(123, 101)
+        Me.lbl_wel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_wel.Location = New System.Drawing.Point(123, 113)
         Me.lbl_wel.Name = "lbl_wel"
-        Me.lbl_wel.Size = New System.Drawing.Size(39, 20)
+        Me.lbl_wel.Size = New System.Drawing.Size(32, 20)
         Me.lbl_wel.TabIndex = 10
         Me.lbl_wel.Text = "wel"
         '
@@ -243,7 +205,7 @@ Partial Class frm_seller
         Me.lbl_date.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.lbl_date.AutoSize = True
         Me.lbl_date.Font = New System.Drawing.Font("Impact", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_date.Location = New System.Drawing.Point(356, 198)
+        Me.lbl_date.Location = New System.Drawing.Point(356, 210)
         Me.lbl_date.Name = "lbl_date"
         Me.lbl_date.Size = New System.Drawing.Size(84, 43)
         Me.lbl_date.TabIndex = 9
@@ -254,7 +216,7 @@ Partial Class frm_seller
         Me.lbl_time.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.lbl_time.AutoSize = True
         Me.lbl_time.Font = New System.Drawing.Font("Impact", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_time.Location = New System.Drawing.Point(356, 270)
+        Me.lbl_time.Location = New System.Drawing.Point(356, 282)
         Me.lbl_time.Name = "lbl_time"
         Me.lbl_time.Size = New System.Drawing.Size(84, 43)
         Me.lbl_time.TabIndex = 8
@@ -267,7 +229,6 @@ Partial Class frm_seller
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(1101, 555)
         Me.Controls.Add(Me.pnl_content)
-        Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.pnl_menu)
         Me.Cursor = System.Windows.Forms.Cursors.Default
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
@@ -279,10 +240,6 @@ Partial Class frm_seller
         Me.pnl_menu.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
         CType(Me.pic_logo, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel2.ResumeLayout(False)
-        Me.Panel2.PerformLayout()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pnl_content.ResumeLayout(False)
         Me.pnl_content.PerformLayout()
         Me.ResumeLayout(False)
@@ -290,9 +247,6 @@ Partial Class frm_seller
     End Sub
 
     Friend WithEvents pnl_menu As Windows.Forms.Panel
-    Friend WithEvents Panel2 As Windows.Forms.Panel
-    Friend WithEvents PictureBox1 As Windows.Forms.PictureBox
-    Friend WithEvents PictureBox2 As Windows.Forms.PictureBox
     Friend WithEvents Timer1 As Windows.Forms.Timer
     Friend WithEvents btn_logout As FontAwesome.Sharp.IconButton
     Friend WithEvents btn_check_prod As FontAwesome.Sharp.IconButton
