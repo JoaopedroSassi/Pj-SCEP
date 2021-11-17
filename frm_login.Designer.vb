@@ -25,8 +25,6 @@ Partial Class frm_login
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_login))
         Me.btn_login = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.pic_minimize = New System.Windows.Forms.PictureBox()
-        Me.pic_close = New System.Windows.Forms.PictureBox()
         Me.pic_logo = New System.Windows.Forms.PictureBox()
         Me.txt_email = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -50,8 +48,6 @@ Partial Class frm_login
         Me.Panel24 = New System.Windows.Forms.Panel()
         Me.Panel25 = New System.Windows.Forms.Panel()
         Me.Panel1.SuspendLayout()
-        CType(Me.pic_minimize, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.pic_close, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.pic_logo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel6.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -83,39 +79,12 @@ Partial Class frm_login
         'Panel1
         '
         Me.Panel1.BackgroundImage = CType(resources.GetObject("Panel1.BackgroundImage"), System.Drawing.Image)
-        Me.Panel1.Controls.Add(Me.pic_minimize)
-        Me.Panel1.Controls.Add(Me.pic_close)
         Me.Panel1.Controls.Add(Me.pic_logo)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(385, 161)
         Me.Panel1.TabIndex = 5
-        '
-        'pic_minimize
-        '
-        Me.pic_minimize.BackColor = System.Drawing.Color.Transparent
-        Me.pic_minimize.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.pic_minimize.Image = CType(resources.GetObject("pic_minimize.Image"), System.Drawing.Image)
-        Me.pic_minimize.Location = New System.Drawing.Point(329, 0)
-        Me.pic_minimize.Name = "pic_minimize"
-        Me.pic_minimize.Size = New System.Drawing.Size(26, 26)
-        Me.pic_minimize.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.pic_minimize.TabIndex = 2
-        Me.pic_minimize.TabStop = False
-        '
-        'pic_close
-        '
-        Me.pic_close.BackColor = System.Drawing.Color.Transparent
-        Me.pic_close.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.pic_close.Cursor = System.Windows.Forms.Cursors.Default
-        Me.pic_close.Image = CType(resources.GetObject("pic_close.Image"), System.Drawing.Image)
-        Me.pic_close.Location = New System.Drawing.Point(356, 0)
-        Me.pic_close.Name = "pic_close"
-        Me.pic_close.Size = New System.Drawing.Size(26, 26)
-        Me.pic_close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.pic_close.TabIndex = 1
-        Me.pic_close.TabStop = False
         '
         'pic_logo
         '
@@ -139,10 +108,10 @@ Partial Class frm_login
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txt_email.BackColor = System.Drawing.Color.White
         Me.txt_email.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txt_email.Font = New System.Drawing.Font("Mukta", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_email.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_email.Location = New System.Drawing.Point(34, 257)
         Me.txt_email.Name = "txt_email"
-        Me.txt_email.Size = New System.Drawing.Size(321, 32)
+        Me.txt_email.Size = New System.Drawing.Size(321, 22)
         Me.txt_email.TabIndex = 1
         '
         'Label3
@@ -262,11 +231,11 @@ Partial Class frm_login
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txt_password.BackColor = System.Drawing.Color.White
         Me.txt_password.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txt_password.Font = New System.Drawing.Font("Mukta", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_password.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_password.Location = New System.Drawing.Point(34, 357)
         Me.txt_password.Name = "txt_password"
         Me.txt_password.PasswordChar = Global.Microsoft.VisualBasic.ChrW(8226)
-        Me.txt_password.Size = New System.Drawing.Size(321, 32)
+        Me.txt_password.Size = New System.Drawing.Size(321, 22)
         Me.txt_password.TabIndex = 2
         '
         'Panel18
@@ -358,15 +327,12 @@ Partial Class frm_login
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.btn_login)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frm_login"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "frm_login"
+        Me.Text = "Login"
         Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
-        CType(Me.pic_minimize, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.pic_close, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.pic_logo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel6.ResumeLayout(False)
         Me.Panel3.ResumeLayout(False)
@@ -385,7 +351,6 @@ Partial Class frm_login
     Friend WithEvents txt_email As Windows.Forms.TextBox
     Friend WithEvents pic_logo As Windows.Forms.PictureBox
     Friend WithEvents Label3 As Windows.Forms.Label
-    Friend WithEvents pic_close As Windows.Forms.PictureBox
     Friend WithEvents Panel4 As Windows.Forms.Panel
     Friend WithEvents Panel6 As Windows.Forms.Panel
     Friend WithEvents Panel7 As Windows.Forms.Panel
@@ -404,6 +369,5 @@ Partial Class frm_login
     Friend WithEvents Panel23 As Windows.Forms.Panel
     Friend WithEvents Panel24 As Windows.Forms.Panel
     Friend WithEvents Panel25 As Windows.Forms.Panel
-    Friend WithEvents pic_minimize As Windows.Forms.PictureBox
     Public WithEvents txt_password As Windows.Forms.TextBox
 End Class
