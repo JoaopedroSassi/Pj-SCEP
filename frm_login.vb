@@ -15,7 +15,7 @@
             sql = "SELECT * FROM tb_login WHERE email = '" & txt_email.Text & "'"
             rs = db.Execute(sql)
             If (rs.EOF = True) Then
-                MsgBox("ERRO! Usuário não encontrado", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Aviso")
+                MsgBox("ERRO! Usuário não encontrado!", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Aviso")
                 txt_email.Clear()
                 txt_password.Clear()
                 txt_email.Focus()
