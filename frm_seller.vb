@@ -122,5 +122,4 @@ Public Class frm_seller
             Me.Close()
         End If
     End Sub
-    End Sub
 End Class
