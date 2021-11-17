@@ -139,10 +139,10 @@ Partial Class frm_login
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txt_email.BackColor = System.Drawing.Color.White
         Me.txt_email.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txt_email.Font = New System.Drawing.Font("Mukta", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_email.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_email.Location = New System.Drawing.Point(34, 257)
         Me.txt_email.Name = "txt_email"
-        Me.txt_email.Size = New System.Drawing.Size(321, 32)
+        Me.txt_email.Size = New System.Drawing.Size(321, 22)
         Me.txt_email.TabIndex = 1
         '
         'Label3
@@ -262,11 +262,11 @@ Partial Class frm_login
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txt_password.BackColor = System.Drawing.Color.White
         Me.txt_password.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txt_password.Font = New System.Drawing.Font("Mukta", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_password.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_password.Location = New System.Drawing.Point(34, 357)
         Me.txt_password.Name = "txt_password"
         Me.txt_password.PasswordChar = Global.Microsoft.VisualBasic.ChrW(8226)
-        Me.txt_password.Size = New System.Drawing.Size(321, 32)
+        Me.txt_password.Size = New System.Drawing.Size(321, 22)
         Me.txt_password.TabIndex = 2
         '
         'Panel18
@@ -358,7 +358,7 @@ Partial Class frm_login
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.btn_login)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frm_login"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
