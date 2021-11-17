@@ -4,7 +4,10 @@
     End Sub
 
     Private Sub frm_login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        conectar_banco()
+        conect_db()
+        txt_email.Clear()
+        txt_password.Clear()
+        txt_email.Focus()
     End Sub
 
     Private Sub btn_login_Click(sender As Object, e As EventArgs) Handles btn_login.Click

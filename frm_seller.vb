@@ -127,4 +127,11 @@ Public Class frm_seller
         End If
         Reset()
     End Sub
+
+    Private Sub btn_logout_Click(sender As Object, e As EventArgs) Handles btn_logout.Click
+        resp = MsgBox("Deseja realmente sair?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Aviso")
+        If resp = MsgBoxResult.Yes Then
+            Me.Close()
+        End If
+    End Sub
 End Class

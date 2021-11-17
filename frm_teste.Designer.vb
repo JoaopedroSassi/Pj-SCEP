@@ -41,7 +41,7 @@ Partial Class frm_teste
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.Controls.Add(Me.Label1)
         Me.Name = "frm_teste"
-        Me.Text = "frm_teste"
+        Me.Text = "Vendedor - Pedidos"
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
