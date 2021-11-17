@@ -12,7 +12,7 @@
 
     Private Sub btn_login_Click(sender As Object, e As EventArgs) Handles btn_login.Click
         Try
-            sql = "SELECT * FROM tb_sys_users WHERE email = '" & txt_email.Text & "'"
+            sql = "SELECT * FROM tb_login WHERE email = '" & txt_email.Text & "'"
             rs = db.Execute(sql)
             If (rs.EOF = True) Then
                 MsgBox("ERRO! Usuário não encontrado", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Aviso")
