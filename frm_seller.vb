@@ -4,64 +4,12 @@ Imports FontAwesome.Sharp
 
 Public Class frm_seller
 
-
     Public Sub New()
         InitializeComponent()
 
         left_border_btn = New Panel()
         left_border_btn.Size = New Size(7, 60)
         pnl_menu.Controls.Add(left_border_btn)
-    End Sub
-
-    Public Sub ActiveButton(send_btn As Object)
-        If send_btn IsNot Nothing Then
-            DisableButton()
-            current_btn = CType(send_btn, IconButton)
-            current_btn.BackColor = Color.FromArgb(49, 0, 168)
-
-            current_btn.TextAlign = ContentAlignment.MiddleCenter
-            current_btn.ImageAlign = ContentAlignment.MiddleRight
-            current_btn.TextImageRelation = TextImageRelation.TextBeforeImage
-
-            left_border_btn.BackColor = Color.FromArgb(251, 215, 116)
-            left_border_btn.Location = New Point(0, current_btn.Location.Y)
-            left_border_btn.Visible = True
-            left_border_btn.BringToFront()
-        End If
-    End Sub
-
-    Public Sub DisableButton()
-        If current_btn IsNot Nothing Then
-            current_btn.BackColor = Color.FromArgb(49, 0, 168)
-            current_btn.TextAlign = ContentAlignment.MiddleLeft
-            current_btn.ImageAlign = ContentAlignment.MiddleLeft
-            current_btn.TextImageRelation = TextImageRelation.ImageBeforeText
-        End If
-    End Sub
-
-    Private Sub OpenChildForm(child_form As Form)
-        If current_child_form IsNot Nothing Then
-            current_child_form.Close()
-        End If
-        current_child_form = child_form
-
-        child_form.TopLevel = False
-        child_form.FormBorderStyle = FormBorderStyle.None
-        child_form.Dock = DockStyle.Fill
-        pnl_content.Controls.Add(child_form)
-        pnl_content.Tag = child_form
-        child_form.BringToFront()
-        child_form.Show()
-
-    End Sub
-
-    Private Sub reset()
-        DisableButton()
-        left_border_btn.Visible = False
-    End Sub
-
-    Private Sub PictureBox1_Click(sender As Object, e As EventArgs)
-        Me.Close()
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
@@ -95,7 +43,7 @@ Public Class frm_seller
 
     Private Sub btn_make_order_Click(sender As Object, e As EventArgs) Handles btn_make_order.Click
         ActiveButton(sender)
-        OpenChildForm(New frm_teste)
+        OpenChildForm(New frm_teste, pnl_content)
     End Sub
 
     Private Sub btn_check_order_Click(sender As Object, e As EventArgs) Handles btn_check_order.Click
@@ -107,10 +55,7 @@ Public Class frm_seller
     End Sub
 
     Private Sub pic_logo_Click(sender As Object, e As EventArgs) Handles pic_logo.Click
-        If current_child_form IsNot Nothing Then
-            current_child_form.Close()
-        End If
-        reset()
+        home_form()
     End Sub
 
     Private Sub btn_logout_Click(sender As Object, e As EventArgs) Handles btn_logout.Click
@@ -121,5 +66,9 @@ Public Class frm_seller
             frm_log.ShowDialog()
             Me.Close()
         End If
+    End Sub
+
+    Private Sub pnl_content_Paint(sender As Object, e As PaintEventArgs) Handles pnl_content.Paint
+
     End Sub
 End Class

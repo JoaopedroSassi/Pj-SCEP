@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frm_adm
     Inherits System.Windows.Forms.Form
 
     'Descartar substituições de formulário para limpar a lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,107 +20,191 @@ Partial Class frm_adm
     'OBSERVAÇÃO: o procedimento a seguir é exigido pelo Windows Form Designer
     'Pode ser modificado usando o Windows Form Designer.  
     'Não o modifique usando o editor de códigos.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_adm))
+        Me.pic_logo = New System.Windows.Forms.PictureBox()
+        Me.btn_prod = New FontAwesome.Sharp.IconButton()
+        Me.btn_check_order = New FontAwesome.Sharp.IconButton()
+        Me.btn_make_order = New FontAwesome.Sharp.IconButton()
+        Me.pnl_menu = New System.Windows.Forms.Panel()
+        Me.btn_logout = New FontAwesome.Sharp.IconButton()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.btn_logout = New System.Windows.Forms.Button()
-        Me.btn_salesman = New System.Windows.Forms.Button()
-        Me.btn_inventory = New System.Windows.Forms.Button()
-        Me.btn_copyorder = New System.Windows.Forms.Button()
-        Me.btn_seeorders = New System.Windows.Forms.Button()
-        Me.btn_dashboard = New System.Windows.Forms.Button()
+        Me.pnl_content = New System.Windows.Forms.Panel()
+        Me.Label1 = New System.Windows.Forms.Label()
+        CType(Me.pic_logo, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pnl_menu.SuspendLayout()
         Me.Panel1.SuspendLayout()
+        Me.pnl_content.SuspendLayout()
         Me.SuspendLayout()
         '
-        'Panel1
+        'pic_logo
         '
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(168, Byte), Integer))
-        Me.Panel1.Controls.Add(Me.btn_logout)
-        Me.Panel1.Controls.Add(Me.btn_salesman)
-        Me.Panel1.Controls.Add(Me.btn_inventory)
-        Me.Panel1.Controls.Add(Me.btn_copyorder)
-        Me.Panel1.Controls.Add(Me.btn_seeorders)
-        Me.Panel1.Controls.Add(Me.btn_dashboard)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(205, 460)
-        Me.Panel1.TabIndex = 1
+        Me.pic_logo.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.pic_logo.Image = CType(resources.GetObject("pic_logo.Image"), System.Drawing.Image)
+        Me.pic_logo.Location = New System.Drawing.Point(0, 3)
+        Me.pic_logo.Name = "pic_logo"
+        Me.pic_logo.Size = New System.Drawing.Size(205, 143)
+        Me.pic_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pic_logo.TabIndex = 0
+        Me.pic_logo.TabStop = False
+        '
+        'btn_prod
+        '
+        Me.btn_prod.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btn_prod.FlatAppearance.BorderSize = 0
+        Me.btn_prod.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_prod.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.btn_prod.IconChar = FontAwesome.Sharp.IconChar.DollyFlatbed
+        Me.btn_prod.IconColor = System.Drawing.SystemColors.ButtonFace
+        Me.btn_prod.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.btn_prod.IconSize = 36
+        Me.btn_prod.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btn_prod.Location = New System.Drawing.Point(0, 266)
+        Me.btn_prod.Name = "btn_prod"
+        Me.btn_prod.Padding = New System.Windows.Forms.Padding(10, 0, 20, 0)
+        Me.btn_prod.Size = New System.Drawing.Size(205, 60)
+        Me.btn_prod.TabIndex = 12
+        Me.btn_prod.Text = "CRUD | Estoque"
+        Me.btn_prod.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btn_prod.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btn_prod.UseVisualStyleBackColor = True
+        '
+        'btn_check_order
+        '
+        Me.btn_check_order.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btn_check_order.FlatAppearance.BorderSize = 0
+        Me.btn_check_order.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_check_order.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.btn_check_order.IconChar = FontAwesome.Sharp.IconChar.FileAlt
+        Me.btn_check_order.IconColor = System.Drawing.SystemColors.ButtonFace
+        Me.btn_check_order.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.btn_check_order.IconSize = 36
+        Me.btn_check_order.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btn_check_order.Location = New System.Drawing.Point(0, 206)
+        Me.btn_check_order.Name = "btn_check_order"
+        Me.btn_check_order.Padding = New System.Windows.Forms.Padding(10, 0, 20, 0)
+        Me.btn_check_order.Size = New System.Drawing.Size(205, 60)
+        Me.btn_check_order.TabIndex = 11
+        Me.btn_check_order.Text = "Checar pedido"
+        Me.btn_check_order.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btn_check_order.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btn_check_order.UseVisualStyleBackColor = True
+        '
+        'btn_make_order
+        '
+        Me.btn_make_order.BackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(168, Byte), Integer))
+        Me.btn_make_order.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btn_make_order.FlatAppearance.BorderSize = 0
+        Me.btn_make_order.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_make_order.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.btn_make_order.IconChar = FontAwesome.Sharp.IconChar.File
+        Me.btn_make_order.IconColor = System.Drawing.SystemColors.ButtonFace
+        Me.btn_make_order.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.btn_make_order.IconSize = 36
+        Me.btn_make_order.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btn_make_order.Location = New System.Drawing.Point(0, 146)
+        Me.btn_make_order.Name = "btn_make_order"
+        Me.btn_make_order.Padding = New System.Windows.Forms.Padding(10, 0, 20, 0)
+        Me.btn_make_order.Size = New System.Drawing.Size(205, 60)
+        Me.btn_make_order.TabIndex = 10
+        Me.btn_make_order.Text = "Fazer pedido"
+        Me.btn_make_order.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btn_make_order.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btn_make_order.UseVisualStyleBackColor = False
+        '
+        'pnl_menu
+        '
+        Me.pnl_menu.BackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(168, Byte), Integer))
+        Me.pnl_menu.Controls.Add(Me.btn_logout)
+        Me.pnl_menu.Controls.Add(Me.btn_prod)
+        Me.pnl_menu.Controls.Add(Me.btn_check_order)
+        Me.pnl_menu.Controls.Add(Me.btn_make_order)
+        Me.pnl_menu.Controls.Add(Me.Panel1)
+        Me.pnl_menu.Dock = System.Windows.Forms.DockStyle.Left
+        Me.pnl_menu.Location = New System.Drawing.Point(0, 0)
+        Me.pnl_menu.Name = "pnl_menu"
+        Me.pnl_menu.Size = New System.Drawing.Size(205, 555)
+        Me.pnl_menu.TabIndex = 16
         '
         'btn_logout
         '
-        Me.btn_logout.Location = New System.Drawing.Point(12, 425)
+        Me.btn_logout.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.btn_logout.FlatAppearance.BorderSize = 0
+        Me.btn_logout.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_logout.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.btn_logout.IconChar = FontAwesome.Sharp.IconChar.SignOutAlt
+        Me.btn_logout.IconColor = System.Drawing.SystemColors.ButtonFace
+        Me.btn_logout.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.btn_logout.IconSize = 36
+        Me.btn_logout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btn_logout.Location = New System.Drawing.Point(0, 495)
         Me.btn_logout.Name = "btn_logout"
-        Me.btn_logout.Size = New System.Drawing.Size(75, 23)
-        Me.btn_logout.TabIndex = 5
-        Me.btn_logout.Text = "Button6"
+        Me.btn_logout.Padding = New System.Windows.Forms.Padding(10, 0, 20, 0)
+        Me.btn_logout.Size = New System.Drawing.Size(205, 60)
+        Me.btn_logout.TabIndex = 13
+        Me.btn_logout.Text = "Logout"
+        Me.btn_logout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btn_logout.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btn_logout.UseVisualStyleBackColor = True
         '
-        'btn_salesman
+        'Panel1
         '
-        Me.btn_salesman.Location = New System.Drawing.Point(0, 324)
-        Me.btn_salesman.Name = "btn_salesman"
-        Me.btn_salesman.Size = New System.Drawing.Size(205, 32)
-        Me.btn_salesman.TabIndex = 4
-        Me.btn_salesman.Text = "Button5"
-        Me.btn_salesman.UseVisualStyleBackColor = True
+        Me.Panel1.Controls.Add(Me.pic_logo)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(205, 146)
+        Me.Panel1.TabIndex = 8
         '
-        'btn_inventory
+        'pnl_content
         '
-        Me.btn_inventory.Location = New System.Drawing.Point(0, 276)
-        Me.btn_inventory.Name = "btn_inventory"
-        Me.btn_inventory.Size = New System.Drawing.Size(205, 32)
-        Me.btn_inventory.TabIndex = 3
-        Me.btn_inventory.Text = "Button4"
-        Me.btn_inventory.UseVisualStyleBackColor = True
+        Me.pnl_content.Controls.Add(Me.Label1)
+        Me.pnl_content.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pnl_content.Location = New System.Drawing.Point(205, 0)
+        Me.pnl_content.Name = "pnl_content"
+        Me.pnl_content.Size = New System.Drawing.Size(896, 555)
+        Me.pnl_content.TabIndex = 17
         '
-        'btn_copyorder
+        'Label1
         '
-        Me.btn_copyorder.Location = New System.Drawing.Point(0, 228)
-        Me.btn_copyorder.Name = "btn_copyorder"
-        Me.btn_copyorder.Size = New System.Drawing.Size(205, 32)
-        Me.btn_copyorder.TabIndex = 2
-        Me.btn_copyorder.Text = "Button3"
-        Me.btn_copyorder.UseVisualStyleBackColor = True
-        '
-        'btn_seeorders
-        '
-        Me.btn_seeorders.Location = New System.Drawing.Point(0, 180)
-        Me.btn_seeorders.Name = "btn_seeorders"
-        Me.btn_seeorders.Size = New System.Drawing.Size(205, 32)
-        Me.btn_seeorders.TabIndex = 1
-        Me.btn_seeorders.Text = "Button2"
-        Me.btn_seeorders.UseVisualStyleBackColor = True
-        '
-        'btn_dashboard
-        '
-        Me.btn_dashboard.Location = New System.Drawing.Point(0, 132)
-        Me.btn_dashboard.Name = "btn_dashboard"
-        Me.btn_dashboard.Size = New System.Drawing.Size(205, 32)
-        Me.btn_dashboard.TabIndex = 0
-        Me.btn_dashboard.Text = "Button1"
-        Me.btn_dashboard.UseVisualStyleBackColor = True
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(374, 125)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(35, 13)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "admin"
         '
         'frm_adm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(936, 460)
-        Me.Controls.Add(Me.Panel1)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.ClientSize = New System.Drawing.Size(1101, 555)
+        Me.Controls.Add(Me.pnl_content)
+        Me.Controls.Add(Me.pnl_menu)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MinimumSize = New System.Drawing.Size(1117, 594)
         Me.Name = "frm_adm"
-        Me.Text = "frm_adm"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Admin"
+        CType(Me.pic_logo, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.pnl_menu.ResumeLayout(False)
         Me.Panel1.ResumeLayout(False)
+        Me.pnl_content.ResumeLayout(False)
+        Me.pnl_content.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
 
+    Friend WithEvents pic_logo As Windows.Forms.PictureBox
+    Friend WithEvents btn_prod As FontAwesome.Sharp.IconButton
+    Friend WithEvents btn_check_order As FontAwesome.Sharp.IconButton
+    Friend WithEvents btn_make_order As FontAwesome.Sharp.IconButton
+    Friend WithEvents pnl_menu As Windows.Forms.Panel
+    Friend WithEvents btn_logout As FontAwesome.Sharp.IconButton
     Friend WithEvents Panel1 As Windows.Forms.Panel
-    Friend WithEvents btn_logout As Windows.Forms.Button
-    Friend WithEvents btn_salesman As Windows.Forms.Button
-    Friend WithEvents btn_inventory As Windows.Forms.Button
-    Friend WithEvents btn_copyorder As Windows.Forms.Button
-    Friend WithEvents btn_seeorders As Windows.Forms.Button
-    Friend WithEvents btn_dashboard As Windows.Forms.Button
+    Friend WithEvents pnl_content As Windows.Forms.Panel
+    Friend WithEvents Label1 As Windows.Forms.Label
 End Class

@@ -29,6 +29,10 @@
                         Me.Close()
                     Else
                         MsgBox("Admin logado!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Atenção")
+                        Me.Hide()
+                        Dim frm_admin = New frm_adm()
+                        frm_admin.ShowDialog()
+                        Me.Close()
                     End If
                 Else
                     MsgBox("ERRO! Senha não confere", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Aviso")
