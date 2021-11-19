@@ -25,7 +25,7 @@ Partial Class frm_adm
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_adm))
         Me.pic_logo = New System.Windows.Forms.PictureBox()
         Me.btn_prod = New FontAwesome.Sharp.IconButton()
-        Me.btn_check_order = New FontAwesome.Sharp.IconButton()
+        Me.btn_seller = New FontAwesome.Sharp.IconButton()
         Me.btn_make_order = New FontAwesome.Sharp.IconButton()
         Me.pnl_menu = New System.Windows.Forms.Panel()
         Me.btn_logout = New FontAwesome.Sharp.IconButton()
@@ -70,26 +70,26 @@ Partial Class frm_adm
         Me.btn_prod.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btn_prod.UseVisualStyleBackColor = True
         '
-        'btn_check_order
+        'btn_seller
         '
-        Me.btn_check_order.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btn_check_order.FlatAppearance.BorderSize = 0
-        Me.btn_check_order.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_check_order.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.btn_check_order.IconChar = FontAwesome.Sharp.IconChar.FileAlt
-        Me.btn_check_order.IconColor = System.Drawing.SystemColors.ButtonFace
-        Me.btn_check_order.IconFont = FontAwesome.Sharp.IconFont.[Auto]
-        Me.btn_check_order.IconSize = 36
-        Me.btn_check_order.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btn_check_order.Location = New System.Drawing.Point(0, 206)
-        Me.btn_check_order.Name = "btn_check_order"
-        Me.btn_check_order.Padding = New System.Windows.Forms.Padding(10, 0, 20, 0)
-        Me.btn_check_order.Size = New System.Drawing.Size(205, 60)
-        Me.btn_check_order.TabIndex = 11
-        Me.btn_check_order.Text = "Checar pedido"
-        Me.btn_check_order.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btn_check_order.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btn_check_order.UseVisualStyleBackColor = True
+        Me.btn_seller.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btn_seller.FlatAppearance.BorderSize = 0
+        Me.btn_seller.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_seller.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.btn_seller.IconChar = FontAwesome.Sharp.IconChar.User
+        Me.btn_seller.IconColor = System.Drawing.SystemColors.ButtonFace
+        Me.btn_seller.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.btn_seller.IconSize = 36
+        Me.btn_seller.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btn_seller.Location = New System.Drawing.Point(0, 206)
+        Me.btn_seller.Name = "btn_seller"
+        Me.btn_seller.Padding = New System.Windows.Forms.Padding(10, 0, 20, 0)
+        Me.btn_seller.Size = New System.Drawing.Size(205, 60)
+        Me.btn_seller.TabIndex = 11
+        Me.btn_seller.Text = "CRUD | Vendedores"
+        Me.btn_seller.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btn_seller.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btn_seller.UseVisualStyleBackColor = True
         '
         'btn_make_order
         '
@@ -118,7 +118,7 @@ Partial Class frm_adm
         Me.pnl_menu.BackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(168, Byte), Integer))
         Me.pnl_menu.Controls.Add(Me.btn_logout)
         Me.pnl_menu.Controls.Add(Me.btn_prod)
-        Me.pnl_menu.Controls.Add(Me.btn_check_order)
+        Me.pnl_menu.Controls.Add(Me.btn_seller)
         Me.pnl_menu.Controls.Add(Me.btn_make_order)
         Me.pnl_menu.Controls.Add(Me.Panel1)
         Me.pnl_menu.Dock = System.Windows.Forms.DockStyle.Left
@@ -199,7 +199,7 @@ Partial Class frm_adm
 
     Friend WithEvents pic_logo As Windows.Forms.PictureBox
     Friend WithEvents btn_prod As FontAwesome.Sharp.IconButton
-    Friend WithEvents btn_check_order As FontAwesome.Sharp.IconButton
+    Friend WithEvents btn_seller As FontAwesome.Sharp.IconButton
     Friend WithEvents btn_make_order As FontAwesome.Sharp.IconButton
     Friend WithEvents pnl_menu As Windows.Forms.Panel
     Friend WithEvents btn_logout As FontAwesome.Sharp.IconButton
