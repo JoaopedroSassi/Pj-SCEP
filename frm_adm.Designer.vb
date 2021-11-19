@@ -42,9 +42,9 @@ Partial Class frm_adm
         '
         Me.pic_logo.Cursor = System.Windows.Forms.Cursors.Hand
         Me.pic_logo.Image = CType(resources.GetObject("pic_logo.Image"), System.Drawing.Image)
-        Me.pic_logo.Location = New System.Drawing.Point(0, 3)
+        Me.pic_logo.Location = New System.Drawing.Point(0, 0)
         Me.pic_logo.Name = "pic_logo"
-        Me.pic_logo.Size = New System.Drawing.Size(205, 143)
+        Me.pic_logo.Size = New System.Drawing.Size(205, 146)
         Me.pic_logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pic_logo.TabIndex = 0
         Me.pic_logo.TabStop = False
