@@ -50,7 +50,7 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>scep.frm_login</StartupObject>
+    <StartupObject>scep.frm_adm</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>app_icon.ico</ApplicationIcon>
@@ -61,17 +61,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="db_scepDataSet.xsc">
-      <DependentUpon>db_scepDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="db_scepDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>db_scepDataSet.Designer.vb</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="db_scepDataSet.xss">
-      <DependentUpon>db_scepDataSet.xsd</DependentUpon>
-    </None>
     <None Include="My Project\Settings.settings">
       <CustomToolNamespace>My</CustomToolNamespace>
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -83,11 +72,6 @@
     <Content Include="app_icon.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="db_scepDataSet.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>db_scepDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="frm_adm.Designer.vb">
       <DependentUpon>frm_adm.vb</DependentUpon>
     </Compile>

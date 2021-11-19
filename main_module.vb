@@ -7,6 +7,7 @@ Module main_module
     Public db As New ADODB.Connection
     Public rs As New ADODB.Recordset
     Public sql, day, resp As String
+    Public cont, id_tmp As Integer
     Public current_btn As IconButton
     Public left_border_btn As Panel
     Public current_child_form As Form
@@ -73,5 +74,7 @@ Module main_module
         End If
         reset()
     End Sub
+
+
 End Module
 

@@ -124,7 +124,7 @@ Partial Class frm_adm
         Me.pnl_menu.Dock = System.Windows.Forms.DockStyle.Left
         Me.pnl_menu.Location = New System.Drawing.Point(0, 0)
         Me.pnl_menu.Name = "pnl_menu"
-        Me.pnl_menu.Size = New System.Drawing.Size(205, 555)
+        Me.pnl_menu.Size = New System.Drawing.Size(205, 511)
         Me.pnl_menu.TabIndex = 16
         '
         'btn_logout
@@ -138,7 +138,7 @@ Partial Class frm_adm
         Me.btn_logout.IconFont = FontAwesome.Sharp.IconFont.[Auto]
         Me.btn_logout.IconSize = 36
         Me.btn_logout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btn_logout.Location = New System.Drawing.Point(0, 495)
+        Me.btn_logout.Location = New System.Drawing.Point(0, 451)
         Me.btn_logout.Name = "btn_logout"
         Me.btn_logout.Padding = New System.Windows.Forms.Padding(10, 0, 20, 0)
         Me.btn_logout.Size = New System.Drawing.Size(205, 60)
@@ -163,7 +163,7 @@ Partial Class frm_adm
         Me.pnl_content.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnl_content.Location = New System.Drawing.Point(205, 0)
         Me.pnl_content.Name = "pnl_content"
-        Me.pnl_content.Size = New System.Drawing.Size(896, 555)
+        Me.pnl_content.Size = New System.Drawing.Size(896, 511)
         Me.pnl_content.TabIndex = 17
         '
         'Label1
@@ -180,12 +180,11 @@ Partial Class frm_adm
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.ClientSize = New System.Drawing.Size(1101, 555)
+        Me.ClientSize = New System.Drawing.Size(1101, 511)
         Me.Controls.Add(Me.pnl_content)
         Me.Controls.Add(Me.pnl_menu)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.MinimumSize = New System.Drawing.Size(1117, 594)
         Me.Name = "frm_adm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Admin"
