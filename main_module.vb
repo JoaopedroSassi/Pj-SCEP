@@ -7,7 +7,7 @@ Module main_module
     Public db As New ADODB.Connection
     Public rs As New ADODB.Recordset
     Public sql, day, resp, aux_status As String
-    Public cont, id_tmp As Integer
+    Public cont, id_tmp, id_sell_log As Integer
     Public current_btn As IconButton
     Public left_border_btn As Panel
     Public current_child_form As Form

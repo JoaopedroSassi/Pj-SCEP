@@ -24,10 +24,6 @@ Public Class frm_adm
         OpenChildForm(New frm_crud_seller, pnl_content)
     End Sub
 
-    Private Sub frm_adm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        conect_db()
-    End Sub
-
     Private Sub pic_logo_Click(sender As Object, e As EventArgs) Handles pic_logo.Click
         home_form()
     End Sub

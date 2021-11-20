@@ -50,7 +50,7 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>scep.frm_adm</StartupObject>
+    <StartupObject>scep.frm_login</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>app_icon.ico</ApplicationIcon>

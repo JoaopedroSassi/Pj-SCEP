@@ -21,18 +21,25 @@
                 txt_email.Focus()
             Else
                 If (txt_password.Text = rs.Fields(5).Value) Then
-                    If (rs.Fields(6).Value = "seller") Then
-                        MsgBox("Vendedor logado!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Atenção")
-                        Me.Hide()
-                        Dim frm_sel = New frm_seller()
-                        frm_sel.ShowDialog()
-                        Me.Close()
+                    If rs.Fields(7).Value = "disabled" Then
+                        MsgBox("ERRO! Usuário desabilitado!", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Aviso")
+                        txt_password.Clear()
+                        txt_password.Focus()
                     Else
-                        MsgBox("Admin logado!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Atenção")
-                        Me.Hide()
-                        Dim frm_admin = New frm_adm()
-                        frm_admin.ShowDialog()
-                        Me.Close()
+                        If (rs.Fields(6).Value = "seller") Then
+                            id_sell_log = rs.Fields(0).Value
+                            MsgBox("Vendedor logado!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Atenção")
+                            Me.Hide()
+                            Dim frm_sel = New frm_seller()
+                            frm_sel.ShowDialog()
+                            Me.Close()
+                        Else
+                            MsgBox("Admin logado!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Atenção")
+                            Me.Hide()
+                            Dim frm_admin = New frm_adm()
+                            frm_admin.ShowDialog()
+                            Me.Close()
+                        End If
                     End If
                 Else
                     MsgBox("ERRO! Senha não confere", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Aviso")
