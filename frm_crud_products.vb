@@ -10,7 +10,7 @@
             With dgv_prod
                 .Rows.Clear()
                 Do While rs.EOF = False
-                    .Rows.Add(rs.Fields(0).Value, rs.Fields(1).Value, rs.Fields(2).Value, rs.Fields(3).Value, rs.Fields(4).Value, Nothing, Nothing)
+                    .Rows.Add(rs.Fields(0).Value, rs.Fields(1).Value, rs.Fields(2).Value, rs.Fields(3).Value, rs.Fields(4).Value)
                     rs.MoveNext()
                 Loop
             End With
@@ -45,7 +45,7 @@
                 sql = "SELECT * FROM tb_products WHERE id_prod = '" & txt_id.Text & "'"
                 rs = db.Execute(sql)
                 If rs.EOF = False Then
-                    sql = "UPDATE tb_products SET name = '" & txt_name_prod.Text & "', category = '" & cmb_cat_prod.SelectedItem & "', amount = '" & txt_amount.Text & "', cost_price = '" & txt_price.Text & "' WHERE id_prod = " & id_tmp & ""
+                    sql = "UPDATE tb_products SET name = '" & txt_name_prod.Text & "', category = '" & cmb_cat_prod.SelectedItem & "', amount = '" & txt_amount.Text & "', cost_price = '" & txt_price.Text & "' WHERE id_prod = " & txt_id.Text & ""
                     rs = db.Execute(sql)
                     MsgBox("Produto atualizado com sucesso!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Aviso")
                     clean_prod()
@@ -74,6 +74,7 @@
                     rs = db.Execute(sql)
                     MsgBox("Produto excluído com sucesso!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Aviso")
                     load_prod()
+                    clean_prod()
                 End If
             End If
         Catch ex As Exception

@@ -78,7 +78,7 @@ Partial Class frm_crud_products
         Me.dgv_prod.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Id, Me.name_prod, Me.cat, Me.amount, Me.cost_price})
         Me.dgv_prod.EnableHeadersVisualStyles = False
         Me.dgv_prod.GridColor = System.Drawing.Color.SteelBlue
-        Me.dgv_prod.Location = New System.Drawing.Point(70, 44)
+        Me.dgv_prod.Location = New System.Drawing.Point(41, 46)
         Me.dgv_prod.Name = "dgv_prod"
         Me.dgv_prod.ReadOnly = True
         Me.dgv_prod.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
@@ -96,7 +96,7 @@ Partial Class frm_crud_products
         DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
         Me.dgv_prod.RowsDefaultCellStyle = DataGridViewCellStyle3
-        Me.dgv_prod.Size = New System.Drawing.Size(409, 349)
+        Me.dgv_prod.Size = New System.Drawing.Size(488, 349)
         Me.dgv_prod.TabIndex = 0
         '
         'Id
@@ -104,42 +104,41 @@ Partial Class frm_crud_products
         Me.Id.HeaderText = "Id"
         Me.Id.Name = "Id"
         Me.Id.ReadOnly = True
-        Me.Id.Width = 42
+        Me.Id.Width = 41
         '
         'name_prod
         '
         Me.name_prod.HeaderText = "Nome"
         Me.name_prod.Name = "name_prod"
         Me.name_prod.ReadOnly = True
-        Me.name_prod.Width = 68
+        Me.name_prod.Width = 67
         '
         'cat
         '
         Me.cat.HeaderText = "Categoria"
         Me.cat.Name = "cat"
         Me.cat.ReadOnly = True
-        Me.cat.Width = 90
+        Me.cat.Width = 89
         '
         'amount
         '
         Me.amount.HeaderText = "Quantidade"
         Me.amount.Name = "amount"
         Me.amount.ReadOnly = True
-        Me.amount.Width = 101
         '
         'cost_price
         '
         Me.cost_price.HeaderText = "Preço"
         Me.cost_price.Name = "cost_price"
         Me.cost_price.ReadOnly = True
-        Me.cost_price.Width = 67
+        Me.cost_price.Width = 66
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(48, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(168, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(234, 9)
+        Me.Label1.Location = New System.Drawing.Point(237, 13)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(69, 20)
         Me.Label1.TabIndex = 1
@@ -336,7 +335,7 @@ Partial Class frm_crud_products
         Me.btn_delete.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(168, Byte), Integer))
         Me.btn_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_delete.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btn_delete.Location = New System.Drawing.Point(381, 433)
+        Me.btn_delete.Location = New System.Drawing.Point(395, 433)
         Me.btn_delete.Name = "btn_delete"
         Me.btn_delete.Size = New System.Drawing.Size(134, 27)
         Me.btn_delete.TabIndex = 5
@@ -349,7 +348,7 @@ Partial Class frm_crud_products
         Me.btn_edit.FlatAppearance.BorderSize = 2
         Me.btn_edit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(168, Byte), Integer))
         Me.btn_edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_edit.Location = New System.Drawing.Point(51, 433)
+        Me.btn_edit.Location = New System.Drawing.Point(41, 433)
         Me.btn_edit.Name = "btn_edit"
         Me.btn_edit.Size = New System.Drawing.Size(134, 27)
         Me.btn_edit.TabIndex = 3
