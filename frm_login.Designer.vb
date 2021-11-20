@@ -110,8 +110,9 @@ Partial Class frm_login
         Me.txt_email.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txt_email.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_email.Location = New System.Drawing.Point(34, 257)
+        Me.txt_email.Multiline = True
         Me.txt_email.Name = "txt_email"
-        Me.txt_email.Size = New System.Drawing.Size(321, 22)
+        Me.txt_email.Size = New System.Drawing.Size(321, 36)
         Me.txt_email.TabIndex = 1
         '
         'Label3
@@ -232,7 +233,7 @@ Partial Class frm_login
         Me.txt_password.BackColor = System.Drawing.Color.White
         Me.txt_password.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txt_password.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_password.Location = New System.Drawing.Point(34, 357)
+        Me.txt_password.Location = New System.Drawing.Point(34, 347)
         Me.txt_password.Name = "txt_password"
         Me.txt_password.PasswordChar = Global.Microsoft.VisualBasic.ChrW(8226)
         Me.txt_password.Size = New System.Drawing.Size(321, 22)
@@ -247,7 +248,7 @@ Partial Class frm_login
         Me.Panel18.Controls.Add(Me.Panel19)
         Me.Panel18.Controls.Add(Me.Panel23)
         Me.Panel18.Controls.Add(Me.Panel25)
-        Me.Panel18.Location = New System.Drawing.Point(35, 395)
+        Me.Panel18.Location = New System.Drawing.Point(36, 385)
         Me.Panel18.Name = "Panel18"
         Me.Panel18.Size = New System.Drawing.Size(321, 1)
         Me.Panel18.TabIndex = 17
@@ -331,7 +332,7 @@ Partial Class frm_login
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frm_login"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Login"
+        Me.Text = "login"
         Me.Panel1.ResumeLayout(False)
         CType(Me.pic_logo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel6.ResumeLayout(False)

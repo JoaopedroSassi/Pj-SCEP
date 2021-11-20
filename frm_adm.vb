@@ -27,4 +27,14 @@ Public Class frm_adm
     Private Sub pic_logo_Click(sender As Object, e As EventArgs) Handles pic_logo.Click
         home_form()
     End Sub
+
+    Private Sub btn_logout_Click(sender As Object, e As EventArgs) Handles btn_logout.Click
+        resp = MsgBox("Deseja realmente sair?", MsgBoxStyle.Question + MsgBoxStyle.YesNo, "Aviso")
+        If resp = MsgBoxResult.Yes Then
+            Me.Hide()
+            Dim frm_log = New frm_login()
+            frm_log.ShowDialog()
+            Me.Close()
+        End If
+    End Sub
 End Class

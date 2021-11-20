@@ -16,15 +16,12 @@
             rs = db.Execute(sql)
             If (rs.EOF = True) Then
                 MsgBox("ERRO! Usuário não encontrado!", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Aviso")
-                txt_email.Clear()
-                txt_password.Clear()
-                txt_email.Focus()
+                clear_login()
             Else
                 If (txt_password.Text = rs.Fields(5).Value) Then
                     If rs.Fields(7).Value = "disabled" Then
                         MsgBox("ERRO! Usuário desabilitado!", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Aviso")
-                        txt_password.Clear()
-                        txt_password.Focus()
+                        clear_login()
                     Else
                         If (rs.Fields(6).Value = "seller") Then
                             id_sell_log = rs.Fields(0).Value
@@ -50,5 +47,11 @@
         Catch ex As Exception
             MsgBox("Erro ao conectar! | Conexão para login", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Aviso")
         End Try
+    End Sub
+
+    Sub clear_login()
+        txt_email.Clear()
+        txt_password.Clear()
+        txt_email.Focus()
     End Sub
 End Class
