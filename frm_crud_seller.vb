@@ -50,12 +50,12 @@
                 rs = db.Execute(sql)
                 status()
                 If rs.EOF = False Then
-                    sql = "UPDATE tb_login SET cpf = '" & txt_cpf.Text & "', first_name = '" & txt_first_name.Text & "', last_name = '" & txt_last_name.Text & "', email = '" & txt_email.Text & "', password = '" & txt_pass.Text & "', status = '" & aux_status & "' WHERE id_login = " & txt_id.Text & ""
+                    sql = "UPDATE tb_login SET cpf = '" & txt_cpf.Text & "', first_name = '" & txt_first_name.Text & "', last_name = '" & txt_last_name.Text & "', email = '" & txt_email.Text & "', password = '" & txt_pass.Text & "', status = '" & aux_cmb & "' WHERE id_login = " & txt_id.Text & ""
                     rs = db.Execute(sql)
                     MsgBox("Vendedor atualizado com sucesso!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Aviso")
                     clean_sell()
                 Else
-                    sql = "INSERT INTO tb_login VALUES (default, '" & txt_cpf.Text & "', '" & txt_first_name.Text & "', '" & txt_last_name.Text & "', '" & txt_email.Text & "', '" & txt_pass.Text & "', 'seller', '" & aux_status & "')"
+                    sql = "INSERT INTO tb_login VALUES (default, '" & txt_cpf.Text & "', '" & txt_first_name.Text & "', '" & txt_last_name.Text & "', '" & txt_email.Text & "', '" & txt_pass.Text & "', 'seller', '" & aux_cmb & "')"
                     rs = db.Execute(sql)
                     MsgBox("Vendedor cadastrado com sucesso!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Aviso")
                 End If
@@ -69,9 +69,9 @@
 
     Sub status()
         If cmb_status.SelectedIndex = 0 Then
-            aux_status = "active"
+            aux_cmb = "active"
         Else
-            aux_status = "disabled"
+            aux_cmb = "disabled"
         End If
     End Sub
 

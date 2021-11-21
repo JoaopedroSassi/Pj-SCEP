@@ -96,6 +96,12 @@
     <Compile Include="frm_login.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frm_selec_prod.Designer.vb">
+      <DependentUpon>frm_selec_prod.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_selec_prod.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frm_teste.Designer.vb">
       <DependentUpon>frm_teste.vb</DependentUpon>
     </Compile>
@@ -149,6 +155,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_login.resx">
       <DependentUpon>frm_login.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_selec_prod.resx">
+      <DependentUpon>frm_selec_prod.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_teste.resx">
       <DependentUpon>frm_teste.vb</DependentUpon>
