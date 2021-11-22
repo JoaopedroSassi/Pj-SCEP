@@ -43,7 +43,7 @@ Public Class frm_seller
 
     Private Sub btn_make_order_Click(sender As Object, e As EventArgs) Handles btn_make_order.Click
         ActiveButton(sender)
-        OpenChildForm(New frm_teste, pnl_content)
+        OpenChildForm(New frm_order, pnl_content)
     End Sub
 
     Private Sub btn_check_order_Click(sender As Object, e As EventArgs) Handles btn_check_order.Click
