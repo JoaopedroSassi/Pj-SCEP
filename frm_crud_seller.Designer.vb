@@ -109,9 +109,9 @@ Partial Class frm_crud_seller
         Me.Panel1.Controls.Add(Me.Label3)
         Me.Panel1.Controls.Add(Me.Label2)
         Me.Panel1.Controls.Add(Me.txt_id)
-        Me.Panel1.Location = New System.Drawing.Point(578, -10)
+        Me.Panel1.Location = New System.Drawing.Point(562, -10)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(350, 542)
+        Me.Panel1.Size = New System.Drawing.Size(366, 542)
         Me.Panel1.TabIndex = 8
         '
         'cmb_status
@@ -119,7 +119,7 @@ Partial Class frm_crud_seller
         Me.cmb_status.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cmb_status.FormattingEnabled = True
         Me.cmb_status.Items.AddRange(New Object() {"Ativo", "Desativado"})
-        Me.cmb_status.Location = New System.Drawing.Point(97, 255)
+        Me.cmb_status.Location = New System.Drawing.Point(113, 255)
         Me.cmb_status.Name = "cmb_status"
         Me.cmb_status.Size = New System.Drawing.Size(193, 21)
         Me.cmb_status.TabIndex = 6
@@ -149,7 +149,7 @@ Partial Class frm_crud_seller
         'txt_pass
         '
         Me.txt_pass.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_pass.Location = New System.Drawing.Point(97, 225)
+        Me.txt_pass.Location = New System.Drawing.Point(113, 225)
         Me.txt_pass.Multiline = True
         Me.txt_pass.Name = "txt_pass"
         Me.txt_pass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(8226)
@@ -170,7 +170,7 @@ Partial Class frm_crud_seller
         'txt_email
         '
         Me.txt_email.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_email.Location = New System.Drawing.Point(97, 198)
+        Me.txt_email.Location = New System.Drawing.Point(113, 198)
         Me.txt_email.Multiline = True
         Me.txt_email.Name = "txt_email"
         Me.txt_email.Size = New System.Drawing.Size(193, 21)
@@ -190,7 +190,7 @@ Partial Class frm_crud_seller
         'txt_cpf
         '
         Me.txt_cpf.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_cpf.Location = New System.Drawing.Point(97, 117)
+        Me.txt_cpf.Location = New System.Drawing.Point(113, 117)
         Me.txt_cpf.Multiline = True
         Me.txt_cpf.Name = "txt_cpf"
         Me.txt_cpf.Size = New System.Drawing.Size(193, 21)
@@ -203,14 +203,14 @@ Partial Class frm_crud_seller
         Me.Label5.ForeColor = System.Drawing.Color.White
         Me.Label5.Location = New System.Drawing.Point(17, 172)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(75, 20)
+        Me.Label5.Size = New System.Drawing.Size(96, 20)
         Me.Label5.TabIndex = 20
-        Me.Label5.Text = "U. Nome:"
+        Me.Label5.Text = "Sobrenome:"
         '
         'txt_last_name
         '
         Me.txt_last_name.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_last_name.Location = New System.Drawing.Point(97, 171)
+        Me.txt_last_name.Location = New System.Drawing.Point(113, 171)
         Me.txt_last_name.Multiline = True
         Me.txt_last_name.Name = "txt_last_name"
         Me.txt_last_name.Size = New System.Drawing.Size(193, 21)
@@ -271,14 +271,14 @@ Partial Class frm_crud_seller
         Me.Label4.ForeColor = System.Drawing.Color.White
         Me.Label4.Location = New System.Drawing.Point(17, 145)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(73, 20)
+        Me.Label4.Size = New System.Drawing.Size(55, 20)
         Me.Label4.TabIndex = 5
-        Me.Label4.Text = "P. Nome:"
+        Me.Label4.Text = "Nome:"
         '
         'txt_first_name
         '
         Me.txt_first_name.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_first_name.Location = New System.Drawing.Point(97, 144)
+        Me.txt_first_name.Location = New System.Drawing.Point(113, 144)
         Me.txt_first_name.Multiline = True
         Me.txt_first_name.Name = "txt_first_name"
         Me.txt_first_name.Size = New System.Drawing.Size(193, 21)
@@ -309,7 +309,7 @@ Partial Class frm_crud_seller
         'txt_id
         '
         Me.txt_id.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_id.Location = New System.Drawing.Point(97, 90)
+        Me.txt_id.Location = New System.Drawing.Point(113, 90)
         Me.txt_id.Multiline = True
         Me.txt_id.Name = "txt_id"
         Me.txt_id.ReadOnly = True
