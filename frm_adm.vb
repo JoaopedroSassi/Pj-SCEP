@@ -37,4 +37,10 @@ Public Class frm_adm
             Me.Close()
         End If
     End Sub
+
+    Private Sub frm_adm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'Db_scepDataSet.tb_products' table. You can move, or remove it, as needed.
+        Me.Tb_productsTableAdapter.test(Me.Db_scepDataSet.tb_products)
+
+    End Sub
 End Class

@@ -57,8 +57,8 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Driver={MySQL ODBC 8.0 Unicode Driver};server=localhost;uid=root;pwd=loj159951;da"& _ 
-            "tabase=db_scep;port=3306")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Driver={MySQL ODBC 8.0 Unicode Driver};server=localhost;uid=root;pwd=123456;datab"& _ 
+            "ase=db_scep;port=3306")>  _
         Public ReadOnly Property db_scepConnectionString() As String
             Get
                 Return CType(Me("db_scepConnectionString"),String)
