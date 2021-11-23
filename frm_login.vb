@@ -11,8 +11,8 @@
     End Sub
 
     Private Sub btn_login_Click(sender As Object, e As EventArgs) Handles btn_login.Click
-        'Try
-        sql = "SELECT * FROM tb_login WHERE email = '" & txt_email.Text & "'"
+        Try
+            sql = "SELECT * FROM tb_login WHERE email = '" & txt_email.Text & "'"
             rs = db.Execute(sql)
             If (rs.EOF = True) Then
                 MsgBox("ERRO! Usuário não encontrado!", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Aviso")
@@ -44,9 +44,9 @@
                     txt_password.Focus()
                 End If
             End If
-        ' Catch ex As Exception
-        'MsgBox("Erro ao conectar! | Conexão para login", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Aviso")
-        'End Try
+        Catch ex As Exception
+            MsgBox("Erro ao conectar! | Conexão para login", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Aviso")
+        End Try
     End Sub
 
     Sub clear_login()

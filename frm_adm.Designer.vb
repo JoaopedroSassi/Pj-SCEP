@@ -27,7 +27,7 @@ Partial Class frm_adm
         Me.pic_logo = New System.Windows.Forms.PictureBox()
         Me.btn_prod = New FontAwesome.Sharp.IconButton()
         Me.btn_seller = New FontAwesome.Sharp.IconButton()
-        Me.btn_select_order = New FontAwesome.Sharp.IconButton()
+        Me.btn_report = New FontAwesome.Sharp.IconButton()
         Me.pnl_menu = New System.Windows.Forms.Panel()
         Me.btn_logout = New FontAwesome.Sharp.IconButton()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -97,27 +97,27 @@ Partial Class frm_adm
         Me.btn_seller.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btn_seller.UseVisualStyleBackColor = True
         '
-        'btn_select_order
+        'btn_report
         '
-        Me.btn_select_order.BackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(168, Byte), Integer))
-        Me.btn_select_order.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btn_select_order.FlatAppearance.BorderSize = 0
-        Me.btn_select_order.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_select_order.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.btn_select_order.IconChar = FontAwesome.Sharp.IconChar.FileAlt
-        Me.btn_select_order.IconColor = System.Drawing.SystemColors.ButtonFace
-        Me.btn_select_order.IconFont = FontAwesome.Sharp.IconFont.[Auto]
-        Me.btn_select_order.IconSize = 36
-        Me.btn_select_order.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btn_select_order.Location = New System.Drawing.Point(0, 146)
-        Me.btn_select_order.Name = "btn_select_order"
-        Me.btn_select_order.Padding = New System.Windows.Forms.Padding(10, 0, 20, 0)
-        Me.btn_select_order.Size = New System.Drawing.Size(205, 60)
-        Me.btn_select_order.TabIndex = 10
-        Me.btn_select_order.Text = "Selecionar pedido" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
-        Me.btn_select_order.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btn_select_order.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btn_select_order.UseVisualStyleBackColor = False
+        Me.btn_report.BackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(168, Byte), Integer))
+        Me.btn_report.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btn_report.FlatAppearance.BorderSize = 0
+        Me.btn_report.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_report.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.btn_report.IconChar = FontAwesome.Sharp.IconChar.FileInvoice
+        Me.btn_report.IconColor = System.Drawing.SystemColors.ButtonFace
+        Me.btn_report.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.btn_report.IconSize = 36
+        Me.btn_report.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btn_report.Location = New System.Drawing.Point(0, 146)
+        Me.btn_report.Name = "btn_report"
+        Me.btn_report.Padding = New System.Windows.Forms.Padding(10, 0, 20, 0)
+        Me.btn_report.Size = New System.Drawing.Size(205, 60)
+        Me.btn_report.TabIndex = 10
+        Me.btn_report.Text = "Gerar relatório"
+        Me.btn_report.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btn_report.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btn_report.UseVisualStyleBackColor = False
         '
         'pnl_menu
         '
@@ -125,7 +125,7 @@ Partial Class frm_adm
         Me.pnl_menu.Controls.Add(Me.btn_logout)
         Me.pnl_menu.Controls.Add(Me.btn_prod)
         Me.pnl_menu.Controls.Add(Me.btn_seller)
-        Me.pnl_menu.Controls.Add(Me.btn_select_order)
+        Me.pnl_menu.Controls.Add(Me.btn_report)
         Me.pnl_menu.Controls.Add(Me.Panel1)
         Me.pnl_menu.Dock = System.Windows.Forms.DockStyle.Left
         Me.pnl_menu.Location = New System.Drawing.Point(0, 0)
@@ -223,7 +223,7 @@ Partial Class frm_adm
     Friend WithEvents pic_logo As Windows.Forms.PictureBox
     Friend WithEvents btn_prod As FontAwesome.Sharp.IconButton
     Friend WithEvents btn_seller As FontAwesome.Sharp.IconButton
-    Friend WithEvents btn_select_order As FontAwesome.Sharp.IconButton
+    Friend WithEvents btn_report As FontAwesome.Sharp.IconButton
     Friend WithEvents pnl_menu As Windows.Forms.Panel
     Friend WithEvents btn_logout As FontAwesome.Sharp.IconButton
     Friend WithEvents Panel1 As Windows.Forms.Panel
