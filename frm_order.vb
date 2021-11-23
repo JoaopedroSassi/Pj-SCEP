@@ -237,4 +237,23 @@ Public Class frm_order
             MsgBox("Erro ao processar | Limpar pedido", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Aviso")
         End Try
     End Sub
+
+    Private Sub txt_cpf_LostFocus(sender As Object, e As EventArgs) Handles txt_cpf.LostFocus
+        Try
+            sql = "SELECT * FROM tb_client WHERE cpf = '" & txt_cpf.Text & "'"
+            rs = db.Execute(sql)
+            If rs.EOF = False Then
+                txt_first_name.Text = rs.Fields(2).Value
+                txt_last_name.Text = rs.Fields(3).Value
+                txt_email.Text = rs.Fields(4).Value
+                txt_landline_phone.Text = rs.Fields(5).Value
+                txt_cell_phone.Text = rs.Fields(6).Value
+                txt_cep.Focus()
+            Else
+                txt_first_name.Focus()
+            End If
+        Catch ex As Exception
+            MsgBox("Erro ao processar | Buscar cliente cpf", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Aviso")
+        End Try
+    End Sub
 End Class
