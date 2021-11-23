@@ -1,4 +1,4 @@
-﻿Public Class frm_selec_prod
+﻿Public Class frm_select_prod
     Private Sub frm_selec_prod_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         load_prod()
         cmb_cat.SelectedIndex = 0

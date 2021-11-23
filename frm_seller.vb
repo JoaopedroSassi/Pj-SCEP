@@ -52,7 +52,7 @@ Public Class frm_seller
 
     Private Sub btn_check_prod_Click(sender As Object, e As EventArgs) Handles btn_check_prod.Click
         ActiveButton(sender)
-        OpenChildForm(New frm_selec_prod, pnl_content)
+        OpenChildForm(New frm_select_prod, pnl_content)
     End Sub
 
     Private Sub pic_logo_Click(sender As Object, e As EventArgs) Handles pic_logo.Click
