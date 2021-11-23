@@ -33,6 +33,10 @@
         End Try
     End Sub
 
+    Sub return_combo_box()
+        cmb_cat_prod.SelectedIndex = 0
+    End Sub
+
     Private Sub btn_save_Click(sender As Object, e As EventArgs) Handles btn_save.Click
         Try
             If txt_name_prod.Text = "" Or
@@ -87,6 +91,7 @@
             If IsNothing(dgv_prod.SelectedRows) Then
                 MsgBox("Erro | Nenhum item selecionado!", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Aviso")
             Else
+                return_combo_box()
                 id_tmp = dgv_prod.CurrentRow.Cells(0).Value
                 sql = "SELECT * FROM tb_products WHERE id_prod = " & id_tmp & ""
                 rs = db.Execute(sql)

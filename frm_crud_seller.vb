@@ -27,12 +27,16 @@
             txt_last_name.Clear()
             txt_email.Clear()
             txt_pass.Clear()
-            cmb_status.Text = " "
+            cmb_status.ResetText()
             txt_search_id.Clear()
             txt_cpf.Focus()
         Catch ex As Exception
             MsgBox("Erro ao processar | Limpar campos produto", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Aviso")
         End Try
+    End Sub
+
+    Sub return_combo_box()
+        cmb_status.SelectedIndex = 0
     End Sub
 
     Private Sub btn_save_Click(sender As Object, e As EventArgs) Handles btn_save.Click
@@ -80,6 +84,7 @@
             If IsNothing(dgv_sell.SelectedRows) Then
                 MsgBox("Erro | Nenhum item selecionado!", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Aviso")
             Else
+                return_combo_box()
                 id_tmp = dgv_sell.CurrentRow.Cells(0).Value
                 sql = "SELECT * FROM tb_login WHERE id_login = " & id_tmp & ""
                 rs = db.Execute(sql)
