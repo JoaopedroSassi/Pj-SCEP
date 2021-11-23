@@ -121,16 +121,16 @@
     <Compile Include="frm_order.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_search_order.Designer.vb">
-      <DependentUpon>frm_search_order.vb</DependentUpon>
+    <Compile Include="frm_select_order.Designer.vb">
+      <DependentUpon>frm_select_order.vb</DependentUpon>
     </Compile>
-    <Compile Include="frm_search_order.vb">
+    <Compile Include="frm_select_order.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frm_selec_prod.Designer.vb">
-      <DependentUpon>frm_selec_prod.vb</DependentUpon>
+    <Compile Include="frm_select_prod.Designer.vb">
+      <DependentUpon>frm_select_prod.vb</DependentUpon>
     </Compile>
-    <Compile Include="frm_selec_prod.vb">
+    <Compile Include="frm_select_prod.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="main_module.vb" />
@@ -184,11 +184,11 @@
     <EmbeddedResource Include="frm_order.resx">
       <DependentUpon>frm_order.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_search_order.resx">
-      <DependentUpon>frm_search_order.vb</DependentUpon>
+    <EmbeddedResource Include="frm_select_order.resx">
+      <DependentUpon>frm_select_order.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_selec_prod.resx">
-      <DependentUpon>frm_selec_prod.vb</DependentUpon>
+    <EmbeddedResource Include="frm_select_prod.resx">
+      <DependentUpon>frm_select_prod.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
