@@ -36,7 +36,7 @@ Partial Class frm_order
         Me.txt_email = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.txt_home_phone = New System.Windows.Forms.MaskedTextBox()
+        Me.txt_landline_phone = New System.Windows.Forms.MaskedTextBox()
         Me.txt_cell_phone = New System.Windows.Forms.MaskedTextBox()
         Me.txt_cep = New System.Windows.Forms.MaskedTextBox()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -59,6 +59,7 @@ Partial Class frm_order
         Me.name_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cat = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.amount = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.preco = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.btn_save_order = New System.Windows.Forms.Button()
         Me.Produtos = New System.Windows.Forms.Label()
         Me.cmb_cat = New System.Windows.Forms.ComboBox()
@@ -68,6 +69,12 @@ Partial Class frm_order
         Me.Quantidade = New System.Windows.Forms.Label()
         Me.txt_qtde = New System.Windows.Forms.TextBox()
         Me.btn_add = New System.Windows.Forms.Button()
+        Me.btn_edit = New System.Windows.Forms.Button()
+        Me.btn_delete = New System.Windows.Forms.Button()
+        Me.cmb_method = New System.Windows.Forms.ComboBox()
+        Me.Label17 = New System.Windows.Forms.Label()
+        Me.txt_price = New System.Windows.Forms.TextBox()
+        Me.Label18 = New System.Windows.Forms.Label()
         CType(Me.dgv_prod_order, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -167,14 +174,14 @@ Partial Class frm_order
         Me.Label6.TabIndex = 13
         Me.Label6.Text = "Telefone celular"
         '
-        'txt_home_phone
+        'txt_landline_phone
         '
-        Me.txt_home_phone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_home_phone.Location = New System.Drawing.Point(629, 43)
-        Me.txt_home_phone.Mask = "(99) 9999-9999"
-        Me.txt_home_phone.Name = "txt_home_phone"
-        Me.txt_home_phone.Size = New System.Drawing.Size(83, 20)
-        Me.txt_home_phone.TabIndex = 5
+        Me.txt_landline_phone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txt_landline_phone.Location = New System.Drawing.Point(629, 43)
+        Me.txt_landline_phone.Mask = "(99) 9999-9999"
+        Me.txt_landline_phone.Name = "txt_landline_phone"
+        Me.txt_landline_phone.Size = New System.Drawing.Size(83, 20)
+        Me.txt_landline_phone.TabIndex = 5
         '
         'txt_cell_phone
         '
@@ -356,10 +363,10 @@ Partial Class frm_order
         Me.dgv_prod_order.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgv_prod_order.ColumnHeadersHeight = 25
         Me.dgv_prod_order.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.dgv_prod_order.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Id, Me.name_prod, Me.cat, Me.amount})
+        Me.dgv_prod_order.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Id, Me.name_prod, Me.cat, Me.amount, Me.preco})
         Me.dgv_prod_order.EnableHeadersVisualStyles = False
         Me.dgv_prod_order.GridColor = System.Drawing.Color.SteelBlue
-        Me.dgv_prod_order.Location = New System.Drawing.Point(306, 172)
+        Me.dgv_prod_order.Location = New System.Drawing.Point(260, 172)
         Me.dgv_prod_order.Name = "dgv_prod_order"
         Me.dgv_prod_order.ReadOnly = True
         Me.dgv_prod_order.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
@@ -377,7 +384,7 @@ Partial Class frm_order
         DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
         Me.dgv_prod_order.RowsDefaultCellStyle = DataGridViewCellStyle3
-        Me.dgv_prod_order.Size = New System.Drawing.Size(406, 251)
+        Me.dgv_prod_order.Size = New System.Drawing.Size(468, 251)
         Me.dgv_prod_order.TabIndex = 54
         '
         'Id
@@ -407,14 +414,21 @@ Partial Class frm_order
         Me.amount.Name = "amount"
         Me.amount.ReadOnly = True
         '
+        'preco
+        '
+        Me.preco.HeaderText = "Preço"
+        Me.preco.Name = "preco"
+        Me.preco.ReadOnly = True
+        Me.preco.Width = 66
+        '
         'btn_save_order
         '
         Me.btn_save_order.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(215, Byte), Integer), CType(CType(116, Byte), Integer))
         Me.btn_save_order.FlatAppearance.BorderSize = 2
         Me.btn_save_order.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_save_order.Location = New System.Drawing.Point(745, 416)
+        Me.btn_save_order.Location = New System.Drawing.Point(722, 429)
         Me.btn_save_order.Name = "btn_save_order"
-        Me.btn_save_order.Size = New System.Drawing.Size(111, 29)
+        Me.btn_save_order.Size = New System.Drawing.Size(142, 31)
         Me.btn_save_order.TabIndex = 55
         Me.btn_save_order.Text = "Salvar"
         Me.btn_save_order.UseVisualStyleBackColor = True
@@ -424,7 +438,7 @@ Partial Class frm_order
         Me.Produtos.AutoSize = True
         Me.Produtos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Produtos.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Produtos.Location = New System.Drawing.Point(114, 172)
+        Me.Produtos.Location = New System.Drawing.Point(125, 172)
         Me.Produtos.Name = "Produtos"
         Me.Produtos.Size = New System.Drawing.Size(73, 20)
         Me.Produtos.TabIndex = 56
@@ -493,12 +507,75 @@ Partial Class frm_order
         Me.btn_add.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(168, Byte), Integer))
         Me.btn_add.FlatAppearance.BorderSize = 2
         Me.btn_add.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_add.Location = New System.Drawing.Point(23, 314)
+        Me.btn_add.Location = New System.Drawing.Point(23, 369)
         Me.btn_add.Name = "btn_add"
         Me.btn_add.Size = New System.Drawing.Size(231, 29)
         Me.btn_add.TabIndex = 63
         Me.btn_add.Text = "Adicionar"
         Me.btn_add.UseVisualStyleBackColor = True
+        '
+        'btn_edit
+        '
+        Me.btn_edit.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(168, Byte), Integer))
+        Me.btn_edit.FlatAppearance.BorderSize = 2
+        Me.btn_edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_edit.Location = New System.Drawing.Point(23, 416)
+        Me.btn_edit.Name = "btn_edit"
+        Me.btn_edit.Size = New System.Drawing.Size(67, 29)
+        Me.btn_edit.TabIndex = 64
+        Me.btn_edit.Text = "Editar"
+        Me.btn_edit.UseVisualStyleBackColor = True
+        '
+        'btn_delete
+        '
+        Me.btn_delete.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(168, Byte), Integer))
+        Me.btn_delete.FlatAppearance.BorderSize = 2
+        Me.btn_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_delete.Location = New System.Drawing.Point(195, 416)
+        Me.btn_delete.Name = "btn_delete"
+        Me.btn_delete.Size = New System.Drawing.Size(59, 29)
+        Me.btn_delete.TabIndex = 65
+        Me.btn_delete.Text = "Deletar"
+        Me.btn_delete.UseVisualStyleBackColor = True
+        '
+        'cmb_method
+        '
+        Me.cmb_method.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.cmb_method.FormattingEnabled = True
+        Me.cmb_method.Items.AddRange(New Object() {"Boleto", "Cartão de Crédito", "Cartão de Débito", "Dinheiro", "PIX"})
+        Me.cmb_method.Location = New System.Drawing.Point(747, 200)
+        Me.cmb_method.Name = "cmb_method"
+        Me.cmb_method.Size = New System.Drawing.Size(121, 21)
+        Me.cmb_method.TabIndex = 66
+        '
+        'Label17
+        '
+        Me.Label17.AutoSize = True
+        Me.Label17.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label17.Location = New System.Drawing.Point(745, 177)
+        Me.Label17.Name = "Label17"
+        Me.Label17.Size = New System.Drawing.Size(114, 13)
+        Me.Label17.TabIndex = 67
+        Me.Label17.Text = "Método de pagamento"
+        '
+        'txt_price
+        '
+        Me.txt_price.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txt_price.Location = New System.Drawing.Point(23, 321)
+        Me.txt_price.Multiline = True
+        Me.txt_price.Name = "txt_price"
+        Me.txt_price.Size = New System.Drawing.Size(89, 20)
+        Me.txt_price.TabIndex = 14
+        '
+        'Label18
+        '
+        Me.Label18.AutoSize = True
+        Me.Label18.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label18.Location = New System.Drawing.Point(20, 298)
+        Me.Label18.Name = "Label18"
+        Me.Label18.Size = New System.Drawing.Size(35, 13)
+        Me.Label18.TabIndex = 69
+        Me.Label18.Text = "Preço"
         '
         'frm_order
         '
@@ -506,6 +583,12 @@ Partial Class frm_order
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(880, 472)
+        Me.Controls.Add(Me.Label18)
+        Me.Controls.Add(Me.txt_price)
+        Me.Controls.Add(Me.Label17)
+        Me.Controls.Add(Me.cmb_method)
+        Me.Controls.Add(Me.btn_delete)
+        Me.Controls.Add(Me.btn_edit)
         Me.Controls.Add(Me.btn_add)
         Me.Controls.Add(Me.Quantidade)
         Me.Controls.Add(Me.txt_qtde)
@@ -533,7 +616,7 @@ Partial Class frm_order
         Me.Controls.Add(Me.txt_cep)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.txt_cell_phone)
-        Me.Controls.Add(Me.txt_home_phone)
+        Me.Controls.Add(Me.txt_landline_phone)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
@@ -565,7 +648,7 @@ Partial Class frm_order
     Friend WithEvents txt_email As Windows.Forms.TextBox
     Friend WithEvents Label5 As Windows.Forms.Label
     Friend WithEvents Label6 As Windows.Forms.Label
-    Friend WithEvents txt_home_phone As Windows.Forms.MaskedTextBox
+    Friend WithEvents txt_landline_phone As Windows.Forms.MaskedTextBox
     Friend WithEvents txt_cell_phone As Windows.Forms.MaskedTextBox
     Friend WithEvents txt_cep As Windows.Forms.MaskedTextBox
     Friend WithEvents Label7 As Windows.Forms.Label
@@ -584,10 +667,6 @@ Partial Class frm_order
     Friend WithEvents Label14 As Windows.Forms.Label
     Friend WithEvents txt_block As Windows.Forms.TextBox
     Friend WithEvents dgv_prod_order As Windows.Forms.DataGridView
-    Friend WithEvents Id As Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents name_prod As Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents cat As Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents amount As Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents btn_save_order As Windows.Forms.Button
     Friend WithEvents Produtos As Windows.Forms.Label
     Friend WithEvents cmb_cat As Windows.Forms.ComboBox
@@ -597,4 +676,15 @@ Partial Class frm_order
     Friend WithEvents Quantidade As Windows.Forms.Label
     Friend WithEvents txt_qtde As Windows.Forms.TextBox
     Friend WithEvents btn_add As Windows.Forms.Button
+    Friend WithEvents btn_edit As Windows.Forms.Button
+    Friend WithEvents btn_delete As Windows.Forms.Button
+    Friend WithEvents cmb_method As Windows.Forms.ComboBox
+    Friend WithEvents Label17 As Windows.Forms.Label
+    Friend WithEvents txt_price As Windows.Forms.TextBox
+    Friend WithEvents Label18 As Windows.Forms.Label
+    Friend WithEvents Id As Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents name_prod As Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents cat As Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents amount As Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents preco As Windows.Forms.DataGridViewTextBoxColumn
 End Class
