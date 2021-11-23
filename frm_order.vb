@@ -24,7 +24,7 @@ Public Class frm_order
         Try
             cmb_name.ResetText()
             cmb_name.Items.Clear()
-            sql = "SELECT * FROM tb_products WHERE category = '" & cmb_cat.Text & "' ORDER BY name ASC"
+            sql = "SELECT * FROM tb_products WHERE category = '" & cmb_cat.Text & "' AND amount > 0 ORDER BY name ASC"
             rs = db.Execute(sql)
             Do While rs.EOF = False
                 cmb_name.Items.Add(rs.Fields(1).Value)
@@ -201,6 +201,13 @@ Public Class frm_order
                 final_price = item.Cells(3).Value * item.Cells(4).Value
                 sql = "INSERT INTO tb_order_product VALUES (default, '" & item.Cells(3).Value & "', '" & final_price & "', '" & id_order & "', '" & item.Cells(0).Value & "')"
                 rs = db.Execute(sql)
+
+                sql = "SELECT * FROM tb_products WHERE id_prod = '" & item.Cells(0).Value & "'"
+                rs = db.Execute(sql)
+                final_amount = rs.Fields(3).Value - item.Cells(3).Value
+
+                sql = "UPDATE tb_products SET amount = '" & final_amount & "' WHERE id_prod = '" & item.Cells(0).Value & "'"
+                rs = db.Execute(sql)
             Next
         Catch ex As Exception
             MsgBox("Erro ao processar | Cadastrar items pedido", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Aviso")
@@ -208,22 +215,26 @@ Public Class frm_order
     End Sub
 
     Sub clean_order()
-        txt_cpf.Clear()
-        txt_first_name.Clear()
-        txt_last_name.Clear()
-        txt_email.Clear()
-        txt_landline_phone.Clear()
-        txt_cell_phone.Clear()
-        txt_cep.Clear()
-        txt_city.Clear()
-        txt_district.Clear()
-        txt_street.Clear()
-        txt_uf.Clear()
-        txt_number.Clear()
-        txt_apartment.Clear()
-        txt_block.Clear()
-        cmb_method.ResetText()
-        txt_cpf.Focus()
-        dgv_prod_order.Rows.Clear()
+        Try
+            txt_cpf.Clear()
+            txt_first_name.Clear()
+            txt_last_name.Clear()
+            txt_email.Clear()
+            txt_landline_phone.Clear()
+            txt_cell_phone.Clear()
+            txt_cep.Clear()
+            txt_city.Clear()
+            txt_district.Clear()
+            txt_street.Clear()
+            txt_uf.Clear()
+            txt_number.Clear()
+            txt_apartment.Clear()
+            txt_block.Clear()
+            cmb_method.ResetText()
+            txt_cpf.Focus()
+            dgv_prod_order.Rows.Clear()
+        Catch ex As Exception
+            MsgBox("Erro ao processar | Limpar pedido", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Aviso")
+        End Try
     End Sub
 End Class
