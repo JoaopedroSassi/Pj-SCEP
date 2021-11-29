@@ -24,6 +24,11 @@ Public Class frm_adm
         OpenChildForm(New frm_crud_seller, pnl_content)
     End Sub
 
+    Private Sub btn_report_Click(sender As Object, e As EventArgs) Handles btn_report.Click
+        ActiveButton(sender)
+        OpenChildForm(New frm_pdf, pnl_content)
+    End Sub
+
     Private Sub pic_logo_Click(sender As Object, e As EventArgs) Handles pic_logo.Click
         home_form()
     End Sub
@@ -43,4 +48,6 @@ Public Class frm_adm
         Me.Tb_productsTableAdapter.test(Me.Db_scepDataSet.tb_products)
 
     End Sub
+
+
 End Class

@@ -1,4 +1,12 @@
 ﻿Imports System.Windows.Forms
+Imports iText.IO.Font.Constants
+Imports iText.Kernel.Font
+Imports iText.Kernel.Pdf
+Imports iText.Layout
+Imports iText.Layout.Element
+Imports iText.Layout.Properties
+Imports System.Net.Mail
+
 
 Public Class frm_order
 
@@ -147,7 +155,10 @@ Public Class frm_order
                 create_client()
                 create_order()
                 create_products_order()
+                create_pdf()
+                send_email()
                 clean_order()
+
                 MsgBox("Pedido cadastrado com sucesso!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Aviso")
             End If
         Catch ex As Exception
@@ -255,5 +266,111 @@ Public Class frm_order
         Catch ex As Exception
             MsgBox("Erro ao processar | Buscar cliente cpf", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Aviso")
         End Try
+    End Sub
+
+    Sub create_pdf()
+        Try
+            Dim archive = "C:\Users\joaop\Documents\Estudos\Fatec\projetos_fatec\2_semestre\scep\pdf\pedido" & id_order & ".pdf"
+
+            Using wPdf = New PdfWriter(archive, New WriterProperties().SetPdfVersion(PdfVersion.PDF_2_0))
+                Dim pdf_document = New PdfDocument(wPdf)
+
+                Dim document = New Document(pdf_document)
+                Dim p1 = New Paragraph().SetBold
+                p1.SetFontSize(25)
+                p1.SetTextAlignment(TextAlignment.CENTER)
+                p1.Add("Pedido N°" & id_order)
+                document.Add(p1)
+
+                Dim p2 = New Paragraph()
+                p2.SetFontSize(18)
+                p2.SetTextAlignment(TextAlignment.CENTER)
+                p2.Add("Dados do cliente:")
+                document.Add(p2)
+
+                document.Add(New Paragraph("CPF: " & txt_cpf.Text))
+                document.Add(New Paragraph("Cliente: " & txt_first_name.Text + " " + txt_last_name.Text))
+                document.Add(New Paragraph("Email: " & txt_email.Text))
+                document.Add(New Paragraph("Telefone residencial: " & txt_landline_phone.Text))
+                document.Add(New Paragraph("Telefone celular: " & txt_cell_phone.Text))
+
+                document.Add(New Paragraph(vbNewLine))
+
+                Dim p3 = New Paragraph()
+                p3.SetFontSize(18)
+                p3.SetTextAlignment(TextAlignment.CENTER)
+                p3.Add("Dados do endereço:")
+                document.Add(p3)
+
+                document.Add(New Paragraph("CEP: " & txt_cep.Text))
+                document.Add(New Paragraph("Cidade: " & txt_city.Text))
+                document.Add(New Paragraph("Bairro: " & txt_district.Text))
+                document.Add(New Paragraph("Rua: " & txt_street.Text))
+                document.Add(New Paragraph("UF: " & txt_uf.Text))
+                document.Add(New Paragraph("Número: " & txt_number.Text))
+                If txt_apartment.Text.Length > 0 Then
+                    document.Add(New Paragraph("Apartamento: " & txt_apartment.Text))
+                Else
+                    document.Add(New Paragraph("Apartamento: ---"))
+                End If
+                If txt_block.Text.Length > 0 Then
+                    document.Add(New Paragraph("Bloco: " & txt_block.Text))
+                Else
+                    document.Add(New Paragraph("Bloco: ---"))
+                End If
+
+                document.Add(New Paragraph(vbNewLine))
+
+                Dim p4 = New Paragraph()
+                p4.SetFontSize(18)
+                p4.SetTextAlignment(TextAlignment.CENTER)
+                p4.Add("Dados do pedido:")
+                document.Add(p4)
+
+                document.Add(New Paragraph("Método de pagamento: " & cmb_method.Text))
+
+                For Each item As DataGridViewRow In dgv_prod_order.Rows
+                    document.Add(New Paragraph("Nome: " & item.Cells(1).Value.ToString & " | " & "Categoria: " & item.Cells(2).Value.ToString & " | " & "Quantidade: " & item.Cells(3).Value.ToString & " | " & "Preço: R$" & item.Cells(4).Value.ToString))
+                Next
+
+                document.Add(New Paragraph(vbNewLine))
+
+                document.Add(New Paragraph("______________________________________________________________________________"))
+
+                document.Add(New Paragraph("Obrigado por fazer negócios com a gold colchões!"))
+
+                document.Close()
+                pdf_document.Close()
+
+                MsgBox("PDF do pedido criado com sucesso!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Atenção")
+            End Using
+        Catch ex As Exception
+            MsgBox("Erro ao processar | Gerar pdf", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Aviso")
+        End Try
+    End Sub
+
+    Sub send_email()
+        Using smtp As New SmtpClient
+            Using email As New MailMessage()
+
+                'Servidor SMTP
+                smtp.Host = "smtp.gmail.com"
+                smtp.UseDefaultCredentials = False
+                smtp.Credentials = New Net.NetworkCredential("pj.scep@gmail.com", "moquidesia")
+                smtp.Port = 587
+                smtp.EnableSsl = True
+
+                'Email
+                email.From = New MailAddress("pj.scep@gmail.com")
+                email.To.Add(txt_email.Text)
+                email.Subject = "Pedido N°" & id_order
+                email.IsBodyHtml = False
+                email.Body = "Olá! Ficamos muito felizes que tenha feito negócios consoco. Em anexo está a cópia do pedido. Obrigado pela preferência!"
+                email.Attachments.Add(New Attachment("C:\Users\joaop\Documents\Estudos\Fatec\projetos_fatec\2_semestre\scep\pdf\pedido" & id_order & ".pdf"))
+
+                smtp.Send(email)
+            End Using
+            MsgBox("Email enviado com sucesso!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Aviso")
+        End Using
     End Sub
 End Class
