@@ -282,6 +282,7 @@ Public Class frm_order
                 p1.SetFontSize(25)
                 p1.SetTextAlignment(TextAlignment.CENTER)
                 p1.Add("Pedido N°" & id_order)
+
                 document.Add(p1)
 
                 Dim p2 = New Paragraph()
@@ -331,6 +332,7 @@ Public Class frm_order
 
                 document.Add(New Paragraph("Método de pagamento: " & cmb_method.Text))
                 document.Add(New Paragraph("Vendedor: " & name_sell_log))
+                document.Add(New Paragraph("Data do pedido: " & DateTime.Now))
 
                 Dim columnWidth As Single() = {10, 40, 30, 10, 20}
 
