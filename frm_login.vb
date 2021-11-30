@@ -25,6 +25,7 @@
                     Else
                         If (rs.Fields(6).Value = "seller") Then
                             id_sell_log = rs.Fields(0).Value
+                            name_sell_log = rs.Fields(2).Value & " " & rs.Fields(3).Value
                             MsgBox("Vendedor logado!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Atenção")
                             Me.Hide()
                             Dim frm_sel = New frm_seller()

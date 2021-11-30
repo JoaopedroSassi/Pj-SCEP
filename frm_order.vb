@@ -6,7 +6,9 @@ Imports iText.Layout
 Imports iText.Layout.Element
 Imports iText.Layout.Properties
 Imports System.Net.Mail
-
+Imports iText.Kernel.Colors
+Imports HorizontalAlignment = System.Windows.Forms.HorizontalAlignment
+Imports iText.Layout.Borders
 
 Public Class frm_order
 
@@ -22,6 +24,7 @@ Public Class frm_order
                 txt_number.Focus()
             Else
                 MsgBox("CEP: " & txt_cep.Text & "não localizado!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Aviso")
+                txt_cep.Focus()
             End If
         Catch ex As Exception
             MsgBox("Erro | Resgatar endereço pelo cep", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Aviso")
@@ -158,7 +161,6 @@ Public Class frm_order
                 create_pdf()
                 send_email()
                 clean_order()
-
                 MsgBox("Pedido cadastrado com sucesso!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Aviso")
             End If
         Catch ex As Exception
@@ -328,21 +330,43 @@ Public Class frm_order
                 document.Add(p4)
 
                 document.Add(New Paragraph("Método de pagamento: " & cmb_method.Text))
+                document.Add(New Paragraph("Vendedor: " & name_sell_log))
+
+                Dim columnWidth As Single() = {10, 40, 30, 10, 20}
+
+                Dim tabela = New Table(UnitValue.CreatePercentArray(columnWidth)).UseAllAvailableWidth()
+                tabela.SetHorizontalAlignment(HorizontalAlignment.Center)
+
+                Dim fonte = PdfFontFactory.CreateFont(StandardFonts.HELVETICA)
+
+                tabela.AddHeaderCell(New Cell(1, 5).Add(New Paragraph("Tabela de produtos").SetFont(fonte).SetBorder(Border.NO_BORDER).SetFontSize(19).SetPadding(10).SetFontColor(ColorConstants.WHITE).SetBackgroundColor(ColorConstants.BLUE).SetTextAlignment(TextAlignment.CENTER)))
+
+                tabela.AddHeaderCell(New Cell().SetTextAlignment(TextAlignment.CENTER).SetBackgroundColor(ColorConstants.WHITE).SetFontColor(ColorConstants.BLUE).Add(New Paragraph("Id")))
+                tabela.AddHeaderCell(New Cell().SetTextAlignment(TextAlignment.CENTER).SetBackgroundColor(ColorConstants.WHITE).SetFontColor(ColorConstants.BLUE).Add(New Paragraph("Nome")))
+                tabela.AddHeaderCell(New Cell().SetTextAlignment(TextAlignment.CENTER).SetBackgroundColor(ColorConstants.WHITE).SetFontColor(ColorConstants.BLUE).Add(New Paragraph("Cateogira")))
+                tabela.AddHeaderCell(New Cell().SetTextAlignment(TextAlignment.CENTER).SetBackgroundColor(ColorConstants.WHITE).SetFontColor(ColorConstants.BLUE).Add(New Paragraph("Qtd")))
+                tabela.AddHeaderCell(New Cell().SetTextAlignment(TextAlignment.CENTER).SetBackgroundColor(ColorConstants.WHITE).SetFontColor(ColorConstants.BLUE).Add(New Paragraph("Preço")))
 
                 For Each item As DataGridViewRow In dgv_prod_order.Rows
-                    document.Add(New Paragraph("Nome: " & item.Cells(1).Value.ToString & " | " & "Categoria: " & item.Cells(2).Value.ToString & " | " & "Quantidade: " & item.Cells(3).Value.ToString & " | " & "Preço: R$" & item.Cells(4).Value.ToString))
+                    tabela.AddCell(New Cell().SetTextAlignment(TextAlignment.CENTER).Add(New Paragraph(item.Cells(0).Value.ToString)))
+
+                    tabela.AddCell(New Cell().Add(New Paragraph(item.Cells(1).Value.ToString)))
+
+                    tabela.AddCell(New Cell().Add(New Paragraph(item.Cells(2).Value.ToString)))
+
+                    tabela.AddCell(New Cell().SetTextAlignment(TextAlignment.CENTER).Add(New Paragraph(item.Cells(3).Value.ToString)))
+
+                    tabela.AddCell(New Cell().SetTextAlignment(TextAlignment.LEFT).Add(New Paragraph("R$" & item.Cells(4).Value.ToString)))
                 Next
+
+                document.Add(tabela)
 
                 document.Add(New Paragraph(vbNewLine))
 
-                document.Add(New Paragraph("______________________________________________________________________________"))
-
-                document.Add(New Paragraph("Obrigado por fazer negócios com a gold colchões!"))
+                document.Add(New Paragraph("______________________________________________________________________________").SetFontColor(ColorConstants.YELLOW))
 
                 document.Close()
                 pdf_document.Close()
-
-                MsgBox("PDF do pedido criado com sucesso!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Atenção")
             End Using
         Catch ex As Exception
             MsgBox("Erro ao processar | Gerar pdf", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Aviso")
@@ -350,27 +374,28 @@ Public Class frm_order
     End Sub
 
     Sub send_email()
-        Using smtp As New SmtpClient
-            Using email As New MailMessage()
+        Try
+            Using smtp As New SmtpClient
+                Using email As New MailMessage()
 
-                'Servidor SMTP
-                smtp.Host = "smtp.gmail.com"
-                smtp.UseDefaultCredentials = False
-                smtp.Credentials = New Net.NetworkCredential("pj.scep@gmail.com", "moquidesia")
-                smtp.Port = 587
-                smtp.EnableSsl = True
+                    smtp.Host = "smtp.gmail.com"
+                    smtp.UseDefaultCredentials = False
+                    smtp.Credentials = New Net.NetworkCredential("pj.scep@gmail.com", "moquidesia")
+                    smtp.Port = 587
+                    smtp.EnableSsl = True
 
-                'Email
-                email.From = New MailAddress("pj.scep@gmail.com")
-                email.To.Add(txt_email.Text)
-                email.Subject = "Pedido N°" & id_order
-                email.IsBodyHtml = False
-                email.Body = "Olá! Ficamos muito felizes que tenha feito negócios consoco. Em anexo está a cópia do pedido. Obrigado pela preferência!"
-                email.Attachments.Add(New Attachment("C:\Users\joaop\Documents\Estudos\Fatec\projetos_fatec\2_semestre\scep\pdf\pedido" & id_order & ".pdf"))
+                    email.From = New MailAddress("pj.scep@gmail.com")
+                    email.To.Add(txt_email.Text)
+                    email.Subject = "Pedido N°" & id_order
+                    email.IsBodyHtml = False
+                    email.Body = "Olá! Ficamos muito felizes que tenha feito negócios consoco. Em anexo está a cópia do pedido. Obrigado pela preferência!"
+                    email.Attachments.Add(New Attachment("C:\Users\joaop\Documents\Estudos\Fatec\projetos_fatec\2_semestre\scep\pdf\pedido" & id_order & ".pdf"))
 
-                smtp.Send(email)
+                    smtp.Send(email)
+                End Using
             End Using
-            MsgBox("Email enviado com sucesso!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Aviso")
-        End Using
+        Catch ex As Exception
+            MsgBox("Erro ao processar | Enviar email", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Aviso")
+        End Try
     End Sub
 End Class

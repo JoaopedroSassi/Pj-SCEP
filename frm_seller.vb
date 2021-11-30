@@ -69,8 +69,4 @@ Public Class frm_seller
             Me.Close()
         End If
     End Sub
-
-    Private Sub pnl_content_Paint(sender As Object, e As PaintEventArgs) Handles pnl_content.Paint
-
-    End Sub
 End Class
