@@ -125,4 +125,12 @@
             MsgBox("Erro ao processar | Busca produtos", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Aviso")
         End Try
     End Sub
+
+    Private Sub txt_amount_KeyPress(sender As Object, e As Windows.Forms.KeyPressEventArgs) Handles txt_amount.KeyPress
+        only_number(sender, e)
+    End Sub
+
+    Private Sub txt_price_KeyPress(sender As Object, e As Windows.Forms.KeyPressEventArgs) Handles txt_price.KeyPress
+        only_number(sender, e)
+    End Sub
 End Class

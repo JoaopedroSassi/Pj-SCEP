@@ -398,4 +398,16 @@ Public Class frm_order
             MsgBox("Erro ao processar | Enviar email", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Aviso")
         End Try
     End Sub
+
+    Private Sub txt_number_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_number.KeyPress
+        only_number(sender, e)
+    End Sub
+
+    Private Sub txt_qtde_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_qtde.KeyPress
+        only_number(sender, e)
+    End Sub
+
+    Private Sub txt_price_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txt_price.KeyPress
+        only_number(sender, e)
+    End Sub
 End Class
