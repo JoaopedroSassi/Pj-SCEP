@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="db_scepDataSet" targetNamespace="http://tempuri.org/db_scepDataSet2.xsd" xmlns:mstns="http://tempuri.org/db_scepDataSet2.xsd" xmlns="http://tempuri.org/db_scepDataSet2.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="db_scepConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="db_scepConnectionString (MySettings)" PropertyReference="ApplicationSettings.scep.My.MySettings.GlobalReference.Default.db_scepConnectionString" Provider="System.Data.Odbc" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tb_precoTableAdapter" GeneratorDataComponentClassName="tb_precoTableAdapter" Name="tb_preco" UserDataComponentName="tb_precoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="db_scepConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Test" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Test" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Test">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        COUNT(payment_method) AS Quantidade, payment_method
+FROM            tb_order
+GROUP BY payment_method
+ORDER BY Quantidade DESC</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="payment_method" DataSetColumn="payment_method" />
+              <Mapping SourceColumn="Quantidade" DataSetColumn="Quantidade" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="tb_vendedorTableAdapter" GeneratorDataComponentClassName="tb_vendedorTableAdapter" Name="tb_vendedor" UserDataComponentName="tb_vendedorTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="db_scepConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Test" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Test" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Test">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        COUNT(ord.sellers_id) AS Qtde_vendas, CONCAT(log.first_name, ' ', log.last_name) AS Full_name
+FROM            tb_order ord, tb_login log
+WHERE        ord.sellers_id = log.id_login AND log.type = 'seller'
+GROUP BY ord.sellers_id</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Qtde_vendas" DataSetColumn="Qtde_vendas" />
+              <Mapping SourceColumn="Full_name" DataSetColumn="Full_name" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="db_scepDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="db_scepDataSet" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="db_scepDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="tb_preco" msprop:Generator_RowEvHandlerName="tb_precoRowChangeEventHandler" msprop:Generator_RowDeletedName="tb_precoRowDeleted" msprop:Generator_RowDeletingName="tb_precoRowDeleting" msprop:Generator_RowEvArgName="tb_precoRowChangeEvent" msprop:Generator_TablePropName="tb_preco" msprop:Generator_RowChangedName="tb_precoRowChanged" msprop:Generator_UserTableName="tb_preco" msprop:Generator_RowChangingName="tb_precoRowChanging" msprop:Generator_RowClassName="tb_precoRow" msprop:Generator_TableClassName="tb_precoDataTable" msprop:Generator_TableVarName="tabletb_preco">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="payment_method" msprop:Generator_ColumnPropNameInTable="payment_methodColumn" msprop:Generator_ColumnPropNameInRow="payment_method" msprop:Generator_UserColumnName="payment_method" msprop:Generator_ColumnVarNameInTable="columnpayment_method" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Quantidade" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="QuantidadeColumn" msprop:Generator_ColumnPropNameInRow="Quantidade" msprop:Generator_UserColumnName="Quantidade" msprop:Generator_ColumnVarNameInTable="columnQuantidade" type="xs:long" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="tb_vendedor" msprop:Generator_RowClassName="tb_vendedorRow" msprop:Generator_RowEvHandlerName="tb_vendedorRowChangeEventHandler" msprop:Generator_RowDeletedName="tb_vendedorRowDeleted" msprop:Generator_RowDeletingName="tb_vendedorRowDeleting" msprop:Generator_RowEvArgName="tb_vendedorRowChangeEvent" msprop:Generator_TablePropName="tb_vendedor" msprop:Generator_RowChangedName="tb_vendedorRowChanged" msprop:Generator_UserTableName="tb_vendedor" msprop:Generator_RowChangingName="tb_vendedorRowChanging" msprop:Generator_TableClassName="tb_vendedorDataTable" msprop:Generator_TableVarName="tabletb_vendedor">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Qtde_vendas" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Qtde_vendas" msprop:Generator_ColumnPropNameInTable="Qtde_vendasColumn" msprop:Generator_ColumnPropNameInRow="Qtde_vendas" msprop:Generator_ColumnVarNameInTable="columnQtde_vendas" type="xs:long" minOccurs="0" />
+              <xs:element name="Full_name" msdata:ReadOnly="true" msprop:Generator_UserColumnName="Full_name" msprop:Generator_ColumnPropNameInTable="Full_nameColumn" msprop:Generator_ColumnPropNameInRow="Full_name" msprop:Generator_ColumnVarNameInTable="columnFull_name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="301" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

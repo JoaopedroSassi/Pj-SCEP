@@ -3,6 +3,6 @@ End Class
 
 Namespace db_scepDataSetTableAdapters
 
-    Partial Public Class tb_productsTableAdapter
+    Partial Public Class tb_precoTableAdapter
     End Class
 End Namespace

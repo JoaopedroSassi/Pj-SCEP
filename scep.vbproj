@@ -61,16 +61,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="db_scepDataSet.xsc">
-      <DependentUpon>db_scepDataSet.xsd</DependentUpon>
+    <None Include="Data_source.xsc">
+      <DependentUpon>Data_source.xsd</DependentUpon>
     </None>
-    <None Include="db_scepDataSet.xsd">
+    <None Include="Data_source.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>db_scepDataSet.Designer.vb</LastGenOutput>
+      <LastGenOutput>Data_source.Designer.vb</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="db_scepDataSet.xss">
-      <DependentUpon>db_scepDataSet.xsd</DependentUpon>
+    <None Include="Data_source.xss">
+      <DependentUpon>Data_source.xsd</DependentUpon>
     </None>
     <None Include="My Project\Settings.settings">
       <CustomToolNamespace>My</CustomToolNamespace>
@@ -83,13 +83,13 @@
     <Content Include="app_icon.ico" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="db_scepDataSet.Designer.vb">
+    <Compile Include="Data_source.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>db_scepDataSet.xsd</DependentUpon>
+      <DependentUpon>Data_source.xsd</DependentUpon>
     </Compile>
-    <Compile Include="db_scepDataSet.vb">
-      <DependentUpon>db_scepDataSet.xsd</DependentUpon>
+    <Compile Include="Data_source.vb">
+      <DependentUpon>Data_source.xsd</DependentUpon>
     </Compile>
     <Compile Include="frm_adm.Designer.vb">
       <DependentUpon>frm_adm.vb</DependentUpon>
