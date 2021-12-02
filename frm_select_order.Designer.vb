@@ -31,6 +31,7 @@ Partial Class frm_select_order
         Me.name_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cat = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.amount = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.unit = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.preco = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.txt_cell_phone = New System.Windows.Forms.MaskedTextBox()
         Me.txt_landline_phone = New System.Windows.Forms.MaskedTextBox()
@@ -65,11 +66,12 @@ Partial Class frm_select_order
         Me.txt_cep = New System.Windows.Forms.MaskedTextBox()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
-        Me.cmb_method = New System.Windows.Forms.ComboBox()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.txt_seller = New System.Windows.Forms.TextBox()
         Me.txt_date = New System.Windows.Forms.TextBox()
+        Me.txt_method = New System.Windows.Forms.TextBox()
+        Me.lbl_date = New System.Windows.Forms.Label()
         CType(Me.dgv_prod_order, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -93,10 +95,10 @@ Partial Class frm_select_order
         Me.dgv_prod_order.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgv_prod_order.ColumnHeadersHeight = 25
         Me.dgv_prod_order.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.dgv_prod_order.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Id, Me.name_prod, Me.cat, Me.amount, Me.preco})
+        Me.dgv_prod_order.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Id, Me.name_prod, Me.cat, Me.amount, Me.unit, Me.preco})
         Me.dgv_prod_order.EnableHeadersVisualStyles = False
         Me.dgv_prod_order.GridColor = System.Drawing.Color.SteelBlue
-        Me.dgv_prod_order.Location = New System.Drawing.Point(391, 209)
+        Me.dgv_prod_order.Location = New System.Drawing.Point(387, 240)
         Me.dgv_prod_order.Name = "dgv_prod_order"
         Me.dgv_prod_order.ReadOnly = True
         Me.dgv_prod_order.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
@@ -144,17 +146,24 @@ Partial Class frm_select_order
         Me.amount.Name = "amount"
         Me.amount.ReadOnly = True
         '
+        'unit
+        '
+        Me.unit.HeaderText = "Unitário"
+        Me.unit.Name = "unit"
+        Me.unit.ReadOnly = True
+        Me.unit.Width = 76
+        '
         'preco
         '
-        Me.preco.HeaderText = "Preço"
+        Me.preco.HeaderText = "Total"
         Me.preco.Name = "preco"
         Me.preco.ReadOnly = True
-        Me.preco.Width = 66
+        Me.preco.Width = 61
         '
         'txt_cell_phone
         '
         Me.txt_cell_phone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_cell_phone.Location = New System.Drawing.Point(336, 185)
+        Me.txt_cell_phone.Location = New System.Drawing.Point(332, 216)
         Me.txt_cell_phone.Mask = "(99) 99999-9999"
         Me.txt_cell_phone.Name = "txt_cell_phone"
         Me.txt_cell_phone.ReadOnly = True
@@ -164,7 +173,7 @@ Partial Class frm_select_order
         'txt_landline_phone
         '
         Me.txt_landline_phone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_landline_phone.Location = New System.Drawing.Point(226, 185)
+        Me.txt_landline_phone.Location = New System.Drawing.Point(222, 216)
         Me.txt_landline_phone.Mask = "(99) 9999-9999"
         Me.txt_landline_phone.Name = "txt_landline_phone"
         Me.txt_landline_phone.ReadOnly = True
@@ -175,7 +184,7 @@ Partial Class frm_select_order
         '
         Me.Label6.AutoSize = True
         Me.Label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label6.Location = New System.Drawing.Point(333, 169)
+        Me.Label6.Location = New System.Drawing.Point(329, 200)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(83, 13)
         Me.Label6.TabIndex = 66
@@ -185,7 +194,7 @@ Partial Class frm_select_order
         '
         Me.Label5.AutoSize = True
         Me.Label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label5.Location = New System.Drawing.Point(223, 170)
+        Me.Label5.Location = New System.Drawing.Point(219, 201)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(102, 13)
         Me.Label5.TabIndex = 65
@@ -195,7 +204,7 @@ Partial Class frm_select_order
         '
         Me.Label4.AutoSize = True
         Me.Label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label4.Location = New System.Drawing.Point(11, 169)
+        Me.Label4.Location = New System.Drawing.Point(11, 200)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(32, 13)
         Me.Label4.TabIndex = 64
@@ -204,7 +213,7 @@ Partial Class frm_select_order
         'txt_email
         '
         Me.txt_email.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_email.Location = New System.Drawing.Point(14, 185)
+        Me.txt_email.Location = New System.Drawing.Point(10, 216)
         Me.txt_email.Multiline = True
         Me.txt_email.Name = "txt_email"
         Me.txt_email.ReadOnly = True
@@ -215,7 +224,7 @@ Partial Class frm_select_order
         '
         Me.Label3.AutoSize = True
         Me.Label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label3.Location = New System.Drawing.Point(248, 120)
+        Me.Label3.Location = New System.Drawing.Point(244, 151)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(61, 13)
         Me.Label3.TabIndex = 63
@@ -224,7 +233,7 @@ Partial Class frm_select_order
         'txt_last_name
         '
         Me.txt_last_name.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_last_name.Location = New System.Drawing.Point(251, 136)
+        Me.txt_last_name.Location = New System.Drawing.Point(247, 167)
         Me.txt_last_name.Multiline = True
         Me.txt_last_name.Name = "txt_last_name"
         Me.txt_last_name.ReadOnly = True
@@ -234,7 +243,7 @@ Partial Class frm_select_order
         'txt_cpf
         '
         Me.txt_cpf.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_cpf.Location = New System.Drawing.Point(14, 136)
+        Me.txt_cpf.Location = New System.Drawing.Point(10, 167)
         Me.txt_cpf.Mask = "999.999.999-99"
         Me.txt_cpf.Name = "txt_cpf"
         Me.txt_cpf.ReadOnly = True
@@ -245,7 +254,7 @@ Partial Class frm_select_order
         '
         Me.Label2.AutoSize = True
         Me.Label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label2.Location = New System.Drawing.Point(106, 119)
+        Me.Label2.Location = New System.Drawing.Point(102, 150)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(35, 13)
         Me.Label2.TabIndex = 60
@@ -254,7 +263,7 @@ Partial Class frm_select_order
         'txt_first_name
         '
         Me.txt_first_name.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_first_name.Location = New System.Drawing.Point(109, 136)
+        Me.txt_first_name.Location = New System.Drawing.Point(105, 167)
         Me.txt_first_name.Multiline = True
         Me.txt_first_name.Name = "txt_first_name"
         Me.txt_first_name.ReadOnly = True
@@ -265,7 +274,7 @@ Partial Class frm_select_order
         '
         Me.Label1.AutoSize = True
         Me.Label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label1.Location = New System.Drawing.Point(11, 119)
+        Me.Label1.Location = New System.Drawing.Point(11, 150)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(23, 13)
         Me.Label1.TabIndex = 67
@@ -277,7 +286,7 @@ Partial Class frm_select_order
         Me.Panel1.Controls.Add(Me.btn_search)
         Me.Panel1.Controls.Add(Me.Label8)
         Me.Panel1.Controls.Add(Me.txt_search)
-        Me.Panel1.Location = New System.Drawing.Point(27, 22)
+        Me.Panel1.Location = New System.Drawing.Point(23, 53)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(265, 32)
         Me.Panel1.TabIndex = 69
@@ -322,7 +331,7 @@ Partial Class frm_select_order
         '
         Me.Label14.AutoSize = True
         Me.Label14.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label14.Location = New System.Drawing.Point(82, 351)
+        Me.Label14.Location = New System.Drawing.Point(78, 382)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(34, 13)
         Me.Label14.TabIndex = 80
@@ -331,7 +340,7 @@ Partial Class frm_select_order
         'txt_block
         '
         Me.txt_block.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_block.Location = New System.Drawing.Point(85, 367)
+        Me.txt_block.Location = New System.Drawing.Point(81, 398)
         Me.txt_block.Multiline = True
         Me.txt_block.Name = "txt_block"
         Me.txt_block.ReadOnly = True
@@ -342,7 +351,7 @@ Partial Class frm_select_order
         '
         Me.Label13.AutoSize = True
         Me.Label13.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label13.Location = New System.Drawing.Point(12, 351)
+        Me.Label13.Location = New System.Drawing.Point(8, 382)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(67, 13)
         Me.Label13.TabIndex = 79
@@ -351,7 +360,7 @@ Partial Class frm_select_order
         'txt_apartment
         '
         Me.txt_apartment.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_apartment.Location = New System.Drawing.Point(15, 367)
+        Me.txt_apartment.Location = New System.Drawing.Point(11, 398)
         Me.txt_apartment.Multiline = True
         Me.txt_apartment.Name = "txt_apartment"
         Me.txt_apartment.ReadOnly = True
@@ -362,7 +371,7 @@ Partial Class frm_select_order
         '
         Me.Label12.AutoSize = True
         Me.Label12.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label12.Location = New System.Drawing.Point(248, 299)
+        Me.Label12.Location = New System.Drawing.Point(244, 330)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(44, 13)
         Me.Label12.TabIndex = 78
@@ -371,7 +380,7 @@ Partial Class frm_select_order
         'txt_number
         '
         Me.txt_number.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_number.Location = New System.Drawing.Point(251, 315)
+        Me.txt_number.Location = New System.Drawing.Point(247, 346)
         Me.txt_number.Multiline = True
         Me.txt_number.Name = "txt_number"
         Me.txt_number.ReadOnly = True
@@ -382,7 +391,7 @@ Partial Class frm_select_order
         '
         Me.Label11.AutoSize = True
         Me.Label11.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label11.Location = New System.Drawing.Point(206, 299)
+        Me.Label11.Location = New System.Drawing.Point(202, 330)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(21, 13)
         Me.Label11.TabIndex = 77
@@ -391,7 +400,7 @@ Partial Class frm_select_order
         'txt_uf
         '
         Me.txt_uf.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_uf.Location = New System.Drawing.Point(209, 315)
+        Me.txt_uf.Location = New System.Drawing.Point(205, 346)
         Me.txt_uf.Multiline = True
         Me.txt_uf.Name = "txt_uf"
         Me.txt_uf.ReadOnly = True
@@ -402,7 +411,7 @@ Partial Class frm_select_order
         '
         Me.Label10.AutoSize = True
         Me.Label10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label10.Location = New System.Drawing.Point(11, 299)
+        Me.Label10.Location = New System.Drawing.Point(11, 330)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(27, 13)
         Me.Label10.TabIndex = 76
@@ -411,7 +420,7 @@ Partial Class frm_select_order
         'txt_street
         '
         Me.txt_street.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_street.Location = New System.Drawing.Point(14, 315)
+        Me.txt_street.Location = New System.Drawing.Point(10, 346)
         Me.txt_street.Multiline = True
         Me.txt_street.Name = "txt_street"
         Me.txt_street.ReadOnly = True
@@ -422,7 +431,7 @@ Partial Class frm_select_order
         '
         Me.Label9.AutoSize = True
         Me.Label9.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label9.Location = New System.Drawing.Point(224, 252)
+        Me.Label9.Location = New System.Drawing.Point(220, 283)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(34, 13)
         Me.Label9.TabIndex = 75
@@ -431,7 +440,7 @@ Partial Class frm_select_order
         'txt_district
         '
         Me.txt_district.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_district.Location = New System.Drawing.Point(227, 268)
+        Me.txt_district.Location = New System.Drawing.Point(223, 299)
         Me.txt_district.Multiline = True
         Me.txt_district.Name = "txt_district"
         Me.txt_district.ReadOnly = True
@@ -442,7 +451,7 @@ Partial Class frm_select_order
         '
         Me.Label15.AutoSize = True
         Me.Label15.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label15.Location = New System.Drawing.Point(82, 252)
+        Me.Label15.Location = New System.Drawing.Point(78, 283)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(40, 13)
         Me.Label15.TabIndex = 74
@@ -451,7 +460,7 @@ Partial Class frm_select_order
         'txt_city
         '
         Me.txt_city.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_city.Location = New System.Drawing.Point(85, 268)
+        Me.txt_city.Location = New System.Drawing.Point(81, 299)
         Me.txt_city.Multiline = True
         Me.txt_city.Name = "txt_city"
         Me.txt_city.ReadOnly = True
@@ -461,7 +470,7 @@ Partial Class frm_select_order
         'txt_cep
         '
         Me.txt_cep.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_cep.Location = New System.Drawing.Point(12, 268)
+        Me.txt_cep.Location = New System.Drawing.Point(8, 299)
         Me.txt_cep.Mask = "99999-999"
         Me.txt_cep.Name = "txt_cep"
         Me.txt_cep.ReadOnly = True
@@ -472,7 +481,7 @@ Partial Class frm_select_order
         '
         Me.Label16.AutoSize = True
         Me.Label16.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label16.Location = New System.Drawing.Point(9, 252)
+        Me.Label16.Location = New System.Drawing.Point(9, 283)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(26, 13)
         Me.Label16.TabIndex = 85
@@ -482,27 +491,17 @@ Partial Class frm_select_order
         '
         Me.Label17.AutoSize = True
         Me.Label17.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label17.Location = New System.Drawing.Point(659, 18)
+        Me.Label17.Location = New System.Drawing.Point(655, 49)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(114, 13)
         Me.Label17.TabIndex = 87
         Me.Label17.Text = "Método de pagamento"
         '
-        'cmb_method
-        '
-        Me.cmb_method.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.cmb_method.FormattingEnabled = True
-        Me.cmb_method.Items.AddRange(New Object() {"Boleto", "Cartão de Crédito", "Cartão de Débito", "Dinheiro", "PIX"})
-        Me.cmb_method.Location = New System.Drawing.Point(661, 41)
-        Me.cmb_method.Name = "cmb_method"
-        Me.cmb_method.Size = New System.Drawing.Size(121, 21)
-        Me.cmb_method.TabIndex = 86
-        '
         'Label18
         '
         Me.Label18.AutoSize = True
         Me.Label18.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label18.Location = New System.Drawing.Point(657, 65)
+        Me.Label18.Location = New System.Drawing.Point(653, 96)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(83, 13)
         Me.Label18.TabIndex = 89
@@ -512,7 +511,7 @@ Partial Class frm_select_order
         '
         Me.Label19.AutoSize = True
         Me.Label19.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label19.Location = New System.Drawing.Point(658, 120)
+        Me.Label19.Location = New System.Drawing.Point(654, 151)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(53, 13)
         Me.Label19.TabIndex = 91
@@ -521,7 +520,7 @@ Partial Class frm_select_order
         'txt_seller
         '
         Me.txt_seller.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_seller.Location = New System.Drawing.Point(661, 136)
+        Me.txt_seller.Location = New System.Drawing.Point(657, 167)
         Me.txt_seller.Multiline = True
         Me.txt_seller.Name = "txt_seller"
         Me.txt_seller.ReadOnly = True
@@ -531,12 +530,33 @@ Partial Class frm_select_order
         'txt_date
         '
         Me.txt_date.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_date.Location = New System.Drawing.Point(660, 81)
+        Me.txt_date.Location = New System.Drawing.Point(656, 112)
         Me.txt_date.Multiline = True
         Me.txt_date.Name = "txt_date"
         Me.txt_date.ReadOnly = True
         Me.txt_date.Size = New System.Drawing.Size(198, 20)
         Me.txt_date.TabIndex = 92
+        '
+        'txt_method
+        '
+        Me.txt_method.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txt_method.Location = New System.Drawing.Point(656, 65)
+        Me.txt_method.Multiline = True
+        Me.txt_method.Name = "txt_method"
+        Me.txt_method.ReadOnly = True
+        Me.txt_method.Size = New System.Drawing.Size(125, 20)
+        Me.txt_method.TabIndex = 93
+        '
+        'lbl_date
+        '
+        Me.lbl_date.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.lbl_date.AutoSize = True
+        Me.lbl_date.Font = New System.Drawing.Font("Lato", 23.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_date.Location = New System.Drawing.Point(325, 9)
+        Me.lbl_date.Name = "lbl_date"
+        Me.lbl_date.Size = New System.Drawing.Size(255, 38)
+        Me.lbl_date.TabIndex = 94
+        Me.lbl_date.Text = "Selecionar pedido"
         '
         'frm_select_order
         '
@@ -544,12 +564,13 @@ Partial Class frm_select_order
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(880, 472)
+        Me.Controls.Add(Me.lbl_date)
+        Me.Controls.Add(Me.txt_method)
         Me.Controls.Add(Me.txt_date)
         Me.Controls.Add(Me.Label19)
         Me.Controls.Add(Me.txt_seller)
         Me.Controls.Add(Me.Label18)
         Me.Controls.Add(Me.Label17)
-        Me.Controls.Add(Me.cmb_method)
         Me.Controls.Add(Me.Label16)
         Me.Controls.Add(Me.Label14)
         Me.Controls.Add(Me.txt_block)
@@ -594,11 +615,6 @@ Partial Class frm_select_order
     End Sub
 
     Friend WithEvents dgv_prod_order As Windows.Forms.DataGridView
-    Friend WithEvents Id As Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents name_prod As Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents cat As Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents amount As Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents preco As Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents txt_cell_phone As Windows.Forms.MaskedTextBox
     Friend WithEvents txt_landline_phone As Windows.Forms.MaskedTextBox
     Friend WithEvents Label6 As Windows.Forms.Label
@@ -631,10 +647,17 @@ Partial Class frm_select_order
     Friend WithEvents txt_cep As Windows.Forms.MaskedTextBox
     Friend WithEvents Label16 As Windows.Forms.Label
     Friend WithEvents Label17 As Windows.Forms.Label
-    Friend WithEvents cmb_method As Windows.Forms.ComboBox
     Friend WithEvents Label18 As Windows.Forms.Label
     Friend WithEvents Label19 As Windows.Forms.Label
     Friend WithEvents txt_seller As Windows.Forms.TextBox
     Friend WithEvents txt_date As Windows.Forms.TextBox
     Friend WithEvents btn_search As FontAwesome.Sharp.IconButton
+    Friend WithEvents txt_method As Windows.Forms.TextBox
+    Friend WithEvents Id As Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents name_prod As Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents cat As Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents amount As Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents unit As Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents preco As Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents lbl_date As Windows.Forms.Label
 End Class

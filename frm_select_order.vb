@@ -13,7 +13,7 @@
                 txt_landline_phone.Text = rs.Fields(5).Value
                 txt_cell_phone.Text = rs.Fields(6).Value
                 txt_date.Text = rs.Fields(9).Value
-                cmb_method.SelectedItem = rs.Fields(10).Value
+                txt_method.Text = rs.Fields(10).Value
                 txt_seller.Text = rs.Fields(25).Value + " " + rs.Fields(26).Value
                 txt_cep.Text = rs.Fields(32).Value
                 txt_city.Text = rs.Fields(33).Value
@@ -27,17 +27,18 @@
                 With dgv_prod_order
                     .Rows.Clear()
                     Do While rs.EOF = False
-                        .Rows.Add(rs.Fields(18).Value, rs.Fields(19).Value, rs.Fields(20).Value, rs.Fields(14).Value, rs.Fields(22).Value)
+                        .Rows.Add(rs.Fields(18).Value, rs.Fields(19).Value, rs.Fields(20).Value, rs.Fields(14).Value, (rs.Fields(15).Value / rs.Fields(14).Value), rs.Fields(15).Value)
                         rs.MoveNext()
                     Loop
                 End With
 
             Else
                 MsgBox("Erro | Pedido não encontrado!", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Aviso")
+                txt_search.Clear()
+                txt_search.Focus()
             End If
         Catch ex As Exception
             MsgBox("Erro ao processar | Busca Pedido!", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Aviso")
         End Try
     End Sub
-
 End Class

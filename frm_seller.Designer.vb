@@ -183,7 +183,7 @@ Partial Class frm_seller
         Me.lbl_day.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.lbl_day.AutoSize = True
         Me.lbl_day.Font = New System.Drawing.Font("Microsoft YaHei", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_day.Location = New System.Drawing.Point(413, 172)
+        Me.lbl_day.Location = New System.Drawing.Point(413, 145)
         Me.lbl_day.Name = "lbl_day"
         Me.lbl_day.Size = New System.Drawing.Size(45, 25)
         Me.lbl_day.TabIndex = 11
@@ -194,7 +194,7 @@ Partial Class frm_seller
         Me.lbl_wel.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.lbl_wel.AutoSize = True
         Me.lbl_wel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_wel.Location = New System.Drawing.Point(123, 113)
+        Me.lbl_wel.Location = New System.Drawing.Point(204, 85)
         Me.lbl_wel.Name = "lbl_wel"
         Me.lbl_wel.Size = New System.Drawing.Size(32, 20)
         Me.lbl_wel.TabIndex = 10
@@ -204,10 +204,10 @@ Partial Class frm_seller
         '
         Me.lbl_date.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.lbl_date.AutoSize = True
-        Me.lbl_date.Font = New System.Drawing.Font("Impact", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_date.Location = New System.Drawing.Point(356, 210)
+        Me.lbl_date.Font = New System.Drawing.Font("Lato", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_date.Location = New System.Drawing.Point(356, 183)
         Me.lbl_date.Name = "lbl_date"
-        Me.lbl_date.Size = New System.Drawing.Size(84, 43)
+        Me.lbl_date.Size = New System.Drawing.Size(86, 42)
         Me.lbl_date.TabIndex = 9
         Me.lbl_date.Text = "date"
         '
@@ -215,10 +215,10 @@ Partial Class frm_seller
         '
         Me.lbl_time.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.lbl_time.AutoSize = True
-        Me.lbl_time.Font = New System.Drawing.Font("Impact", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_time.Location = New System.Drawing.Point(356, 282)
+        Me.lbl_time.Font = New System.Drawing.Font("Lato", 26.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_time.Location = New System.Drawing.Point(356, 255)
         Me.lbl_time.Name = "lbl_time"
-        Me.lbl_time.Size = New System.Drawing.Size(84, 43)
+        Me.lbl_time.Size = New System.Drawing.Size(87, 42)
         Me.lbl_time.TabIndex = 8
         Me.lbl_time.Text = "time"
         '

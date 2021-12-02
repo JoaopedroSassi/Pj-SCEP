@@ -334,20 +334,21 @@ Public Class frm_order
                 document.Add(New Paragraph("Vendedor: " & name_sell_log))
                 document.Add(New Paragraph("Data do pedido: " & DateTime.Now))
 
-                Dim columnWidth As Single() = {10, 40, 30, 10, 20}
+                Dim columnWidth As Single() = {10, 40, 30, 10, 20, 20}
 
                 Dim tabela = New Table(UnitValue.CreatePercentArray(columnWidth)).UseAllAvailableWidth()
                 tabela.SetHorizontalAlignment(HorizontalAlignment.Center)
 
                 Dim fonte = PdfFontFactory.CreateFont(StandardFonts.HELVETICA)
 
-                tabela.AddHeaderCell(New Cell(1, 5).Add(New Paragraph("Tabela de produtos").SetFont(fonte).SetBorder(Border.NO_BORDER).SetFontSize(19).SetPadding(10).SetFontColor(ColorConstants.WHITE).SetBackgroundColor(ColorConstants.BLUE).SetTextAlignment(TextAlignment.CENTER)))
+                tabela.AddHeaderCell(New Cell(1, 6).Add(New Paragraph("Tabela de produtos").SetFont(fonte).SetBorder(Border.NO_BORDER).SetFontSize(19).SetPadding(10).SetFontColor(ColorConstants.WHITE).SetBackgroundColor(ColorConstants.BLUE).SetTextAlignment(TextAlignment.CENTER)))
 
                 tabela.AddHeaderCell(New Cell().SetTextAlignment(TextAlignment.CENTER).SetBackgroundColor(ColorConstants.WHITE).SetFontColor(ColorConstants.BLUE).Add(New Paragraph("Id")))
                 tabela.AddHeaderCell(New Cell().SetTextAlignment(TextAlignment.CENTER).SetBackgroundColor(ColorConstants.WHITE).SetFontColor(ColorConstants.BLUE).Add(New Paragraph("Nome")))
                 tabela.AddHeaderCell(New Cell().SetTextAlignment(TextAlignment.CENTER).SetBackgroundColor(ColorConstants.WHITE).SetFontColor(ColorConstants.BLUE).Add(New Paragraph("Cateogira")))
                 tabela.AddHeaderCell(New Cell().SetTextAlignment(TextAlignment.CENTER).SetBackgroundColor(ColorConstants.WHITE).SetFontColor(ColorConstants.BLUE).Add(New Paragraph("Qtd")))
-                tabela.AddHeaderCell(New Cell().SetTextAlignment(TextAlignment.CENTER).SetBackgroundColor(ColorConstants.WHITE).SetFontColor(ColorConstants.BLUE).Add(New Paragraph("Preço")))
+                tabela.AddHeaderCell(New Cell().SetTextAlignment(TextAlignment.CENTER).SetBackgroundColor(ColorConstants.WHITE).SetFontColor(ColorConstants.BLUE).Add(New Paragraph("Preço - Unit")))
+                tabela.AddHeaderCell(New Cell().SetTextAlignment(TextAlignment.CENTER).SetBackgroundColor(ColorConstants.WHITE).SetFontColor(ColorConstants.BLUE).Add(New Paragraph("Preço - Total")))
 
                 For Each item As DataGridViewRow In dgv_prod_order.Rows
                     tabela.AddCell(New Cell().SetTextAlignment(TextAlignment.CENTER).Add(New Paragraph(item.Cells(0).Value.ToString)))
@@ -359,6 +360,8 @@ Public Class frm_order
                     tabela.AddCell(New Cell().SetTextAlignment(TextAlignment.CENTER).Add(New Paragraph(item.Cells(3).Value.ToString)))
 
                     tabela.AddCell(New Cell().SetTextAlignment(TextAlignment.LEFT).Add(New Paragraph("R$" & item.Cells(4).Value.ToString)))
+
+                    tabela.AddCell(New Cell().SetTextAlignment(TextAlignment.LEFT).Add(New Paragraph("R$" & final_price.ToString)))
                 Next
 
                 document.Add(tabela)

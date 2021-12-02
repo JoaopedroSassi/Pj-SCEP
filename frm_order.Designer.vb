@@ -75,6 +75,7 @@ Partial Class frm_order
         Me.Label17 = New System.Windows.Forms.Label()
         Me.txt_price = New System.Windows.Forms.TextBox()
         Me.Label18 = New System.Windows.Forms.Label()
+        Me.lbl_date = New System.Windows.Forms.Label()
         CType(Me.dgv_prod_order, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -82,7 +83,7 @@ Partial Class frm_order
         '
         Me.Label1.AutoSize = True
         Me.Label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label1.Location = New System.Drawing.Point(20, 26)
+        Me.Label1.Location = New System.Drawing.Point(19, 63)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(23, 13)
         Me.Label1.TabIndex = 2
@@ -92,7 +93,7 @@ Partial Class frm_order
         '
         Me.Label2.AutoSize = True
         Me.Label2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label2.Location = New System.Drawing.Point(115, 26)
+        Me.Label2.Location = New System.Drawing.Point(114, 63)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(35, 13)
         Me.Label2.TabIndex = 4
@@ -101,7 +102,7 @@ Partial Class frm_order
         'txt_first_name
         '
         Me.txt_first_name.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_first_name.Location = New System.Drawing.Point(118, 43)
+        Me.txt_first_name.Location = New System.Drawing.Point(117, 80)
         Me.txt_first_name.Multiline = True
         Me.txt_first_name.Name = "txt_first_name"
         Me.txt_first_name.Size = New System.Drawing.Size(136, 20)
@@ -110,7 +111,7 @@ Partial Class frm_order
         'txt_cpf
         '
         Me.txt_cpf.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_cpf.Location = New System.Drawing.Point(23, 43)
+        Me.txt_cpf.Location = New System.Drawing.Point(22, 80)
         Me.txt_cpf.Mask = "999.999.999-99"
         Me.txt_cpf.Name = "txt_cpf"
         Me.txt_cpf.Size = New System.Drawing.Size(89, 20)
@@ -120,7 +121,7 @@ Partial Class frm_order
         '
         Me.Label3.AutoSize = True
         Me.Label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label3.Location = New System.Drawing.Point(257, 27)
+        Me.Label3.Location = New System.Drawing.Point(256, 64)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(61, 13)
         Me.Label3.TabIndex = 7
@@ -129,7 +130,7 @@ Partial Class frm_order
         'txt_last_name
         '
         Me.txt_last_name.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_last_name.Location = New System.Drawing.Point(260, 43)
+        Me.txt_last_name.Location = New System.Drawing.Point(259, 80)
         Me.txt_last_name.Multiline = True
         Me.txt_last_name.Name = "txt_last_name"
         Me.txt_last_name.Size = New System.Drawing.Size(134, 20)
@@ -139,7 +140,7 @@ Partial Class frm_order
         '
         Me.Label4.AutoSize = True
         Me.Label4.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label4.Location = New System.Drawing.Point(409, 28)
+        Me.Label4.Location = New System.Drawing.Point(408, 65)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(32, 13)
         Me.Label4.TabIndex = 9
@@ -148,7 +149,7 @@ Partial Class frm_order
         'txt_email
         '
         Me.txt_email.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_email.Location = New System.Drawing.Point(412, 44)
+        Me.txt_email.Location = New System.Drawing.Point(411, 81)
         Me.txt_email.Multiline = True
         Me.txt_email.Name = "txt_email"
         Me.txt_email.Size = New System.Drawing.Size(198, 20)
@@ -158,7 +159,7 @@ Partial Class frm_order
         '
         Me.Label5.AutoSize = True
         Me.Label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label5.Location = New System.Drawing.Point(626, 28)
+        Me.Label5.Location = New System.Drawing.Point(625, 65)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(102, 13)
         Me.Label5.TabIndex = 11
@@ -168,7 +169,7 @@ Partial Class frm_order
         '
         Me.Label6.AutoSize = True
         Me.Label6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label6.Location = New System.Drawing.Point(742, 27)
+        Me.Label6.Location = New System.Drawing.Point(741, 64)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(83, 13)
         Me.Label6.TabIndex = 13
@@ -177,7 +178,7 @@ Partial Class frm_order
         'txt_landline_phone
         '
         Me.txt_landline_phone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_landline_phone.Location = New System.Drawing.Point(629, 43)
+        Me.txt_landline_phone.Location = New System.Drawing.Point(628, 80)
         Me.txt_landline_phone.Mask = "(99) 9999-9999"
         Me.txt_landline_phone.Name = "txt_landline_phone"
         Me.txt_landline_phone.Size = New System.Drawing.Size(83, 20)
@@ -186,7 +187,7 @@ Partial Class frm_order
         'txt_cell_phone
         '
         Me.txt_cell_phone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_cell_phone.Location = New System.Drawing.Point(745, 43)
+        Me.txt_cell_phone.Location = New System.Drawing.Point(744, 80)
         Me.txt_cell_phone.Mask = "(99) 99999-9999"
         Me.txt_cell_phone.Name = "txt_cell_phone"
         Me.txt_cell_phone.Size = New System.Drawing.Size(89, 20)
@@ -195,17 +196,17 @@ Partial Class frm_order
         'txt_cep
         '
         Me.txt_cep.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_cep.Location = New System.Drawing.Point(23, 106)
+        Me.txt_cep.Location = New System.Drawing.Point(22, 143)
         Me.txt_cep.Mask = "99999-999"
         Me.txt_cep.Name = "txt_cep"
-        Me.txt_cep.Size = New System.Drawing.Size(67, 20)
+        Me.txt_cep.Size = New System.Drawing.Size(59, 20)
         Me.txt_cep.TabIndex = 7
         '
         'Label7
         '
         Me.Label7.AutoSize = True
         Me.Label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label7.Location = New System.Drawing.Point(20, 90)
+        Me.Label7.Location = New System.Drawing.Point(19, 127)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(26, 13)
         Me.Label7.TabIndex = 15
@@ -215,7 +216,7 @@ Partial Class frm_order
         '
         Me.Label8.AutoSize = True
         Me.Label8.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label8.Location = New System.Drawing.Point(93, 90)
+        Me.Label8.Location = New System.Drawing.Point(92, 127)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(40, 13)
         Me.Label8.TabIndex = 17
@@ -224,7 +225,7 @@ Partial Class frm_order
         'txt_city
         '
         Me.txt_city.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_city.Location = New System.Drawing.Point(96, 106)
+        Me.txt_city.Location = New System.Drawing.Point(95, 143)
         Me.txt_city.Multiline = True
         Me.txt_city.Name = "txt_city"
         Me.txt_city.Size = New System.Drawing.Size(136, 20)
@@ -234,7 +235,7 @@ Partial Class frm_order
         '
         Me.Label9.AutoSize = True
         Me.Label9.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label9.Location = New System.Drawing.Point(235, 90)
+        Me.Label9.Location = New System.Drawing.Point(234, 127)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(34, 13)
         Me.Label9.TabIndex = 19
@@ -243,7 +244,7 @@ Partial Class frm_order
         'txt_district
         '
         Me.txt_district.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_district.Location = New System.Drawing.Point(238, 106)
+        Me.txt_district.Location = New System.Drawing.Point(237, 143)
         Me.txt_district.Multiline = True
         Me.txt_district.Name = "txt_district"
         Me.txt_district.Size = New System.Drawing.Size(136, 20)
@@ -253,7 +254,7 @@ Partial Class frm_order
         '
         Me.Label10.AutoSize = True
         Me.Label10.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label10.Location = New System.Drawing.Point(377, 90)
+        Me.Label10.Location = New System.Drawing.Point(376, 127)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(27, 13)
         Me.Label10.TabIndex = 21
@@ -262,7 +263,7 @@ Partial Class frm_order
         'txt_street
         '
         Me.txt_street.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_street.Location = New System.Drawing.Point(380, 106)
+        Me.txt_street.Location = New System.Drawing.Point(379, 143)
         Me.txt_street.Multiline = True
         Me.txt_street.Name = "txt_street"
         Me.txt_street.Size = New System.Drawing.Size(188, 20)
@@ -272,7 +273,7 @@ Partial Class frm_order
         '
         Me.Label11.AutoSize = True
         Me.Label11.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label11.Location = New System.Drawing.Point(571, 90)
+        Me.Label11.Location = New System.Drawing.Point(570, 127)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(21, 13)
         Me.Label11.TabIndex = 23
@@ -281,7 +282,7 @@ Partial Class frm_order
         'txt_uf
         '
         Me.txt_uf.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_uf.Location = New System.Drawing.Point(574, 106)
+        Me.txt_uf.Location = New System.Drawing.Point(573, 143)
         Me.txt_uf.Multiline = True
         Me.txt_uf.Name = "txt_uf"
         Me.txt_uf.Size = New System.Drawing.Size(36, 20)
@@ -291,7 +292,7 @@ Partial Class frm_order
         '
         Me.Label12.AutoSize = True
         Me.Label12.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label12.Location = New System.Drawing.Point(613, 90)
+        Me.Label12.Location = New System.Drawing.Point(612, 127)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(44, 13)
         Me.Label12.TabIndex = 25
@@ -300,7 +301,7 @@ Partial Class frm_order
         'txt_number
         '
         Me.txt_number.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_number.Location = New System.Drawing.Point(616, 106)
+        Me.txt_number.Location = New System.Drawing.Point(615, 143)
         Me.txt_number.Multiline = True
         Me.txt_number.Name = "txt_number"
         Me.txt_number.Size = New System.Drawing.Size(83, 20)
@@ -310,7 +311,7 @@ Partial Class frm_order
         '
         Me.Label13.AutoSize = True
         Me.Label13.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label13.Location = New System.Drawing.Point(702, 90)
+        Me.Label13.Location = New System.Drawing.Point(701, 127)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(67, 13)
         Me.Label13.TabIndex = 27
@@ -319,7 +320,7 @@ Partial Class frm_order
         'txt_apartment
         '
         Me.txt_apartment.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_apartment.Location = New System.Drawing.Point(705, 106)
+        Me.txt_apartment.Location = New System.Drawing.Point(704, 143)
         Me.txt_apartment.Multiline = True
         Me.txt_apartment.Name = "txt_apartment"
         Me.txt_apartment.Size = New System.Drawing.Size(64, 20)
@@ -329,7 +330,7 @@ Partial Class frm_order
         '
         Me.Label14.AutoSize = True
         Me.Label14.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label14.Location = New System.Drawing.Point(772, 90)
+        Me.Label14.Location = New System.Drawing.Point(771, 127)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(34, 13)
         Me.Label14.TabIndex = 29
@@ -338,7 +339,7 @@ Partial Class frm_order
         'txt_block
         '
         Me.txt_block.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_block.Location = New System.Drawing.Point(775, 106)
+        Me.txt_block.Location = New System.Drawing.Point(774, 143)
         Me.txt_block.Multiline = True
         Me.txt_block.Name = "txt_block"
         Me.txt_block.Size = New System.Drawing.Size(64, 20)
@@ -366,7 +367,7 @@ Partial Class frm_order
         Me.dgv_prod_order.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Id, Me.name_prod, Me.cat, Me.amount, Me.preco})
         Me.dgv_prod_order.EnableHeadersVisualStyles = False
         Me.dgv_prod_order.GridColor = System.Drawing.Color.SteelBlue
-        Me.dgv_prod_order.Location = New System.Drawing.Point(260, 172)
+        Me.dgv_prod_order.Location = New System.Drawing.Point(259, 209)
         Me.dgv_prod_order.Name = "dgv_prod_order"
         Me.dgv_prod_order.ReadOnly = True
         Me.dgv_prod_order.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
@@ -426,7 +427,7 @@ Partial Class frm_order
         Me.btn_save_order.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(251, Byte), Integer), CType(CType(215, Byte), Integer), CType(CType(116, Byte), Integer))
         Me.btn_save_order.FlatAppearance.BorderSize = 2
         Me.btn_save_order.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_save_order.Location = New System.Drawing.Point(722, 429)
+        Me.btn_save_order.Location = New System.Drawing.Point(721, 466)
         Me.btn_save_order.Name = "btn_save_order"
         Me.btn_save_order.Size = New System.Drawing.Size(142, 31)
         Me.btn_save_order.TabIndex = 55
@@ -438,7 +439,7 @@ Partial Class frm_order
         Me.Produtos.AutoSize = True
         Me.Produtos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Produtos.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Produtos.Location = New System.Drawing.Point(125, 172)
+        Me.Produtos.Location = New System.Drawing.Point(124, 209)
         Me.Produtos.Name = "Produtos"
         Me.Produtos.Size = New System.Drawing.Size(73, 20)
         Me.Produtos.TabIndex = 56
@@ -449,7 +450,7 @@ Partial Class frm_order
         Me.cmb_cat.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cmb_cat.FormattingEnabled = True
         Me.cmb_cat.Items.AddRange(New Object() {"Acoplados", "Cama", "Colchão", "Travesseiro"})
-        Me.cmb_cat.Location = New System.Drawing.Point(23, 220)
+        Me.cmb_cat.Location = New System.Drawing.Point(22, 257)
         Me.cmb_cat.Name = "cmb_cat"
         Me.cmb_cat.Size = New System.Drawing.Size(121, 21)
         Me.cmb_cat.TabIndex = 11
@@ -458,7 +459,7 @@ Partial Class frm_order
         '
         Me.Label15.AutoSize = True
         Me.Label15.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label15.Location = New System.Drawing.Point(20, 203)
+        Me.Label15.Location = New System.Drawing.Point(19, 240)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(52, 13)
         Me.Label15.TabIndex = 58
@@ -468,7 +469,7 @@ Partial Class frm_order
         '
         Me.Label16.AutoSize = True
         Me.Label16.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label16.Location = New System.Drawing.Point(20, 254)
+        Me.Label16.Location = New System.Drawing.Point(19, 291)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(35, 13)
         Me.Label16.TabIndex = 59
@@ -478,7 +479,7 @@ Partial Class frm_order
         '
         Me.cmb_name.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cmb_name.FormattingEnabled = True
-        Me.cmb_name.Location = New System.Drawing.Point(23, 270)
+        Me.cmb_name.Location = New System.Drawing.Point(22, 307)
         Me.cmb_name.Name = "cmb_name"
         Me.cmb_name.Size = New System.Drawing.Size(231, 21)
         Me.cmb_name.TabIndex = 13
@@ -487,7 +488,7 @@ Partial Class frm_order
         '
         Me.Quantidade.AutoSize = True
         Me.Quantidade.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Quantidade.Location = New System.Drawing.Point(192, 203)
+        Me.Quantidade.Location = New System.Drawing.Point(191, 240)
         Me.Quantidade.Name = "Quantidade"
         Me.Quantidade.Size = New System.Drawing.Size(62, 13)
         Me.Quantidade.TabIndex = 61
@@ -496,7 +497,7 @@ Partial Class frm_order
         'txt_qtde
         '
         Me.txt_qtde.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_qtde.Location = New System.Drawing.Point(195, 220)
+        Me.txt_qtde.Location = New System.Drawing.Point(194, 257)
         Me.txt_qtde.Multiline = True
         Me.txt_qtde.Name = "txt_qtde"
         Me.txt_qtde.Size = New System.Drawing.Size(44, 20)
@@ -507,7 +508,7 @@ Partial Class frm_order
         Me.btn_add.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(168, Byte), Integer))
         Me.btn_add.FlatAppearance.BorderSize = 2
         Me.btn_add.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_add.Location = New System.Drawing.Point(23, 369)
+        Me.btn_add.Location = New System.Drawing.Point(22, 406)
         Me.btn_add.Name = "btn_add"
         Me.btn_add.Size = New System.Drawing.Size(231, 29)
         Me.btn_add.TabIndex = 63
@@ -519,7 +520,7 @@ Partial Class frm_order
         Me.btn_edit.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(168, Byte), Integer))
         Me.btn_edit.FlatAppearance.BorderSize = 2
         Me.btn_edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_edit.Location = New System.Drawing.Point(23, 416)
+        Me.btn_edit.Location = New System.Drawing.Point(22, 453)
         Me.btn_edit.Name = "btn_edit"
         Me.btn_edit.Size = New System.Drawing.Size(67, 29)
         Me.btn_edit.TabIndex = 64
@@ -531,7 +532,7 @@ Partial Class frm_order
         Me.btn_delete.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(168, Byte), Integer))
         Me.btn_delete.FlatAppearance.BorderSize = 2
         Me.btn_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_delete.Location = New System.Drawing.Point(195, 416)
+        Me.btn_delete.Location = New System.Drawing.Point(194, 453)
         Me.btn_delete.Name = "btn_delete"
         Me.btn_delete.Size = New System.Drawing.Size(59, 29)
         Me.btn_delete.TabIndex = 65
@@ -543,7 +544,7 @@ Partial Class frm_order
         Me.cmb_method.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.cmb_method.FormattingEnabled = True
         Me.cmb_method.Items.AddRange(New Object() {"Boleto", "Cartão de Crédito", "Cartão de Débito", "Dinheiro", "PIX"})
-        Me.cmb_method.Location = New System.Drawing.Point(747, 200)
+        Me.cmb_method.Location = New System.Drawing.Point(746, 237)
         Me.cmb_method.Name = "cmb_method"
         Me.cmb_method.Size = New System.Drawing.Size(121, 21)
         Me.cmb_method.TabIndex = 66
@@ -552,7 +553,7 @@ Partial Class frm_order
         '
         Me.Label17.AutoSize = True
         Me.Label17.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label17.Location = New System.Drawing.Point(745, 177)
+        Me.Label17.Location = New System.Drawing.Point(744, 214)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(114, 13)
         Me.Label17.TabIndex = 67
@@ -561,7 +562,7 @@ Partial Class frm_order
         'txt_price
         '
         Me.txt_price.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_price.Location = New System.Drawing.Point(23, 321)
+        Me.txt_price.Location = New System.Drawing.Point(22, 358)
         Me.txt_price.Multiline = True
         Me.txt_price.Name = "txt_price"
         Me.txt_price.Size = New System.Drawing.Size(89, 20)
@@ -571,11 +572,22 @@ Partial Class frm_order
         '
         Me.Label18.AutoSize = True
         Me.Label18.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label18.Location = New System.Drawing.Point(20, 298)
+        Me.Label18.Location = New System.Drawing.Point(19, 335)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(35, 13)
         Me.Label18.TabIndex = 69
         Me.Label18.Text = "Preço"
+        '
+        'lbl_date
+        '
+        Me.lbl_date.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.lbl_date.AutoSize = True
+        Me.lbl_date.Font = New System.Drawing.Font("Lato", 23.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_date.Location = New System.Drawing.Point(356, 9)
+        Me.lbl_date.Name = "lbl_date"
+        Me.lbl_date.Size = New System.Drawing.Size(181, 38)
+        Me.lbl_date.TabIndex = 95
+        Me.lbl_date.Text = "Criar pedido"
         '
         'frm_order
         '
@@ -583,6 +595,7 @@ Partial Class frm_order
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(880, 472)
+        Me.Controls.Add(Me.lbl_date)
         Me.Controls.Add(Me.Label18)
         Me.Controls.Add(Me.txt_price)
         Me.Controls.Add(Me.Label17)
@@ -687,4 +700,5 @@ Partial Class frm_order
     Friend WithEvents cat As Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents amount As Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents preco As Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents lbl_date As Windows.Forms.Label
 End Class
