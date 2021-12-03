@@ -10,7 +10,10 @@
             With dgv_next_sales
                 .Rows.Clear()
                 Do While rs.EOF = False
-                    .Rows.Add(rs.Fields(0).Value, rs.Fields(1).Value, rs.Fields(2).Value, rs.Fields(3).Value, rs.Fields(4).Value, rs.Fields(5).Value, rs.Fields(6).Value, rs.Fields(7).Value)
+                    Dim today As Date = rs.Fields(6).Value
+                    If today.ToString("yyyy-MM-dd") >= Date.Now.ToString("yyyy-MM-dd") Then
+                        .Rows.Add(rs.Fields(0).Value, rs.Fields(1).Value, rs.Fields(2).Value, rs.Fields(3).Value, rs.Fields(4).Value, rs.Fields(5).Value, rs.Fields(6).Value, rs.Fields(7).Value)
+                    End If
                     rs.MoveNext()
                 Loop
             End With
