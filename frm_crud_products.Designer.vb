@@ -32,7 +32,6 @@ Partial Class frm_crud_products
         Me.cat = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.amount = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cost_price = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.btn_search_id = New FontAwesome.Sharp.IconPictureBox()
         Me.txt_price = New System.Windows.Forms.TextBox()
@@ -51,6 +50,7 @@ Partial Class frm_crud_products
         Me.txt_id = New System.Windows.Forms.TextBox()
         Me.btn_delete = New System.Windows.Forms.Button()
         Me.btn_edit = New System.Windows.Forms.Button()
+        Me.lbl_date = New System.Windows.Forms.Label()
         CType(Me.dgv_prod, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         CType(Me.btn_search_id, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -78,7 +78,7 @@ Partial Class frm_crud_products
         Me.dgv_prod.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Id, Me.name_prod, Me.cat, Me.amount, Me.cost_price})
         Me.dgv_prod.EnableHeadersVisualStyles = False
         Me.dgv_prod.GridColor = System.Drawing.Color.SteelBlue
-        Me.dgv_prod.Location = New System.Drawing.Point(41, 46)
+        Me.dgv_prod.Location = New System.Drawing.Point(41, 79)
         Me.dgv_prod.Name = "dgv_prod"
         Me.dgv_prod.ReadOnly = True
         Me.dgv_prod.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
@@ -96,7 +96,7 @@ Partial Class frm_crud_products
         DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
         Me.dgv_prod.RowsDefaultCellStyle = DataGridViewCellStyle3
-        Me.dgv_prod.Size = New System.Drawing.Size(488, 349)
+        Me.dgv_prod.Size = New System.Drawing.Size(488, 316)
         Me.dgv_prod.TabIndex = 0
         '
         'Id
@@ -133,20 +133,9 @@ Partial Class frm_crud_products
         Me.cost_price.ReadOnly = True
         Me.cost_price.Width = 66
         '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(48, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(168, Byte), Integer))
-        Me.Label1.Location = New System.Drawing.Point(237, 13)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(69, 20)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Estoque"
-        '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(92, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(188, Byte), Integer))
+        Me.Panel1.BackColor = System.Drawing.Color.Blue
         Me.Panel1.Controls.Add(Me.btn_search_id)
         Me.Panel1.Controls.Add(Me.txt_price)
         Me.Panel1.Controls.Add(Me.btn_save)
@@ -169,7 +158,7 @@ Partial Class frm_crud_products
         '
         'btn_search_id
         '
-        Me.btn_search_id.BackColor = System.Drawing.Color.FromArgb(CType(CType(92, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(188, Byte), Integer))
+        Me.btn_search_id.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.btn_search_id.IconChar = FontAwesome.Sharp.IconChar.Search
         Me.btn_search_id.IconColor = System.Drawing.Color.White
         Me.btn_search_id.IconFont = FontAwesome.Sharp.IconFont.[Auto]
@@ -355,16 +344,28 @@ Partial Class frm_crud_products
         Me.btn_edit.Text = "Editar"
         Me.btn_edit.UseVisualStyleBackColor = True
         '
+        'lbl_date
+        '
+        Me.lbl_date.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.lbl_date.AutoSize = True
+        Me.lbl_date.Font = New System.Drawing.Font("Lato", 23.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_date.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.lbl_date.Location = New System.Drawing.Point(139, 13)
+        Me.lbl_date.Name = "lbl_date"
+        Me.lbl_date.Size = New System.Drawing.Size(251, 38)
+        Me.lbl_date.TabIndex = 95
+        Me.lbl_date.Text = "CRUD | Produtos"
+        '
         'frm_crud_products
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(880, 472)
+        Me.Controls.Add(Me.lbl_date)
         Me.Controls.Add(Me.btn_delete)
         Me.Controls.Add(Me.btn_edit)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.dgv_prod)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MinimumSize = New System.Drawing.Size(896, 511)
@@ -380,7 +381,6 @@ Partial Class frm_crud_products
     End Sub
 
     Friend WithEvents dgv_prod As Windows.Forms.DataGridView
-    Friend WithEvents Label1 As Windows.Forms.Label
     Friend WithEvents Panel1 As Windows.Forms.Panel
     Friend WithEvents Label3 As Windows.Forms.Label
     Friend WithEvents Label2 As Windows.Forms.Label
@@ -404,4 +404,5 @@ Partial Class frm_crud_products
     Friend WithEvents txt_search_id As Windows.Forms.TextBox
     Friend WithEvents btn_delete As Windows.Forms.Button
     Friend WithEvents btn_edit As Windows.Forms.Button
+    Friend WithEvents lbl_date As Windows.Forms.Label
 End Class

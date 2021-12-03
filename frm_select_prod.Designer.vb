@@ -31,12 +31,12 @@ Partial Class frm_select_prod
         Me.name_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cat = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.amount = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.cmb_cat = New System.Windows.Forms.ComboBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txt_search = New System.Windows.Forms.TextBox()
+        Me.lbl_date = New System.Windows.Forms.Label()
         CType(Me.dgv_prod, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -63,7 +63,7 @@ Partial Class frm_select_prod
         Me.dgv_prod.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Id, Me.name_prod, Me.cat, Me.amount})
         Me.dgv_prod.EnableHeadersVisualStyles = False
         Me.dgv_prod.GridColor = System.Drawing.Color.SteelBlue
-        Me.dgv_prod.Location = New System.Drawing.Point(40, 69)
+        Me.dgv_prod.Location = New System.Drawing.Point(40, 98)
         Me.dgv_prod.Name = "dgv_prod"
         Me.dgv_prod.ReadOnly = True
         Me.dgv_prod.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
@@ -81,7 +81,7 @@ Partial Class frm_select_prod
         DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
         Me.dgv_prod.RowsDefaultCellStyle = DataGridViewCellStyle3
-        Me.dgv_prod.Size = New System.Drawing.Size(488, 349)
+        Me.dgv_prod.Size = New System.Drawing.Size(618, 349)
         Me.dgv_prod.TabIndex = 1
         '
         'Id
@@ -110,16 +110,6 @@ Partial Class frm_select_prod
         Me.amount.HeaderText = "Quantidade"
         Me.amount.Name = "amount"
         Me.amount.ReadOnly = True
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(35, 14)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(219, 26)
-        Me.Label1.TabIndex = 2
-        Me.Label1.Text = "Visualizando estoque"
         '
         'Panel1
         '
@@ -174,19 +164,30 @@ Partial Class frm_select_prod
         Me.txt_search.Size = New System.Drawing.Size(129, 20)
         Me.txt_search.TabIndex = 0
         '
-        'frm_selec_prod
+        'lbl_date
+        '
+        Me.lbl_date.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.lbl_date.AutoSize = True
+        Me.lbl_date.Font = New System.Drawing.Font("Lato", 23.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_date.Location = New System.Drawing.Point(33, 9)
+        Me.lbl_date.Name = "lbl_date"
+        Me.lbl_date.Size = New System.Drawing.Size(271, 38)
+        Me.lbl_date.TabIndex = 95
+        Me.lbl_date.Text = "Selecionar estoque"
+        '
+        'frm_select_prod
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(880, 472)
+        Me.Controls.Add(Me.lbl_date)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.dgv_prod)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximumSize = New System.Drawing.Size(896, 511)
         Me.MinimumSize = New System.Drawing.Size(896, 511)
-        Me.Name = "frm_selec_prod"
+        Me.Name = "frm_select_prod"
         Me.Text = "Select | Estoque"
         CType(Me.dgv_prod, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
@@ -197,7 +198,6 @@ Partial Class frm_select_prod
     End Sub
 
     Friend WithEvents dgv_prod As Windows.Forms.DataGridView
-    Friend WithEvents Label1 As Windows.Forms.Label
     Friend WithEvents Id As Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents name_prod As Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents cat As Windows.Forms.DataGridViewTextBoxColumn
@@ -207,4 +207,5 @@ Partial Class frm_select_prod
     Friend WithEvents Label2 As Windows.Forms.Label
     Friend WithEvents txt_search As Windows.Forms.TextBox
     Friend WithEvents Label3 As Windows.Forms.Label
+    Friend WithEvents lbl_date As Windows.Forms.Label
 End Class

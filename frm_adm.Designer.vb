@@ -24,39 +24,39 @@ Partial Class frm_adm
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_adm))
-        Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
-        Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
-        Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Dim ChartArea1 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
         Dim Legend1 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
         Dim Series1 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
+        Dim ChartArea2 As System.Windows.Forms.DataVisualization.Charting.ChartArea = New System.Windows.Forms.DataVisualization.Charting.ChartArea()
+        Dim Legend2 As System.Windows.Forms.DataVisualization.Charting.Legend = New System.Windows.Forms.DataVisualization.Charting.Legend()
+        Dim Series2 As System.Windows.Forms.DataVisualization.Charting.Series = New System.Windows.Forms.DataVisualization.Charting.Series()
         Me.pic_logo = New System.Windows.Forms.PictureBox()
         Me.btn_prod = New FontAwesome.Sharp.IconButton()
         Me.btn_seller = New FontAwesome.Sharp.IconButton()
-        Me.btn_report = New FontAwesome.Sharp.IconButton()
+        Me.btn_next_order = New FontAwesome.Sharp.IconButton()
         Me.pnl_menu = New System.Windows.Forms.Panel()
         Me.btn_logout = New FontAwesome.Sharp.IconButton()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.pnl_content = New System.Windows.Forms.Panel()
+        Me.lbl_date = New System.Windows.Forms.Label()
+        Me.Chart2 = New System.Windows.Forms.DataVisualization.Charting.Chart()
+        Me.TbvendedorBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Db_scepDataSet = New scep.db_scepDataSet()
+        Me.Chart1 = New System.Windows.Forms.DataVisualization.Charting.Chart()
+        Me.TbprecoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Chart1 = New System.Windows.Forms.DataVisualization.Charting.Chart()
-        Me.Chart2 = New System.Windows.Forms.DataVisualization.Charting.Chart()
-        Me.Db_scepDataSet = New scep.db_scepDataSet()
-        Me.TbprecoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Tb_precoTableAdapter = New scep.db_scepDataSetTableAdapters.tb_precoTableAdapter()
-        Me.TbvendedorBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Tb_vendedorTableAdapter = New scep.db_scepDataSetTableAdapters.tb_vendedorTableAdapter()
         CType(Me.pic_logo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnl_menu.SuspendLayout()
         Me.Panel1.SuspendLayout()
         Me.pnl_content.SuspendLayout()
-        CType(Me.Chart1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Chart2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Db_scepDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.TbprecoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.TbvendedorBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Db_scepDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Chart1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TbprecoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'pic_logo
@@ -112,27 +112,27 @@ Partial Class frm_adm
         Me.btn_seller.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btn_seller.UseVisualStyleBackColor = True
         '
-        'btn_report
+        'btn_next_order
         '
-        Me.btn_report.BackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(168, Byte), Integer))
-        Me.btn_report.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btn_report.FlatAppearance.BorderSize = 0
-        Me.btn_report.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_report.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.btn_report.IconChar = FontAwesome.Sharp.IconChar.FileInvoice
-        Me.btn_report.IconColor = System.Drawing.SystemColors.ButtonFace
-        Me.btn_report.IconFont = FontAwesome.Sharp.IconFont.[Auto]
-        Me.btn_report.IconSize = 36
-        Me.btn_report.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btn_report.Location = New System.Drawing.Point(0, 146)
-        Me.btn_report.Name = "btn_report"
-        Me.btn_report.Padding = New System.Windows.Forms.Padding(10, 0, 20, 0)
-        Me.btn_report.Size = New System.Drawing.Size(205, 60)
-        Me.btn_report.TabIndex = 10
-        Me.btn_report.Text = "Gerar relatório"
-        Me.btn_report.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btn_report.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btn_report.UseVisualStyleBackColor = False
+        Me.btn_next_order.BackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(168, Byte), Integer))
+        Me.btn_next_order.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btn_next_order.FlatAppearance.BorderSize = 0
+        Me.btn_next_order.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_next_order.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.btn_next_order.IconChar = FontAwesome.Sharp.IconChar.CalendarWeek
+        Me.btn_next_order.IconColor = System.Drawing.SystemColors.ButtonFace
+        Me.btn_next_order.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.btn_next_order.IconSize = 36
+        Me.btn_next_order.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btn_next_order.Location = New System.Drawing.Point(0, 146)
+        Me.btn_next_order.Name = "btn_next_order"
+        Me.btn_next_order.Padding = New System.Windows.Forms.Padding(10, 0, 20, 0)
+        Me.btn_next_order.Size = New System.Drawing.Size(205, 60)
+        Me.btn_next_order.TabIndex = 10
+        Me.btn_next_order.Text = "Próximas entregas"
+        Me.btn_next_order.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btn_next_order.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btn_next_order.UseVisualStyleBackColor = False
         '
         'pnl_menu
         '
@@ -140,7 +140,7 @@ Partial Class frm_adm
         Me.pnl_menu.Controls.Add(Me.btn_logout)
         Me.pnl_menu.Controls.Add(Me.btn_prod)
         Me.pnl_menu.Controls.Add(Me.btn_seller)
-        Me.pnl_menu.Controls.Add(Me.btn_report)
+        Me.pnl_menu.Controls.Add(Me.btn_next_order)
         Me.pnl_menu.Controls.Add(Me.Panel1)
         Me.pnl_menu.Dock = System.Windows.Forms.DockStyle.Left
         Me.pnl_menu.Location = New System.Drawing.Point(0, 0)
@@ -180,67 +180,27 @@ Partial Class frm_adm
         '
         'pnl_content
         '
+        Me.pnl_content.Controls.Add(Me.lbl_date)
         Me.pnl_content.Controls.Add(Me.Chart2)
         Me.pnl_content.Controls.Add(Me.Chart1)
         Me.pnl_content.Controls.Add(Me.Label3)
         Me.pnl_content.Controls.Add(Me.Label2)
-        Me.pnl_content.Controls.Add(Me.Label1)
         Me.pnl_content.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pnl_content.Location = New System.Drawing.Point(205, 0)
         Me.pnl_content.Name = "pnl_content"
         Me.pnl_content.Size = New System.Drawing.Size(896, 511)
         Me.pnl_content.TabIndex = 17
         '
-        'Label3
+        'lbl_date
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(567, 126)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(242, 20)
-        Me.Label3.TabIndex = 4
-        Me.Label3.Text = "Relação de vendas por vendedor"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(81, 384)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(263, 20)
-        Me.Label2.TabIndex = 3
-        Me.Label2.Text = "Relação de métodos de pagamento"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(301, 20)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(282, 31)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Seja bem vindo Admin"
-        '
-        'Chart1
-        '
-        ChartArea2.Name = "ChartArea1"
-        Me.Chart1.ChartAreas.Add(ChartArea2)
-        Me.Chart1.DataSource = Me.TbprecoBindingSource
-        Legend2.Name = "Legend1"
-        Me.Chart1.Legends.Add(Legend2)
-        Me.Chart1.Location = New System.Drawing.Point(6, 81)
-        Me.Chart1.Name = "Chart1"
-        Me.Chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel
-        Series2.ChartArea = "ChartArea1"
-        Series2.IsValueShownAsLabel = True
-        Series2.Legend = "Legend1"
-        Series2.Name = "N° de pedidos"
-        Series2.XValueMember = "payment_method"
-        Series2.YValueMembers = "Quantidade"
-        Me.Chart1.Series.Add(Series2)
-        Me.Chart1.Size = New System.Drawing.Size(479, 300)
-        Me.Chart1.TabIndex = 5
-        Me.Chart1.Text = "Chart1"
+        Me.lbl_date.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.lbl_date.AutoSize = True
+        Me.lbl_date.Font = New System.Drawing.Font("Lato", 23.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_date.Location = New System.Drawing.Point(358, 22)
+        Me.lbl_date.Name = "lbl_date"
+        Me.lbl_date.Size = New System.Drawing.Size(162, 38)
+        Me.lbl_date.TabIndex = 95
+        Me.lbl_date.Text = "Olá admin!"
         '
         'Chart2
         '
@@ -263,24 +223,65 @@ Partial Class frm_adm
         Me.Chart2.TabIndex = 6
         Me.Chart2.Text = "Chart2"
         '
+        'TbvendedorBindingSource
+        '
+        Me.TbvendedorBindingSource.DataMember = "tb_vendedor"
+        Me.TbvendedorBindingSource.DataSource = Me.Db_scepDataSet
+        '
         'Db_scepDataSet
         '
         Me.Db_scepDataSet.DataSetName = "db_scepDataSet"
         Me.Db_scepDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'Chart1
+        '
+        ChartArea2.Name = "ChartArea1"
+        Me.Chart1.ChartAreas.Add(ChartArea2)
+        Me.Chart1.DataSource = Me.TbprecoBindingSource
+        Legend2.Name = "Legend1"
+        Me.Chart1.Legends.Add(Legend2)
+        Me.Chart1.Location = New System.Drawing.Point(6, 81)
+        Me.Chart1.Name = "Chart1"
+        Me.Chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel
+        Series2.ChartArea = "ChartArea1"
+        Series2.IsValueShownAsLabel = True
+        Series2.Legend = "Legend1"
+        Series2.Name = "N° de pedidos"
+        Series2.XValueMember = "payment_method"
+        Series2.YValueMembers = "Quantidade"
+        Me.Chart1.Series.Add(Series2)
+        Me.Chart1.Size = New System.Drawing.Size(479, 300)
+        Me.Chart1.TabIndex = 5
+        Me.Chart1.Text = "Chart1"
         '
         'TbprecoBindingSource
         '
         Me.TbprecoBindingSource.DataMember = "tb_preco"
         Me.TbprecoBindingSource.DataSource = Me.Db_scepDataSet
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(567, 126)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(242, 20)
+        Me.Label3.TabIndex = 4
+        Me.Label3.Text = "Relação de vendas por vendedor"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(81, 384)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(263, 20)
+        Me.Label2.TabIndex = 3
+        Me.Label2.Text = "Relação de métodos de pagamento"
+        '
         'Tb_precoTableAdapter
         '
         Me.Tb_precoTableAdapter.ClearBeforeFill = True
-        '
-        'TbvendedorBindingSource
-        '
-        Me.TbvendedorBindingSource.DataMember = "tb_vendedor"
-        Me.TbvendedorBindingSource.DataSource = Me.Db_scepDataSet
         '
         'Tb_vendedorTableAdapter
         '
@@ -304,11 +305,11 @@ Partial Class frm_adm
         Me.Panel1.ResumeLayout(False)
         Me.pnl_content.ResumeLayout(False)
         Me.pnl_content.PerformLayout()
-        CType(Me.Chart1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Chart2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Db_scepDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.TbprecoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.TbvendedorBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Db_scepDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Chart1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TbprecoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -316,12 +317,11 @@ Partial Class frm_adm
     Friend WithEvents pic_logo As Windows.Forms.PictureBox
     Friend WithEvents btn_prod As FontAwesome.Sharp.IconButton
     Friend WithEvents btn_seller As FontAwesome.Sharp.IconButton
-    Friend WithEvents btn_report As FontAwesome.Sharp.IconButton
+    Friend WithEvents btn_next_order As FontAwesome.Sharp.IconButton
     Friend WithEvents pnl_menu As Windows.Forms.Panel
     Friend WithEvents btn_logout As FontAwesome.Sharp.IconButton
     Friend WithEvents Panel1 As Windows.Forms.Panel
     Friend WithEvents pnl_content As Windows.Forms.Panel
-    Friend WithEvents Label1 As Windows.Forms.Label
     Friend WithEvents Label3 As Windows.Forms.Label
     Friend WithEvents Label2 As Windows.Forms.Label
     Friend WithEvents Chart2 As Windows.Forms.DataVisualization.Charting.Chart
@@ -331,4 +331,5 @@ Partial Class frm_adm
     Friend WithEvents Tb_precoTableAdapter As db_scepDataSetTableAdapters.tb_precoTableAdapter
     Friend WithEvents TbvendedorBindingSource As Windows.Forms.BindingSource
     Friend WithEvents Tb_vendedorTableAdapter As db_scepDataSetTableAdapters.tb_vendedorTableAdapter
+    Friend WithEvents lbl_date As Windows.Forms.Label
 End Class
