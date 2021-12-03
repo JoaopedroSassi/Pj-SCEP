@@ -33,11 +33,12 @@ Partial Class frm_adm
         Me.pic_logo = New System.Windows.Forms.PictureBox()
         Me.btn_prod = New FontAwesome.Sharp.IconButton()
         Me.btn_seller = New FontAwesome.Sharp.IconButton()
-        Me.btn_report = New FontAwesome.Sharp.IconButton()
+        Me.btn_next_order = New FontAwesome.Sharp.IconButton()
         Me.pnl_menu = New System.Windows.Forms.Panel()
         Me.btn_logout = New FontAwesome.Sharp.IconButton()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.pnl_content = New System.Windows.Forms.Panel()
+        Me.lbl_date = New System.Windows.Forms.Label()
         Me.Chart2 = New System.Windows.Forms.DataVisualization.Charting.Chart()
         Me.TbvendedorBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Db_scepDataSet = New scep.db_scepDataSet()
@@ -47,7 +48,6 @@ Partial Class frm_adm
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Tb_precoTableAdapter = New scep.db_scepDataSetTableAdapters.tb_precoTableAdapter()
         Me.Tb_vendedorTableAdapter = New scep.db_scepDataSetTableAdapters.tb_vendedorTableAdapter()
-        Me.lbl_date = New System.Windows.Forms.Label()
         CType(Me.pic_logo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pnl_menu.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -112,27 +112,27 @@ Partial Class frm_adm
         Me.btn_seller.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.btn_seller.UseVisualStyleBackColor = True
         '
-        'btn_report
+        'btn_next_order
         '
-        Me.btn_report.BackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(168, Byte), Integer))
-        Me.btn_report.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btn_report.FlatAppearance.BorderSize = 0
-        Me.btn_report.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_report.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.btn_report.IconChar = FontAwesome.Sharp.IconChar.FileInvoice
-        Me.btn_report.IconColor = System.Drawing.SystemColors.ButtonFace
-        Me.btn_report.IconFont = FontAwesome.Sharp.IconFont.[Auto]
-        Me.btn_report.IconSize = 36
-        Me.btn_report.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btn_report.Location = New System.Drawing.Point(0, 146)
-        Me.btn_report.Name = "btn_report"
-        Me.btn_report.Padding = New System.Windows.Forms.Padding(10, 0, 20, 0)
-        Me.btn_report.Size = New System.Drawing.Size(205, 60)
-        Me.btn_report.TabIndex = 10
-        Me.btn_report.Text = "Gerar relatório"
-        Me.btn_report.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btn_report.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.btn_report.UseVisualStyleBackColor = False
+        Me.btn_next_order.BackColor = System.Drawing.Color.FromArgb(CType(CType(49, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(168, Byte), Integer))
+        Me.btn_next_order.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btn_next_order.FlatAppearance.BorderSize = 0
+        Me.btn_next_order.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_next_order.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.btn_next_order.IconChar = FontAwesome.Sharp.IconChar.CalendarWeek
+        Me.btn_next_order.IconColor = System.Drawing.SystemColors.ButtonFace
+        Me.btn_next_order.IconFont = FontAwesome.Sharp.IconFont.[Auto]
+        Me.btn_next_order.IconSize = 36
+        Me.btn_next_order.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btn_next_order.Location = New System.Drawing.Point(0, 146)
+        Me.btn_next_order.Name = "btn_next_order"
+        Me.btn_next_order.Padding = New System.Windows.Forms.Padding(10, 0, 20, 0)
+        Me.btn_next_order.Size = New System.Drawing.Size(205, 60)
+        Me.btn_next_order.TabIndex = 10
+        Me.btn_next_order.Text = "Próximas entregas"
+        Me.btn_next_order.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btn_next_order.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btn_next_order.UseVisualStyleBackColor = False
         '
         'pnl_menu
         '
@@ -140,7 +140,7 @@ Partial Class frm_adm
         Me.pnl_menu.Controls.Add(Me.btn_logout)
         Me.pnl_menu.Controls.Add(Me.btn_prod)
         Me.pnl_menu.Controls.Add(Me.btn_seller)
-        Me.pnl_menu.Controls.Add(Me.btn_report)
+        Me.pnl_menu.Controls.Add(Me.btn_next_order)
         Me.pnl_menu.Controls.Add(Me.Panel1)
         Me.pnl_menu.Dock = System.Windows.Forms.DockStyle.Left
         Me.pnl_menu.Location = New System.Drawing.Point(0, 0)
@@ -190,6 +190,17 @@ Partial Class frm_adm
         Me.pnl_content.Name = "pnl_content"
         Me.pnl_content.Size = New System.Drawing.Size(896, 511)
         Me.pnl_content.TabIndex = 17
+        '
+        'lbl_date
+        '
+        Me.lbl_date.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.lbl_date.AutoSize = True
+        Me.lbl_date.Font = New System.Drawing.Font("Lato", 23.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_date.Location = New System.Drawing.Point(358, 22)
+        Me.lbl_date.Name = "lbl_date"
+        Me.lbl_date.Size = New System.Drawing.Size(162, 38)
+        Me.lbl_date.TabIndex = 95
+        Me.lbl_date.Text = "Olá admin!"
         '
         'Chart2
         '
@@ -276,17 +287,6 @@ Partial Class frm_adm
         '
         Me.Tb_vendedorTableAdapter.ClearBeforeFill = True
         '
-        'lbl_date
-        '
-        Me.lbl_date.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.lbl_date.AutoSize = True
-        Me.lbl_date.Font = New System.Drawing.Font("Lato", 23.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_date.Location = New System.Drawing.Point(358, 22)
-        Me.lbl_date.Name = "lbl_date"
-        Me.lbl_date.Size = New System.Drawing.Size(162, 38)
-        Me.lbl_date.TabIndex = 95
-        Me.lbl_date.Text = "Olá admin!"
-        '
         'frm_adm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -317,7 +317,7 @@ Partial Class frm_adm
     Friend WithEvents pic_logo As Windows.Forms.PictureBox
     Friend WithEvents btn_prod As FontAwesome.Sharp.IconButton
     Friend WithEvents btn_seller As FontAwesome.Sharp.IconButton
-    Friend WithEvents btn_report As FontAwesome.Sharp.IconButton
+    Friend WithEvents btn_next_order As FontAwesome.Sharp.IconButton
     Friend WithEvents pnl_menu As Windows.Forms.Panel
     Friend WithEvents btn_logout As FontAwesome.Sharp.IconButton
     Friend WithEvents Panel1 As Windows.Forms.Panel

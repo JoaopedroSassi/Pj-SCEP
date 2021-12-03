@@ -76,6 +76,8 @@ Partial Class frm_order
         Me.txt_price = New System.Windows.Forms.TextBox()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.lbl_date = New System.Windows.Forms.Label()
+        Me.Label19 = New System.Windows.Forms.Label()
+        Me.txt_delivery_date = New System.Windows.Forms.MaskedTextBox()
         CType(Me.dgv_prod_order, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -589,12 +591,35 @@ Partial Class frm_order
         Me.lbl_date.TabIndex = 95
         Me.lbl_date.Text = "Criar pedido"
         '
+        'Label19
+        '
+        Me.Label19.AutoSize = True
+        Me.Label19.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label19.Location = New System.Drawing.Point(744, 275)
+        Me.Label19.Name = "Label19"
+        Me.Label19.Size = New System.Drawing.Size(95, 15)
+        Me.Label19.TabIndex = 96
+        Me.Label19.Text = "Data de entrega"
+        '
+        'txt_delivery_date
+        '
+        Me.txt_delivery_date.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txt_delivery_date.Location = New System.Drawing.Point(747, 293)
+        Me.txt_delivery_date.Mask = "00/00/0000"
+        Me.txt_delivery_date.Name = "txt_delivery_date"
+        Me.txt_delivery_date.Size = New System.Drawing.Size(77, 20)
+        Me.txt_delivery_date.TabIndex = 97
+        Me.txt_delivery_date.ValidatingType = GetType(Date)
+        '
         'frm_order
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(880, 472)
+        Me.Controls.Add(Me.txt_delivery_date)
+        Me.Controls.Add(Me.Label19)
         Me.Controls.Add(Me.lbl_date)
         Me.Controls.Add(Me.Label18)
         Me.Controls.Add(Me.txt_price)
@@ -701,4 +726,6 @@ Partial Class frm_order
     Friend WithEvents amount As Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents preco As Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents lbl_date As Windows.Forms.Label
+    Friend WithEvents Label19 As Windows.Forms.Label
+    Friend WithEvents txt_delivery_date As Windows.Forms.MaskedTextBox
 End Class

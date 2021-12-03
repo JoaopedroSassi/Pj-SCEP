@@ -115,16 +115,16 @@
     <Compile Include="frm_login.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frm_next_sales.Designer.vb">
+      <DependentUpon>frm_next_sales.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_next_sales.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frm_order.Designer.vb">
       <DependentUpon>frm_order.vb</DependentUpon>
     </Compile>
     <Compile Include="frm_order.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_pdf.Designer.vb">
-      <DependentUpon>frm_pdf.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frm_pdf.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_select_order.Designer.vb">
@@ -263,11 +263,11 @@
     <EmbeddedResource Include="frm_login.resx">
       <DependentUpon>frm_login.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_next_sales.resx">
+      <DependentUpon>frm_next_sales.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_order.resx">
       <DependentUpon>frm_order.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frm_pdf.resx">
-      <DependentUpon>frm_pdf.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_select_order.resx">
       <DependentUpon>frm_select_order.vb</DependentUpon>
