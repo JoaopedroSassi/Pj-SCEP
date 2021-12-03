@@ -10,6 +10,7 @@ Imports iText.Kernel.Colors
 Imports HorizontalAlignment = System.Windows.Forms.HorizontalAlignment
 Imports iText.Layout.Borders
 Imports System.IO
+Imports System.Globalization
 
 Public Class frm_order
 
@@ -138,8 +139,8 @@ Public Class frm_order
     End Sub
 
     Private Sub btn_save_order_Click(sender As Object, e As EventArgs) Handles btn_save_order.Click
-        ' Try
-        If txt_cpf.Text = "" Or
+        Try
+            If txt_cpf.Text = "" Or
            txt_first_name.Text = "" Or
            txt_last_name.Text = "" Or
            txt_email.Text = "" Or
@@ -164,9 +165,9 @@ Public Class frm_order
                 clean_order()
                 MsgBox("Pedido cadastrado com sucesso!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Aviso")
             End If
-        '  Catch ex As Exception
-        ' MsgBox("Erro ao processar | Criar pedido", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Aviso")
-        ' End Try
+        Catch ex As Exception
+            MsgBox("Erro ao processar | Criar pedido", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Aviso")
+        End Try
     End Sub
 
     Sub create_client()
@@ -196,23 +197,22 @@ Public Class frm_order
     End Sub
 
     Sub create_order()
-        'Try
-        date_system = DateTime.Now.ToString("yyyyMMdd")
-        date_delivery = Date.ParseExact(txt_delivery_date.Text, "dd/MM/yyyy", System.Globalization.DateTimeFormatInfo.InvariantInfo)
-        sql = "INSERT INTO tb_order VALUES (default, '" & date_system & "', '" & date_delivery & "', '" & cmb_method.Text & "', '" & id_client & "', '" & id_sell_log & "')"
+        Try
+            date_system = DateTime.Now.ToString("yyyyMMdd")
+            sql = "INSERT INTO tb_order VALUES (default, '" & date_system & "', STR_TO_DATE('" & txt_delivery_date.Text & "','%d-%m-%Y'), '" & cmb_method.Text & "', '" & id_client & "', '" & id_sell_log & "')"
             rs = db.Execute(sql)
 
             sql = "SELECT MAX(id_order) FROM tb_order"
             rs = db.Execute(sql)
             id_order = rs.Fields(0).Value
-        ' Catch ex As Exception
-        '  MsgBox("Erro ao processar | Cadastrar pedido", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Aviso")
-        '  End Try
+        Catch ex As Exception
+            MsgBox("Erro ao processar | Cadastrar pedido", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Aviso")
+        End Try
     End Sub
 
     Sub create_products_order()
-        '  Try
-        For Each item As DataGridViewRow In dgv_prod_order.Rows
+        Try
+            For Each item As DataGridViewRow In dgv_prod_order.Rows
                 final_price = item.Cells(3).Value * item.Cells(4).Value
                 sql = "INSERT INTO tb_order_product VALUES (default, '" & item.Cells(3).Value & "', '" & final_price & "', '" & id_order & "', '" & item.Cells(0).Value & "')"
                 rs = db.Execute(sql)
@@ -224,9 +224,9 @@ Public Class frm_order
                 sql = "UPDATE tb_products SET amount = '" & final_amount & "' WHERE id_prod = '" & item.Cells(0).Value & "'"
                 rs = db.Execute(sql)
             Next
-        '  Catch ex As Exception
-        'MsgBox("Erro ao processar | Cadastrar items pedido", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Aviso")
-        ' End Try
+        Catch ex As Exception
+            MsgBox("Erro ao processar | Cadastrar items pedido", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Aviso")
+        End Try
     End Sub
 
     Sub clean_order()
@@ -245,9 +245,10 @@ Public Class frm_order
             txt_number.Clear()
             txt_apartment.Clear()
             txt_block.Clear()
+            txt_delivery_date.Clear()
             cmb_method.ResetText()
-            txt_cpf.Focus()
             dgv_prod_order.Rows.Clear()
+            txt_cpf.Focus()
         Catch ex As Exception
             MsgBox("Erro ao processar | Limpar pedido", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Aviso")
         End Try
@@ -273,8 +274,8 @@ Public Class frm_order
     End Sub
 
     Sub create_pdf()
-        '  Try
-        Dim archive = "C:\Users\joaop\Documents\Estudos\Fatec\projetos_fatec\2_semestre\scep\pdf\pedido" & id_order & ".pdf"
+        Try
+            Dim archive = "C:\Users\joaop\Documents\Estudos\Fatec\projetos_fatec\2_semestre\scep\pdf\pedido" & id_order & ".pdf"
 
             Using wPdf = New PdfWriter(archive, New WriterProperties().SetPdfVersion(PdfVersion.PDF_2_0))
                 Dim pdf_document = New PdfDocument(wPdf)
@@ -331,7 +332,7 @@ Public Class frm_order
                 document.Add(New Paragraph("Método de pagamento: " & cmb_method.Text))
                 document.Add(New Paragraph("Vendedor: " & name_sell_log))
                 document.Add(New Paragraph("Data do pedido: " & DateTime.Now))
-                document.Add(New Paragraph("Data de entrega: " & date_delivery))
+                document.Add(New Paragraph("Data de entrega: " & txt_delivery_date.Text))
 
 
                 Dim columnWidth As Single() = {10, 40, 30, 10, 20, 20}
@@ -351,6 +352,7 @@ Public Class frm_order
                 tabela.AddHeaderCell(New Cell().SetTextAlignment(TextAlignment.CENTER).SetBackgroundColor(ColorConstants.WHITE).SetFontColor(ColorConstants.BLUE).Add(New Paragraph("Preço - Total")))
 
                 For Each item As DataGridViewRow In dgv_prod_order.Rows
+                    final_price = item.Cells(3).Value * item.Cells(4).Value
                     tabela.AddCell(New Cell().SetTextAlignment(TextAlignment.CENTER).Add(New Paragraph(item.Cells(0).Value.ToString)))
 
                     tabela.AddCell(New Cell().Add(New Paragraph(item.Cells(1).Value.ToString)))
@@ -373,9 +375,9 @@ Public Class frm_order
                 document.Close()
                 pdf_document.Close()
             End Using
-        '  Catch ex As Exception
-        '  MsgBox("Erro ao processar | Gerar pdf", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Aviso")
-        ' End Try
+        Catch ex As Exception
+            MsgBox("Erro ao processar | Gerar pdf", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Aviso")
+        End Try
     End Sub
 
     Sub send_email()

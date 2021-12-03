@@ -72,6 +72,8 @@ Partial Class frm_select_order
         Me.txt_date = New System.Windows.Forms.TextBox()
         Me.txt_method = New System.Windows.Forms.TextBox()
         Me.lbl_date = New System.Windows.Forms.Label()
+        Me.txt_delivery_date = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
         CType(Me.dgv_prod_order, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
@@ -491,7 +493,7 @@ Partial Class frm_select_order
         '
         Me.Label17.AutoSize = True
         Me.Label17.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label17.Location = New System.Drawing.Point(655, 49)
+        Me.Label17.Location = New System.Drawing.Point(657, 37)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(114, 13)
         Me.Label17.TabIndex = 87
@@ -501,7 +503,7 @@ Partial Class frm_select_order
         '
         Me.Label18.AutoSize = True
         Me.Label18.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label18.Location = New System.Drawing.Point(653, 96)
+        Me.Label18.Location = New System.Drawing.Point(655, 128)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(83, 13)
         Me.Label18.TabIndex = 89
@@ -511,7 +513,7 @@ Partial Class frm_select_order
         '
         Me.Label19.AutoSize = True
         Me.Label19.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Label19.Location = New System.Drawing.Point(654, 151)
+        Me.Label19.Location = New System.Drawing.Point(657, 177)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(53, 13)
         Me.Label19.TabIndex = 91
@@ -520,7 +522,7 @@ Partial Class frm_select_order
         'txt_seller
         '
         Me.txt_seller.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_seller.Location = New System.Drawing.Point(657, 167)
+        Me.txt_seller.Location = New System.Drawing.Point(660, 193)
         Me.txt_seller.Multiline = True
         Me.txt_seller.Name = "txt_seller"
         Me.txt_seller.ReadOnly = True
@@ -530,7 +532,7 @@ Partial Class frm_select_order
         'txt_date
         '
         Me.txt_date.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_date.Location = New System.Drawing.Point(656, 112)
+        Me.txt_date.Location = New System.Drawing.Point(658, 144)
         Me.txt_date.Multiline = True
         Me.txt_date.Name = "txt_date"
         Me.txt_date.ReadOnly = True
@@ -540,7 +542,7 @@ Partial Class frm_select_order
         'txt_method
         '
         Me.txt_method.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_method.Location = New System.Drawing.Point(656, 65)
+        Me.txt_method.Location = New System.Drawing.Point(658, 53)
         Me.txt_method.Multiline = True
         Me.txt_method.Name = "txt_method"
         Me.txt_method.ReadOnly = True
@@ -558,12 +560,34 @@ Partial Class frm_select_order
         Me.lbl_date.TabIndex = 94
         Me.lbl_date.Text = "Selecionar pedido"
         '
+        'txt_delivery_date
+        '
+        Me.txt_delivery_date.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txt_delivery_date.Location = New System.Drawing.Point(658, 99)
+        Me.txt_delivery_date.Multiline = True
+        Me.txt_delivery_date.Name = "txt_delivery_date"
+        Me.txt_delivery_date.ReadOnly = True
+        Me.txt_delivery_date.Size = New System.Drawing.Size(198, 20)
+        Me.txt_delivery_date.TabIndex = 96
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Label7.Location = New System.Drawing.Point(655, 83)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(84, 13)
+        Me.Label7.TabIndex = 95
+        Me.Label7.Text = "Data de entrega"
+        '
         'frm_select_order
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(880, 472)
+        Me.Controls.Add(Me.txt_delivery_date)
+        Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.lbl_date)
         Me.Controls.Add(Me.txt_method)
         Me.Controls.Add(Me.txt_date)
@@ -660,4 +684,6 @@ Partial Class frm_select_order
     Friend WithEvents unit As Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents preco As Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents lbl_date As Windows.Forms.Label
+    Friend WithEvents txt_delivery_date As Windows.Forms.TextBox
+    Friend WithEvents Label7 As Windows.Forms.Label
 End Class
