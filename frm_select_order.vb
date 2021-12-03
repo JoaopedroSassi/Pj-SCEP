@@ -13,21 +13,22 @@
                 txt_landline_phone.Text = rs.Fields(5).Value
                 txt_cell_phone.Text = rs.Fields(6).Value
                 txt_date.Text = rs.Fields(9).Value
-                txt_method.Text = rs.Fields(10).Value
-                txt_seller.Text = rs.Fields(25).Value + " " + rs.Fields(26).Value
-                txt_cep.Text = rs.Fields(32).Value
-                txt_city.Text = rs.Fields(33).Value
-                txt_district.Text = rs.Fields(34).Value
-                txt_street.Text = rs.Fields(35).Value
-                txt_uf.Text = rs.Fields(36).Value
-                txt_number.Text = rs.Fields(37).Value
-                txt_apartment.Text = rs.Fields(38).Value
-                txt_block.Text = rs.Fields(39).Value
+                txt_delivery_date.Text = rs.Fields(10).Value
+                txt_method.Text = rs.Fields(11).Value
+                txt_seller.Text = rs.Fields(26).Value + " " + rs.Fields(27).Value
+                txt_cep.Text = rs.Fields(33).Value
+                txt_city.Text = rs.Fields(34).Value
+                txt_district.Text = rs.Fields(35).Value
+                txt_street.Text = rs.Fields(36).Value
+                txt_uf.Text = rs.Fields(37).Value
+                txt_number.Text = rs.Fields(38).Value
+                txt_apartment.Text = rs.Fields(39).Value
+                txt_block.Text = rs.Fields(40).Value
 
                 With dgv_prod_order
                     .Rows.Clear()
                     Do While rs.EOF = False
-                        .Rows.Add(rs.Fields(18).Value, rs.Fields(19).Value, rs.Fields(20).Value, rs.Fields(14).Value, (rs.Fields(15).Value / rs.Fields(14).Value), rs.Fields(15).Value)
+                        .Rows.Add(rs.Fields(19).Value, rs.Fields(20).Value, rs.Fields(21).Value, rs.Fields(15).Value, (rs.Fields(16).Value / rs.Fields(15).Value), rs.Fields(16).Value)
                         rs.MoveNext()
                     Loop
                 End With
