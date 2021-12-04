@@ -78,7 +78,7 @@ Partial Class frm_crud_products
         Me.dgv_prod.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Id, Me.name_prod, Me.cat, Me.amount, Me.cost_price})
         Me.dgv_prod.EnableHeadersVisualStyles = False
         Me.dgv_prod.GridColor = System.Drawing.Color.SteelBlue
-        Me.dgv_prod.Location = New System.Drawing.Point(41, 79)
+        Me.dgv_prod.Location = New System.Drawing.Point(2, 79)
         Me.dgv_prod.Name = "dgv_prod"
         Me.dgv_prod.ReadOnly = True
         Me.dgv_prod.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
@@ -96,7 +96,7 @@ Partial Class frm_crud_products
         DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
         Me.dgv_prod.RowsDefaultCellStyle = DataGridViewCellStyle3
-        Me.dgv_prod.Size = New System.Drawing.Size(488, 316)
+        Me.dgv_prod.Size = New System.Drawing.Size(570, 316)
         Me.dgv_prod.TabIndex = 0
         '
         'Id

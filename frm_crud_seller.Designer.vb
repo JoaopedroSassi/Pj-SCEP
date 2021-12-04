@@ -338,7 +338,7 @@ Partial Class frm_crud_seller
         Me.dgv_sell.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Id, Me.name_prod, Me.cat, Me.amount, Me.cost_price})
         Me.dgv_sell.EnableHeadersVisualStyles = False
         Me.dgv_sell.GridColor = System.Drawing.Color.SteelBlue
-        Me.dgv_sell.Location = New System.Drawing.Point(41, 97)
+        Me.dgv_sell.Location = New System.Drawing.Point(2, 98)
         Me.dgv_sell.Name = "dgv_sell"
         Me.dgv_sell.ReadOnly = True
         Me.dgv_sell.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
@@ -356,7 +356,7 @@ Partial Class frm_crud_seller
         DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
         Me.dgv_sell.RowsDefaultCellStyle = DataGridViewCellStyle3
-        Me.dgv_sell.Size = New System.Drawing.Size(515, 299)
+        Me.dgv_sell.Size = New System.Drawing.Size(554, 299)
         Me.dgv_sell.TabIndex = 6
         '
         'Id
