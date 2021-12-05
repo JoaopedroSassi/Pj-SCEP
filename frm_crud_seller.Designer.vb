@@ -36,7 +36,6 @@ Partial Class frm_crud_seller
         Me.lbl_email = New System.Windows.Forms.Label()
         Me.txt_email = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.txt_cpf = New System.Windows.Forms.TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txt_last_name = New System.Windows.Forms.TextBox()
         Me.btn_search_id = New FontAwesome.Sharp.IconPictureBox()
@@ -55,6 +54,7 @@ Partial Class frm_crud_seller
         Me.amount = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.cost_price = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.lbl_date = New System.Windows.Forms.Label()
+        Me.txt_cpf = New System.Windows.Forms.MaskedTextBox()
         Me.Panel1.SuspendLayout()
         CType(Me.btn_search_id, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgv_sell, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -90,6 +90,7 @@ Partial Class frm_crud_seller
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.txt_cpf)
         Me.Panel1.Controls.Add(Me.cmb_status)
         Me.Panel1.Controls.Add(Me.Label9)
         Me.Panel1.Controls.Add(Me.Label7)
@@ -97,7 +98,6 @@ Partial Class frm_crud_seller
         Me.Panel1.Controls.Add(Me.lbl_email)
         Me.Panel1.Controls.Add(Me.txt_email)
         Me.Panel1.Controls.Add(Me.Label6)
-        Me.Panel1.Controls.Add(Me.txt_cpf)
         Me.Panel1.Controls.Add(Me.Label5)
         Me.Panel1.Controls.Add(Me.txt_last_name)
         Me.Panel1.Controls.Add(Me.btn_search_id)
@@ -186,15 +186,6 @@ Partial Class frm_crud_seller
         Me.Label6.Size = New System.Drawing.Size(38, 20)
         Me.Label6.TabIndex = 22
         Me.Label6.Text = "Cpf:"
-        '
-        'txt_cpf
-        '
-        Me.txt_cpf.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.txt_cpf.Location = New System.Drawing.Point(113, 117)
-        Me.txt_cpf.Multiline = True
-        Me.txt_cpf.Name = "txt_cpf"
-        Me.txt_cpf.Size = New System.Drawing.Size(193, 21)
-        Me.txt_cpf.TabIndex = 1
         '
         'Label5
         '
@@ -406,6 +397,15 @@ Partial Class frm_crud_seller
         Me.lbl_date.TabIndex = 96
         Me.lbl_date.Text = "CRUD | Vendedores"
         '
+        'txt_cpf
+        '
+        Me.txt_cpf.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.txt_cpf.Location = New System.Drawing.Point(113, 117)
+        Me.txt_cpf.Mask = "999.999.999-99"
+        Me.txt_cpf.Name = "txt_cpf"
+        Me.txt_cpf.Size = New System.Drawing.Size(84, 20)
+        Me.txt_cpf.TabIndex = 29
+        '
         'frm_crud_seller
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -449,7 +449,6 @@ Partial Class frm_crud_seller
     Friend WithEvents amount As Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents cost_price As Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Label6 As Windows.Forms.Label
-    Friend WithEvents txt_cpf As Windows.Forms.TextBox
     Friend WithEvents Label5 As Windows.Forms.Label
     Friend WithEvents txt_last_name As Windows.Forms.TextBox
     Friend WithEvents Label9 As Windows.Forms.Label
@@ -459,4 +458,5 @@ Partial Class frm_crud_seller
     Friend WithEvents txt_email As Windows.Forms.TextBox
     Friend WithEvents cmb_status As Windows.Forms.ComboBox
     Friend WithEvents lbl_date As Windows.Forms.Label
+    Friend WithEvents txt_cpf As Windows.Forms.MaskedTextBox
 End Class
