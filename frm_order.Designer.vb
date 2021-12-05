@@ -230,6 +230,7 @@ Partial Class frm_order
         Me.txt_city.Location = New System.Drawing.Point(95, 143)
         Me.txt_city.Multiline = True
         Me.txt_city.Name = "txt_city"
+        Me.txt_city.ReadOnly = True
         Me.txt_city.Size = New System.Drawing.Size(136, 20)
         Me.txt_city.TabIndex = 50
         '
@@ -249,6 +250,7 @@ Partial Class frm_order
         Me.txt_district.Location = New System.Drawing.Point(237, 143)
         Me.txt_district.Multiline = True
         Me.txt_district.Name = "txt_district"
+        Me.txt_district.ReadOnly = True
         Me.txt_district.Size = New System.Drawing.Size(136, 20)
         Me.txt_district.TabIndex = 51
         '
@@ -268,6 +270,7 @@ Partial Class frm_order
         Me.txt_street.Location = New System.Drawing.Point(379, 143)
         Me.txt_street.Multiline = True
         Me.txt_street.Name = "txt_street"
+        Me.txt_street.ReadOnly = True
         Me.txt_street.Size = New System.Drawing.Size(188, 20)
         Me.txt_street.TabIndex = 52
         '
@@ -287,6 +290,7 @@ Partial Class frm_order
         Me.txt_uf.Location = New System.Drawing.Point(573, 143)
         Me.txt_uf.Multiline = True
         Me.txt_uf.Name = "txt_uf"
+        Me.txt_uf.ReadOnly = True
         Me.txt_uf.Size = New System.Drawing.Size(36, 20)
         Me.txt_uf.TabIndex = 53
         '
@@ -432,7 +436,7 @@ Partial Class frm_order
         Me.btn_save_order.Location = New System.Drawing.Point(721, 466)
         Me.btn_save_order.Name = "btn_save_order"
         Me.btn_save_order.Size = New System.Drawing.Size(142, 31)
-        Me.btn_save_order.TabIndex = 55
+        Me.btn_save_order.TabIndex = 17
         Me.btn_save_order.Text = "Salvar"
         Me.btn_save_order.UseVisualStyleBackColor = True
         '
@@ -549,7 +553,7 @@ Partial Class frm_order
         Me.cmb_method.Location = New System.Drawing.Point(746, 237)
         Me.cmb_method.Name = "cmb_method"
         Me.cmb_method.Size = New System.Drawing.Size(121, 21)
-        Me.cmb_method.TabIndex = 66
+        Me.cmb_method.TabIndex = 15
         '
         'Label17
         '
@@ -609,7 +613,7 @@ Partial Class frm_order
         Me.txt_delivery_date.Mask = "00-00-0000"
         Me.txt_delivery_date.Name = "txt_delivery_date"
         Me.txt_delivery_date.Size = New System.Drawing.Size(77, 20)
-        Me.txt_delivery_date.TabIndex = 97
+        Me.txt_delivery_date.TabIndex = 16
         '
         'frm_order
         '
