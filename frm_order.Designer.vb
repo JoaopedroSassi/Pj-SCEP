@@ -78,6 +78,7 @@ Partial Class frm_order
         Me.lbl_date = New System.Windows.Forms.Label()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.txt_delivery_date = New System.Windows.Forms.MaskedTextBox()
+        Me.Panel1 = New System.Windows.Forms.Panel()
         CType(Me.dgv_prod_order, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -373,7 +374,7 @@ Partial Class frm_order
         Me.dgv_prod_order.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Id, Me.name_prod, Me.cat, Me.amount, Me.preco})
         Me.dgv_prod_order.EnableHeadersVisualStyles = False
         Me.dgv_prod_order.GridColor = System.Drawing.Color.SteelBlue
-        Me.dgv_prod_order.Location = New System.Drawing.Point(259, 209)
+        Me.dgv_prod_order.Location = New System.Drawing.Point(284, 209)
         Me.dgv_prod_order.Name = "dgv_prod_order"
         Me.dgv_prod_order.ReadOnly = True
         Me.dgv_prod_order.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
@@ -391,7 +392,7 @@ Partial Class frm_order
         DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White
         Me.dgv_prod_order.RowsDefaultCellStyle = DataGridViewCellStyle3
-        Me.dgv_prod_order.Size = New System.Drawing.Size(468, 251)
+        Me.dgv_prod_order.Size = New System.Drawing.Size(443, 251)
         Me.dgv_prod_order.TabIndex = 54
         '
         'Id
@@ -445,7 +446,7 @@ Partial Class frm_order
         Me.Produtos.AutoSize = True
         Me.Produtos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Produtos.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Produtos.Location = New System.Drawing.Point(124, 209)
+        Me.Produtos.Location = New System.Drawing.Point(113, 207)
         Me.Produtos.Name = "Produtos"
         Me.Produtos.Size = New System.Drawing.Size(73, 20)
         Me.Produtos.TabIndex = 56
@@ -589,7 +590,7 @@ Partial Class frm_order
         Me.lbl_date.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.lbl_date.AutoSize = True
         Me.lbl_date.Font = New System.Drawing.Font("Lato", 23.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_date.Location = New System.Drawing.Point(356, 9)
+        Me.lbl_date.Location = New System.Drawing.Point(354, -2)
         Me.lbl_date.Name = "lbl_date"
         Me.lbl_date.Size = New System.Drawing.Size(181, 38)
         Me.lbl_date.TabIndex = 95
@@ -615,12 +616,21 @@ Partial Class frm_order
         Me.txt_delivery_date.Size = New System.Drawing.Size(77, 20)
         Me.txt_delivery_date.TabIndex = 16
         '
+        'Panel1
+        '
+        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.Panel1.Location = New System.Drawing.Point(-10, 181)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(913, 3)
+        Me.Panel1.TabIndex = 97
+        '
         'frm_order
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
         Me.ClientSize = New System.Drawing.Size(880, 472)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.txt_delivery_date)
         Me.Controls.Add(Me.Label19)
         Me.Controls.Add(Me.lbl_date)
@@ -731,4 +741,5 @@ Partial Class frm_order
     Friend WithEvents lbl_date As Windows.Forms.Label
     Friend WithEvents Label19 As Windows.Forms.Label
     Friend WithEvents txt_delivery_date As Windows.Forms.MaskedTextBox
+    Friend WithEvents Panel1 As Windows.Forms.Panel
 End Class
