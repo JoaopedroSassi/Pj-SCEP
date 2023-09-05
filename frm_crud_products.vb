@@ -54,7 +54,7 @@
                     MsgBox("Produto atualizado com sucesso!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Aviso")
                     clean_prod()
                 Else
-                    sql = "INSERT INTO tb_products VALUES (default, '" & txt_name_prod.Text & "', '" & cmb_cat_prod.SelectedItem & "', '" & txt_amount.Text & "', '" & txt_price.Text & "')"
+                    sql = "INSERT INTO tb_products VALUES ('" & txt_name_prod.Text & "', '" & cmb_cat_prod.SelectedItem & "', '" & txt_amount.Text & "', '" & txt_price.Text & "')"
                     rs = db.Execute(sql)
                     MsgBox("Produto cadastrado com sucesso!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Aviso")
                 End If

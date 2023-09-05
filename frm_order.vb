@@ -11,18 +11,31 @@ Imports HorizontalAlignment = System.Windows.Forms.HorizontalAlignment
 Imports iText.Layout.Borders
 Imports System.IO
 Imports System.Globalization
+Imports System.Net
+Imports System.Text
+Imports Newtonsoft.Json
 
 Public Class frm_order
 
     Private Sub txt_cep_LostFocus(sender As Object, e As EventArgs) Handles txt_cep.LostFocus
         Try
-            sql = "SELECT * FROM tb_cep WHERE cep = '" & txt_cep.Text & "'"
-            rs = db.Execute(sql)
-            If rs.EOF = False Then
-                txt_street.Text = rs.Fields(1).Value
-                txt_city.Text = rs.Fields(2).Value
-                txt_district.Text = rs.Fields(3).Value
-                txt_uf.Text = rs.Fields(4).Value
+            Dim address As Address
+            Using webClient As New WebClient()
+                Dim url As String = "https://viacep.com.br/ws/" & txt_cep.Text.Replace("-", "") & "/json/"
+
+                Dim respostaBytes As Byte() = webClient.DownloadData(url)
+
+                Dim encoding As Encoding = Encoding.UTF8
+                Dim resposta As String = encoding.GetString(respostaBytes)
+
+                address = JsonConvert.DeserializeObject(Of Address)(resposta)
+            End Using
+
+            If address IsNot Nothing Then
+                txt_street.Text = address.Logradouro
+                txt_city.Text = address.Localidade
+                txt_district.Text = address.Bairro
+                txt_uf.Text = address.Uf
                 txt_number.Focus()
             Else
                 MsgBox("CEP: " & txt_cep.Text & "não localizado!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Aviso")
@@ -160,8 +173,8 @@ Public Class frm_order
                 create_client()
                 create_order()
                 create_products_order()
-                create_pdf()
-                send_email()
+                'create_pdf()
+                'send_email()
                 clean_order()
                 MsgBox("Pedido cadastrado com sucesso!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Aviso")
             End If
@@ -172,7 +185,7 @@ Public Class frm_order
 
     Sub create_client()
         Try
-            sql = "INSERT INTO tb_client VALUES (default, '" & txt_cpf.Text & "', '" & txt_first_name.Text & "', '" & txt_last_name.Text & "', '" & txt_email.Text & "', '" & txt_landline_phone.Text & "', '" & txt_cell_phone.Text & "', '" & id_address & "')"
+            sql = "INSERT INTO tb_client VALUES ('" & txt_cpf.Text & "', '" & txt_first_name.Text & "', '" & txt_last_name.Text & "', '" & txt_email.Text & "', '" & txt_landline_phone.Text & "', '" & txt_cell_phone.Text & "', '" & id_address & "')"
             rs = db.Execute(sql)
 
             sql = "SELECT MAX(id_client) FROM tb_client"
@@ -185,7 +198,7 @@ Public Class frm_order
 
     Sub create_address()
         Try
-            sql = "INSERT INTO tb_address VALUES (default, '" & txt_cep.Text & "', '" & txt_city.Text & "', '" & txt_district.Text & "', '" & txt_street.Text & "', '" & txt_uf.Text & "', '" & txt_number.Text & "', '" & txt_apartment.Text & "', '" & txt_block.Text & "')"
+            sql = "INSERT INTO tb_address VALUES ('" & txt_cep.Text & "', '" & txt_city.Text & "', '" & txt_district.Text & "', '" & txt_street.Text & "', '" & txt_uf.Text & "', '" & txt_number.Text & "', '" & txt_apartment.Text & "', '" & txt_block.Text & "')"
             rs = db.Execute(sql)
 
             sql = "SELECT MAX(id_address) FROM tb_address"
@@ -199,7 +212,7 @@ Public Class frm_order
     Sub create_order()
         Try
             date_system = DateTime.Now.ToString("yyyyMMdd")
-            sql = "INSERT INTO tb_order VALUES (default, '" & date_system & "', STR_TO_DATE('" & txt_delivery_date.Text & "','%d-%m-%Y'), '" & cmb_method.Text & "', '" & id_client & "', '" & id_sell_log & "')"
+            sql = "INSERT INTO tb_order VALUES ('" & date_system & "', STR_TO_DATE('" & txt_delivery_date.Text & "','%d-%m-%Y'), '" & cmb_method.Text & "', '" & id_client & "', '" & id_sell_log & "')"
             rs = db.Execute(sql)
 
             sql = "SELECT MAX(id_order) FROM tb_order"
@@ -214,7 +227,7 @@ Public Class frm_order
         Try
             For Each item As DataGridViewRow In dgv_prod_order.Rows
                 final_price = item.Cells(3).Value * item.Cells(4).Value
-                sql = "INSERT INTO tb_order_product VALUES (default, '" & item.Cells(3).Value & "', '" & final_price & "', '" & id_order & "', '" & item.Cells(0).Value & "')"
+                sql = "INSERT INTO tb_order_product VALUES ('" & item.Cells(3).Value & "', '" & final_price & "', '" & id_order & "', '" & item.Cells(0).Value & "')"
                 rs = db.Execute(sql)
 
                 sql = "SELECT * FROM tb_products WHERE id_prod = '" & item.Cells(0).Value & "'"

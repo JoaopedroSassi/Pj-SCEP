@@ -45,9 +45,9 @@ Public Class frm_adm
 
     Private Sub frm_adm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'Db_scepDataSet.tb_vendedor' table. You can move, or remove it, as needed.
-        Me.Tb_vendedorTableAdapter.Test(Me.Db_scepDataSet.tb_vendedor)
+        'Me.Tb_vendedorTableAdapter.Test(Me.Db_scepDataSet.tb_vendedor)
         'TODO: This line of code loads data into the 'Db_scepDataSet.tb_preco' table. You can move, or remove it, as needed.
-        Me.Tb_precoTableAdapter.Test(Me.Db_scepDataSet.tb_preco)
+        'Me.Tb_precoTableAdapter.Test(Me.Db_scepDataSet.tb_preco)
 
     End Sub
 End Class

@@ -16,7 +16,8 @@ Module main_module
     Sub conect_db()
         Try
             db = CreateObject("ADODB.Connection")
-            db.Open("Driver={MySQL ODBC 8.0 Unicode Driver};Server=localhost;PORT=3306;Database=db_scep;User=root;Password=123456")
+            'db.Open("Driver={MySQL ODBC 8.0 Unicode Driver};Server=localhost;PORT=3306;Database=db_scep;User=root;Password=root")
+            db.Open("Provider=SQLOLEDB;Data Source=localhost,1433;Initial Catalog=db_scep;User ID=sa;Password=@Sql012210;")
             MsgBox("Conexão com a base de dados executado", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Aviso")
         Catch ex As Exception
             MsgBox("Erro ao conectar! | Conexão base de dados", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Aviso")

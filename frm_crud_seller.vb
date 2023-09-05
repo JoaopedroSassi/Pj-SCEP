@@ -59,7 +59,7 @@
                     MsgBox("Vendedor atualizado com sucesso!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Aviso")
                     clean_sell()
                 Else
-                    sql = "INSERT INTO tb_login VALUES (default, '" & txt_cpf.Text & "', '" & txt_first_name.Text & "', '" & txt_last_name.Text & "', '" & txt_email.Text & "', '" & txt_pass.Text & "', 'seller', '" & aux_cmb & "')"
+                    sql = "INSERT INTO tb_login VALUES ('" & txt_cpf.Text & "', '" & txt_first_name.Text & "', '" & txt_last_name.Text & "', '" & txt_email.Text & "', '" & txt_pass.Text & "', 'seller', '" & aux_cmb & "')"
                     rs = db.Execute(sql)
                     MsgBox("Vendedor cadastrado com sucesso!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Aviso")
                 End If
