@@ -14,6 +14,7 @@ Imports System.Globalization
 Imports System.Net
 Imports System.Text
 Imports Newtonsoft.Json
+Imports System.Diagnostics
 
 Public Class frm_order
 
@@ -212,7 +213,7 @@ Public Class frm_order
     Sub create_order()
         Try
             date_system = DateTime.Now.ToString("yyyyMMdd")
-            sql = "INSERT INTO tb_order VALUES ('" & date_system & "', STR_TO_DATE('" & txt_delivery_date.Text & "','%d-%m-%Y'), '" & cmb_method.Text & "', '" & id_client & "', '" & id_sell_log & "')"
+            sql = "INSERT INTO tb_order VALUES ('" & date_system & "',  CONVERT(DATETIME, '" & txt_delivery_date.Text & "', 105), '" & cmb_method.Text & "', '" & id_client & "', '" & id_sell_log & "')"
             rs = db.Execute(sql)
 
             sql = "SELECT MAX(id_order) FROM tb_order"
@@ -288,9 +289,9 @@ Public Class frm_order
 
     Sub create_pdf()
         Try
-            Dim archive = "C:\Users\joaop\Documents\Estudos\Fatec\projetos_fatec\2_semestre\scep\pdf\pedido" & id_order & ".pdf"
+            diretorio_pdf = AppDomain.CurrentDomain.BaseDirectory.Replace("\bin\Debug\", "\pdf\pedido" & id_order & ".pdf")
 
-            Using wPdf = New PdfWriter(archive, New WriterProperties().SetPdfVersion(PdfVersion.PDF_2_0))
+            Using wPdf = New PdfWriter(diretorio_pdf, New WriterProperties().SetPdfVersion(PdfVersion.PDF_2_0))
                 Dim pdf_document = New PdfDocument(wPdf)
 
                 Dim document = New Document(pdf_document)
@@ -409,7 +410,7 @@ Public Class frm_order
                     email.Subject = "Pedido N°" & id_order
                     email.IsBodyHtml = False
                     email.Body = "Olá! Ficamos muito felizes que tenha feito negócios consoco. Em anexo está a cópia do pedido. Obrigado pela preferência!"
-                    email.Attachments.Add(New Attachment("C:\Users\joaop\Documents\Estudos\Fatec\projetos_fatec\2_semestre\scep\pdf\pedido" & id_order & ".pdf"))
+                    email.Attachments.Add(New Attachment(diretorio_pdf))
 
                     smtp.Send(email)
                 End Using
@@ -423,7 +424,7 @@ Public Class frm_order
 
     Sub delete_pdf()
         Try
-            Dim archive = "C:\Users\joaop\Documents\Estudos\Fatec\projetos_fatec\2_semestre\scep\pdf\pedido" & id_order & ".pdf"
+            Dim archive = diretorio_pdf
 
             If File.Exists(archive) Then
                 File.Delete(archive)

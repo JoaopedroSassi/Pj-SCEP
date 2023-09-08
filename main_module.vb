@@ -6,7 +6,7 @@ Imports MySql.Data.MySqlClient
 Module main_module
     Public db As New ADODB.Connection
     Public rs As New ADODB.Recordset
-    Public sql, day, resp, aux_cmb, name_sell_log As String
+    Public sql, day, resp, aux_cmb, name_sell_log, diretorio_pdf As String
     Public cont, date_system, id_tmp, id_sell_log, id_address, id_client, id_order, final_price, final_amount As Integer
     Public date_delivery As Date
     Public current_btn As IconButton
