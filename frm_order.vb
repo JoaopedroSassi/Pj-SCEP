@@ -177,7 +177,7 @@ Public Class frm_order
                 'create_pdf()
                 'send_email()
                 clean_order()
-                MsgBox("Pedido cadastrado com sucesso!", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Aviso")
+                MsgBox($"Pedido cadastrado com sucesso! Id do pedido: {id_order}", MsgBoxStyle.Information + MsgBoxStyle.OkOnly, "Aviso")
             End If
         Catch ex As Exception
             MsgBox("Erro ao processar | Criar pedido", MsgBoxStyle.Critical + MsgBoxStyle.OkOnly, "Aviso")
